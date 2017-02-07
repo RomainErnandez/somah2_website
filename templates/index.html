@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}Title{% endblock %}</title>
+
+</head>
+
+{% block nav %}
+    {% load static %}
+    <img src="{% static 'salut .jpg ' %}" alt="Mon image " />
+    <ul>
+    <li><a href="{% url "home.views.home" %}">Home</a ></li>
+    </ul>
+{% endblock %}
+
+<section>
+    {% block content %}
+    {% endblock %}
+</section>
+
+
+<body>
+
+</body>
+</html>
