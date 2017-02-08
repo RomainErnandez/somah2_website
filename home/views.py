@@ -3,11 +3,16 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+from home.models import Period
+
 
 def home(request):
     return render(request, template_name='home/home.html')
 
 def view_period(request, id_period):
-    if int(id_period) > 100:
+    try:
+        period = Period.objects.get(id=id_period)
+    except Exception as e:
         raise Http404
-    return HttpResponse("" + id_period)
+    else:
+        return HttpResponse("period: " + str(period.id))

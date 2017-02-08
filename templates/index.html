@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>{% block title %}Title{% endblock %}</title>
+    <title>{% block title %}SOMAH2{% endblock %}</title>
 
 </head>
 
 {% block nav %}
     {% load static %}
-    <img src="{% static 'salut .jpg ' %}" alt="Mon image " />
+    <img src="{% static 'salut .jpg ' %}" alt="logo" />
     <ul>
-    <li><a href="{% url "home.views.home" %}">Home</a ></li>
     </ul>
 {% endblock %}
 
