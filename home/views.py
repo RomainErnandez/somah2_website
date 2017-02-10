@@ -6,8 +6,8 @@ from django.shortcuts import render
 from home.models import Period
 
 
-def home(request):
-    return render(request, template_name='home/home.html')
+def dashboard(request):
+    return render(request, template_name='home/dashboard.html')
 
 def view_period(request, id_period):
     try:

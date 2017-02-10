@@ -1,0 +1,166 @@
+{% extends "home/template.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="content">
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">What is SOMAH2 ?</h4>
+                    <p class="category">A culturally sensitive communication app for breastfeeding and infant feeding counselling</p>
+                </div>
+                <div class="content">
+                <p>The SOMAH2 project aims to increase breastfeeding practice of new mothers by providing a medical application that will enhance the communication with midwives.</p>
+                <p>The application was developped during the spring of the European Project Semester (EPS) 2016 in Oslo and Akershus University College. It was conceptualized using a collaborative process with public health researchers.</p>
+                <p>The code is entirely open source and available on Github.</p>
+                <p>If you need more information, a complete report of the project is available here.</p>
+                </div>
+                <div class="content">
+                    <div class="footer">
+                        <div class="legend">
+                            <i class="fa fa-circle text-info"></i> Open source
+                            <i class="fa fa-circle text-danger"></i> Communication
+                            <i class="fa fa-circle text-warning"></i> Application
+                        </div>
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-history"></i> Updated the 09/02/2017
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card ">
+                <div class="header">
+                    <h4 class="title">2017 Activity</h4>
+                    <p class="category">All activities month-by-month (Demo purpose)</p>
+                </div>
+                <div class="content">
+                    <div id="chartActivity" class="ct-chart"></div>
+
+                    <div class="footer">
+                        <div class="legend">
+                            <i class="fa fa-circle text-info"></i> Data updates
+                            <i class="fa fa-circle text-danger"></i> Google play store downloads
+                        </div>
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-check"></i> Data information certified
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card ">
+                <div class="header">
+                    <h4 class="title">Tasks</h4>
+                    <p class="category">Android development</p>
+                </div>
+                <div class="content">
+                    <div class="table-full-width">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="" data-toggle="checkbox">
+                                        </label>
+                                    </td>
+                                    <td>Task 1"</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="checkbox">
+                                            <input type="checkbox" value="" data-toggle="checkbox" checked="">
+                                        </label>
+                                    </td>
+                                    <td>Task 2</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="footer">
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-history"></i> Synchronized with Trello 3 minutes ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}
+
+
+
+{% block javascript %}
+    <!--   Core JS Files   -->
+    <script src="{% static 'home/js/jquery-1.10.2.js' %}" type="text/javascript"></script>
+	<script src="{% static 'home/js/bootstrap.min.js' %}" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="{% static 'home/js/bootstrap-checkbox-radio-switch.js' %}"></script>
+
+	<!--  Charts Plugin -->
+	<script src="{% static 'home/js/chartist.min.js' %}"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="{% static 'home/js/bootstrap-notify.js' %}"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="{% static 'home/js/light-bootstrap-dashboard.js' %}"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="{% static 'home/js/demo.js' %}"></script>
+
+	<script type="text/javascript">
+    	$(document).ready(function(){
+
+        	demo.initChartist();
+
+        	$.notify({
+            	icon: 'pe-7s-gift',
+            	message: "Welcome to <b>SOMAH2</b> - a beautiful project for increasing breastfeeding practice"
+
+            },{
+                type: 'info',
+                timer: 4000
+            });
+
+    	});
+	</script>
+{% endblock javascript %}
