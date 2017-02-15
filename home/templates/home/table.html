@@ -2,6 +2,9 @@
 
 {% load static %}
 
+{% block head %}
+{% endblock head %}
+
 {% block ul_nav %}
 <ul class="nav">
     <li>
@@ -19,7 +22,7 @@
     <li class="active">
         <a href="{% url 'table' %}">
             <i class="pe-7s-note2"></i>
-            <p>Table List</p>
+            <p>Data Table</p>
         </a>
     </li>
     <li>
@@ -31,7 +34,226 @@
 </ul>
 {% endblock ul_nav %}
 
+{% block navbar-brand %}
+<a class="navbar-brand" href="#">Data Table</a>
+{% endblock navbar-brand %}
+
 {% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Striped Table with Hover</h4>
+                        <p class="category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    {% for flag in all_flags %}
+                                    <th>
+                                        <a href="#" class="text-center" style="">
+                                            <img src="{{ flag }}" alt="flag image">
+                                        </a>
+                                    </th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for period, period_trs in all_periods_extended %}
+                                <tr>
+                                     <td class="text-center">{{ period }}</td>
+                                     <td>{{ period_trs.0.name }}</td>
+                                     <td>{{ period_trs.1.name }}</td>
+                                     <td>{{ period_trs.2.name }}</td>
+                                     <td>{{ period_trs.3.name }}</td>
+                                     <td>{{ period_trs.4.name }}</td>
+                                     <td>{{ period_trs.5.name }}</td>
+                                     <td>{{ period_trs.6.name }}</td>
+                                     <td>{{ period_trs.7.name }}</td>
+                                     <td>{{ period_trs.8.name }}</td>
+                                     <td>{{ period_trs.9.name }}</td>
+                                     <td>
+                                        <a href="#" class="text-center">
+                                            <img src="/media/{{ period.image }}" alt="period image" style="width: 70px; height: 50px;">
+                                        </a>
+                                     </td>
+                                     <td class="td-actions text-right">
+                                         <button type="button" rel="tooltip" title="View Period" class="btn btn-info btn-simple btn-xs">
+                                            <i class="fa fa-user"></i>
+                                         </button>
+                                         <button type="button" rel="tooltip" title="Edit Period" class="btn btn-success btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                         </button>
+                                         <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                         </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Striped Table with Hover</h4>
+                        <p class="category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Job Position</th>
+                                    <th>Since</th>
+                                    <th class="text-right">Salary</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">&euro; 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                            <i class="fa fa-user"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td>John Doe</td>
+                                    <td>Design</td>
+                                    <td>2012</td>
+                                    <td class="text-right">&euro; 89,241</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                            <i class="fa fa-user"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">3</td>
+                                    <td>Alex Mike</td>
+                                    <td>Design</td>
+                                    <td>2010</td>
+                                    <td class="text-right">&euro; 92,144</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                            <i class="fa fa-user"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Striped Table with Hover</h4>
+                        <p class="category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Job Position</th>
+                                    <th>Since</th>
+                                    <th class="text-right">Salary</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">&euro; 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                            <i class="fa fa-user"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td>John Doe</td>
+                                    <td>Design</td>
+                                    <td>2012</td>
+                                    <td class="text-right">&euro; 89,241</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                            <i class="fa fa-user"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">3</td>
+                                    <td>Alex Mike</td>
+                                    <td>Design</td>
+                                    <td>2010</td>
+                                    <td class="text-right">&euro; 92,144</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                            <i class="fa fa-user"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
 
 

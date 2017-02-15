@@ -3,10 +3,15 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from home.models import Period
+from home.log_settings import get_logger
+from home.models import Period, Language, PeriodTr
+from somah2_website.local_settings import TRELLO_API_KEY
+from somah2_website.settings import MEDIA_URL
+
+logger = get_logger()
 
 def dashboard(request):
-    return render(request, template_name='home/dashboard.html')
+    return render(request, 'home/dashboard.html', { 'TRELLO_API_KEY':TRELLO_API_KEY })
 
 def view_period(request, id_period):
     try:
@@ -23,4 +28,17 @@ def notifications(request):
     return render(request, template_name='home/notifications.html')
 
 def table(request):
-    return render(request, template_name='home/table.html')
+    all_languages = Language.objects.all().order_by('country') # contry_code
+    all_flags = list()
+    for language in all_languages:
+        all_flags.append(language.country.flag)
+
+    all_periods = Period.objects.all()
+    all_periods_trs = list() # [periods_trs_for_period1, periods_trs_for_period2..]
+    for period in all_periods:
+        logger.error(period.image.url)
+        all_periods_trs.append(PeriodTr.objects.filter(period=period).order_by('language__country')) # list
+    all_periods_extended = zip(all_periods, all_periods_trs)
+    #logger.error(list(all_periods_extended))
+
+    return render(request, 'home/table.html', { 'all_flags':all_flags, 'all_periods_extended':all_periods_extended })

@@ -19,7 +19,7 @@
     <li>
         <a href="{% url 'table' %}">
             <i class="pe-7s-note2"></i>
-            <p>Table List</p>
+            <p>Data Table</p>
         </a>
     </li>
     <li>
@@ -31,11 +31,14 @@
 </ul>
 {% endblock ul_nav %}
 
+{% block navbar-brand %}
+<a class="navbar-brand" href="#">Dashboard</a>
+{% endblock navbar-brand %}
+
 {% block content %}
 <div class="content">
     <div class="container-fluid">
         <div class="row">
-
             <div class="col-md-8">
                 <div class="card">
                     <div class="header">
@@ -70,7 +73,7 @@
                 <div class="card ">
                     <div class="header">
                         <h4 class="title">2017 Activity</h4>
-                        <p class="category">All activities month-by-month (Demo purpose)</p>
+                        <p class="category">All activities month-by-month (fake graph)</p>
                     </div>
                     <div class="content">
                         <div id="chartActivity" class="ct-chart"></div>
@@ -105,7 +108,7 @@
                                                 <input type="checkbox" value="" data-toggle="checkbox">
                                             </label>
                                         </td>
-                                        <td>Task 1</td>
+                                        <td id="card_0">Task 1</td>
                                         <td class="td-actions text-right">
                                             <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
                                                 <i class="fa fa-edit"></i>
@@ -121,7 +124,7 @@
                                                 <input type="checkbox" value="" data-toggle="checkbox" checked="">
                                             </label>
                                         </td>
-                                        <td>Task 2</td>
+                                        <td id="card_1">Task 2</td>
                                         <td class="td-actions text-right">
                                             <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
                                                 <i class="fa fa-edit"></i>
@@ -151,21 +154,52 @@
 
 
 {% block javascript %}
+<script src="https://api.trello.com/1/client.js?key={{ TRELLO_API_KEY  }}"></script>
 
 <script type="text/javascript">
-    $(document).ready(function(){
 
-        demo.initChartist();
+var loadCards = function() {
+  //Get the users boards
+  Trello.get(
+    '/boards/QJjoodGx/cards',
+    loadedCards,
+    function() { console.log("Failed to load cards"); }
+  );
+};
 
-        $.notify({
-            icon: 'pe-7s-gift',
-            message: "Welcome to <b>SOMAH2</b> - a beautiful project for increasing breastfeeding practice"
+var loadedCards = function(cards) {
+    $.each(cards, function(index, value) {
 
-        },{
-            type: 'info',
-            timer: 4000
-        });
+        $('#card_'+index)
+          .html(value.name);
+      });
+    // update last time updated
+};
+
+Trello.authorize({
+  type: "popup",
+  name: "Trello dashboard",
+  scope: {
+    read: true,
+    write: false },
+  expiration: "never",
+  success: loadCards,
+  error: function() { console.log("Failed authentication"); }
+});
+
+$(document).ready(function(){
+
+    demo.initChartist();
+
+    $.notify({
+        icon: 'pe-7s-gift',
+        message: "Welcome to <b>SOMAH2</b> - a beautiful project for increasing breastfeeding practice"
+
+    },{
+        type: 'info',
+        timer: 4000
     });
+});
 </script>
 
 {% endblock javascript %}
