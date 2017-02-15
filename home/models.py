@@ -27,7 +27,7 @@ class Topic(models.Model):
     periods = models.ManyToManyField(Period, related_name='periods')
 
     def get_periods(self):
-        return "\n".join([p.id for p in self.periods.all()])
+        return "\n".join([str(p.id) for p in self.periods.all()])
 
     def __str__(self):
         return str(self.id)

@@ -11,10 +11,10 @@ class PeriodAdmin(admin.ModelAdmin):
     list_display = ('id', 'image',)
 
 class PeriodTrAdmin(admin.ModelAdmin):
-    list_display = ('name', 'language', 'period',)
+    list_display = ('period', 'name', 'language',)
 
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ('image', 'get_periods')
+    list_display = ('id', 'image', 'get_periods',)
 
 class TopicTrAdmin(admin.ModelAdmin):
     list_display = ('name', 'language', 'topic_id',)
