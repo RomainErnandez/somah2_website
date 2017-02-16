@@ -45,8 +45,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
+                        <h4 class="title">Table of Periods</h4>
+                        <p class="category">and their translations in each language</p>
                     </div>
                     <div class="content table-responsive table-full-width">
                         <table class="table table table-hover table-striped">
@@ -98,111 +98,128 @@
                         </table>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
+                        <h4 class="title">Table of Topics</h4>
+                        <p class="category">and their translations in each language</p>
                     </div>
                     <div class="content table-responsive table-full-width">
                         <table class="table table table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th>Name</th>
-                                    <th>Job Position</th>
-                                    <th>Since</th>
-                                    <th class="text-right">Salary</th>
-                                    <th class="text-right">Actions</th>
+                                    <th class="text-center">period(s)</th>
+                                    {% for flag in all_flags %}
+                                    <th>
+                                        <a href="#" class="text-center" style="">
+                                            <img src="{{ flag }}" alt="flag image">
+                                        </a>
+                                    </th>
+                                    {% endfor %}
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for topic, topic_trs in all_topics_extended %}
                                 <tr>
-                                    <td class="text-center">1</td>
-                                    <td>Andrew Mike</td>
-                                    <td>Develop</td>
-                                    <td>2013</td>
-                                    <td class="text-right">&euro; 99,225</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                     <td class="text-center">{{ topic }}</td>
+                                     <td class="text-center">{{ topic.get_periods }}</td>
+                                     <td>{{ topic_trs.0.name }}</td>
+                                     <td>{{ topic_trs.1.name }}</td>
+                                     <td>{{ topic_trs.2.name }}</td>
+                                     <td>{{ topic_trs.3.name }}</td>
+                                     <td>{{ topic_trs.4.name }}</td>
+                                     <td>{{ topic_trs.5.name }}</td>
+                                     <td>{{ topic_trs.6.name }}</td>
+                                     <td>{{ topic_trs.7.name }}</td>
+                                     <td>{{ topic_trs.8.name }}</td>
+                                     <td>{{ topic_trs.9.name }}</td>
+                                     <td>
+                                        <a href="#" class="text-center">
+                                            <img src="/media/{{ topic.image }}" alt="topic image" style="width: 70px; height: 50px;">
+                                        </a>
+                                     </td>
+                                     <td class="td-actions text-right">
+                                         <button type="button" rel="tooltip" title="View Topic" class="btn btn-info btn-simple btn-xs">
                                             <i class="fa fa-user"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                         </button>
+                                         <button type="button" rel="tooltip" title="Edit Topic" class="btn btn-success btn-simple btn-xs">
                                             <i class="fa fa-edit"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                         </button>
+                                         <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
                                             <i class="fa fa-times"></i>
-                                        </button>
+                                         </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="text-center">2</td>
-                                    <td>John Doe</td>
-                                    <td>Design</td>
-                                    <td>2012</td>
-                                    <td class="text-right">&euro; 89,241</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
-                                            <i class="fa fa-user"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">3</td>
-                                    <td>Alex Mike</td>
-                                    <td>Design</td>
-                                    <td>2010</td>
-                                    <td class="text-right">&euro; 92,144</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
-                                            <i class="fa fa-user"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
+                        <h4 class="title">Table of Contents</h4>
+                        <p class="category">and their translations in each language</p>
                     </div>
                     <div class="content table-responsive table-full-width">
                         <table class="table table table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th>Name</th>
-                                    <th>Job Position</th>
-                                    <th>Since</th>
-                                    <th class="text-right">Salary</th>
-                                    <th class="text-right">Actions</th>
+                                    <th class="text-center">topic</th>
+                                    {% for flag in all_flags %}
+                                    <th colspan="2">
+                                        <a href="#" class="text-center" style="">
+                                            <img src="{{ flag }}" alt="flag image">
+                                        </a>
+                                    </th>
+                                    {% endfor %}
+                                </tr>
+                                    <th></th>
+                                    <th></th>
+                                    {% for flag in all_flags %}
+                                        <th>title</th>
+                                        <th>text</th>
+                                    {% endfor %}
+                                <tr>
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for content, content_trs in all_contents_extended %}
                                 <tr>
-                                    <td class="text-center">1</td>
-                                    <td>Andrew Mike</td>
-                                    <td>Develop</td>
-                                    <td>2013</td>
-                                    <td class="text-right">&euro; 99,225</td>
+                                    <td class="text-center">{{ content }}</td>
+                                    <td class="text-center">{{ content.topic }}</td>
+                                    <td>{{ content_trs.0.title }}</td>
+                                    <td>{{ content_trs.0.text|truncatechars:40 }}</td>
+                                    <td>{{ content_trs.1.title }}</td>
+                                    <td>{{ content_trs.1.text|truncatechars:40 }}</td>
+                                    <td>{{ content_trs.2.title }}</td>
+                                    <td>{{ content_trs.2.text|truncatechars:40 }}</td>
+                                    <td>{{ content_trs.3.title }}</td>
+                                    <td>{{ content_trs.3.text|truncatechars:40 }}</td>
+                                    <td>{{ content_trs.4.title }}</td>
+                                    <td>{{ content_trs.4.text|truncatechars:40 }}</td>
+                                    <td>{{ content_trs.5.title }}</td>
+                                    <td>{{ content_trs.5.text|truncatechars:40 }}</td>
+                                    <td>{{ content_trs.6.title }}</td>
+                                    <td>{{ content_trs.6.text|truncatechars:40 }}</td>
+                                    <td>{{ content_trs.7.title }}</td>
+                                    <td>{{ content_trs.7.text|truncatechars:40 }}</td>
+                                    <td>{{ content_trs.8.title }}</td>
+                                    <td>{{ content_trs.8.text|truncatechars:40 }}</td>
+                                    <td>{{ content_trs.9.title }}</td>
+                                    <td>{{ content_trs.9.text|truncatechars:40 }}</td>
+                                    <td>
+                                        <a href="#" class="text-center">
+                                            <img src="/media/{{ content.image }}" alt="content image" style="width: 70px; height: 50px;">
+                                        </a>
+                                    </td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                        <button type="button" rel="tooltip" title="View Content" class="btn btn-info btn-simple btn-xs">
                                             <i class="fa fa-user"></i>
                                         </button>
-                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                        <button type="button" rel="tooltip" title="Edit Content" class="btn btn-success btn-simple btn-xs">
                                             <i class="fa fa-edit"></i>
                                         </button>
                                         <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
@@ -210,46 +227,12 @@
                                         </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="text-center">2</td>
-                                    <td>John Doe</td>
-                                    <td>Design</td>
-                                    <td>2012</td>
-                                    <td class="text-right">&euro; 89,241</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
-                                            <i class="fa fa-user"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">3</td>
-                                    <td>Alex Mike</td>
-                                    <td>Design</td>
-                                    <td>2010</td>
-                                    <td class="text-right">&euro; 92,144</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
-                                            <i class="fa fa-user"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

@@ -20,7 +20,7 @@ class TopicTrAdmin(admin.ModelAdmin):
     list_display = ('name', 'language', 'topic_id',)
 
 class ContentAdmin(admin.ModelAdmin):
-    list_display = ('image', 'topic_id',)
+    list_display = ('id', 'image', 'topic_id',)
 
 class ContentTrAdmin(admin.ModelAdmin):
     list_display = ('language', 'content_id', 'title', 'text',)
