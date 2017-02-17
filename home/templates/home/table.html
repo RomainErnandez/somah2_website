@@ -74,8 +74,6 @@
                                      <td>{{ period_trs.5.name }}</td>
                                      <td>{{ period_trs.6.name }}</td>
                                      <td>{{ period_trs.7.name }}</td>
-                                     <td>{{ period_trs.8.name }}</td>
-                                     <td>{{ period_trs.9.name }}</td>
                                      <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ period.image }}" alt="period image" style="width: 70px; height: 50px;">
@@ -132,8 +130,6 @@
                                      <td>{{ topic_trs.5.name }}</td>
                                      <td>{{ topic_trs.6.name }}</td>
                                      <td>{{ topic_trs.7.name }}</td>
-                                     <td>{{ topic_trs.8.name }}</td>
-                                     <td>{{ topic_trs.9.name }}</td>
                                      <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ topic.image }}" alt="topic image" style="width: 70px; height: 50px;">
@@ -182,8 +178,6 @@
                                         <th>title</th>
                                         <th>text</th>
                                     {% endfor %}
-                                <tr>
-                                </tr>
                             </thead>
                             <tbody>
                                 {% for content, content_trs in all_contents_extended %}
@@ -206,10 +200,6 @@
                                     <td>{{ content_trs.6.text|truncatechars:40 }}</td>
                                     <td>{{ content_trs.7.title }}</td>
                                     <td>{{ content_trs.7.text|truncatechars:40 }}</td>
-                                    <td>{{ content_trs.8.title }}</td>
-                                    <td>{{ content_trs.8.text|truncatechars:40 }}</td>
-                                    <td>{{ content_trs.9.title }}</td>
-                                    <td>{{ content_trs.9.text|truncatechars:40 }}</td>
                                     <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ content.image }}" alt="content image" style="width: 70px; height: 50px;">
@@ -236,7 +226,7 @@
             </div>
         </div>
     </div>
-</div>
+
 {% endblock content %}
 
 
