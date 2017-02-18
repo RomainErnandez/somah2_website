@@ -3,12 +3,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from home.log_settings import get_logger
 from home.models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
 from somah2_website.local_settings import TRELLO_API_KEY
 from somah2_website.settings import MEDIA_URL
-
-logger = get_logger()
 
 def dashboard(request):
     return render(request, 'home/dashboard.html', { 'TRELLO_API_KEY':TRELLO_API_KEY })
