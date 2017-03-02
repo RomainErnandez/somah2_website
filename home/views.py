@@ -3,16 +3,18 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+from django.views.generic import CreateView
+from django.views.generic import FormView
+
 from home.models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
 from somah2_website.local_settings import TRELLO_API_KEY
-from somah2_website.settings import MEDIA_URL
 
 def dashboard(request):
     return render(request, 'home/dashboard.html', { 'TRELLO_API_KEY':TRELLO_API_KEY })
 
-def view_period(request, id_period):
+def view_period(request, period_id):
     try:
-        period = Period.objects.get(id=id_period)
+        period = Period.objects.get(id=period_id)
     except Exception as e:
         raise Http404
     else:
@@ -25,7 +27,7 @@ def notifications(request):
     return render(request, template_name='home/notifications.html')
 
 def table(request):
-    all_languages = Language.objects.all().order_by('country') # contry_code
+    all_languages = Language.objects.all().order_by('country') # country_code
     all_flags = list()
     for language in all_languages:
         all_flags.append(language.country.flag)
@@ -50,3 +52,17 @@ def table(request):
 
     return render(request, 'home/table.html', { 'all_flags':all_flags, 'all_periods_extended':all_periods_extended,
             'all_topics_extended':all_topics_extended, 'all_contents_extended':all_contents_extended })
+
+
+def remove_period(request, period_id):
+    return view_period(request, period_id)
+
+class EditPeriodView(CreateView):
+    model = Period
+    fields = '__all__'
+    template_name = 'home/edit_period.html'
+
+    def form_valid(self, form):
+        self.object = form.save()
+        return render(self.request, 'home/edit_period_success.html', {'news': self.object})
+
