@@ -4,13 +4,14 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic import CreateView
-from django.views.generic import FormView
 
 from home.models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
 from somah2_website.local_settings import TRELLO_API_KEY
 
+
 def dashboard(request):
     return render(request, 'home/dashboard.html', { 'TRELLO_API_KEY':TRELLO_API_KEY })
+
 
 def view_period(request, period_id):
     try:
@@ -20,11 +21,14 @@ def view_period(request, period_id):
     else:
         return HttpResponse("period: " + str(period.id))
 
+
 def user(request):
     return render(request, template_name='home/user.html')
 
+
 def notifications(request):
     return render(request, template_name='home/notifications.html')
+
 
 def table(request):
     all_languages = Language.objects.all().order_by('country') # country_code
@@ -56,6 +60,7 @@ def table(request):
 
 def remove_period(request, period_id):
     return view_period(request, period_id)
+
 
 class EditPeriodView(CreateView):
     model = Period

@@ -96,3 +96,18 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block javascript %}
+<script type="text/javascript">
+$(document).ready(function(){
+    demo.initChartist();
+    $.notify({
+        icon: 'pe-7s-gift',
+        message: "Welcome to <b>SOMAH2</b> - a beautiful project for increasing breastfeeding practice"
+    },{
+        type: 'info',
+        timer: 4000
+    });
+});
+</script>
+{% endblock javascript %}
