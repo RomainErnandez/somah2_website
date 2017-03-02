@@ -29,7 +29,7 @@
     <link href="{% static 'home/css/demo.css' %}" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
-    <link href="{% static 'home/css/font-awesome.min.css' %}" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='{% static 'home/css/css.css' %}' rel='stylesheet' type='text/css'>
     <link href="{% static 'home/css/pe-icon-7-stroke.css' %}" rel="stylesheet" />
     {% block head %}
@@ -117,8 +117,8 @@
                 </div>
             </nav>
 
-    {% block content %}
-    {% endblock content %}
+            {% block content %}
+            {% endblock content %}
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -133,7 +133,6 @@
                     <p class="copyright pull-right">&copy; 2017 <a href="https://github.com/RomainErnandez/SOMAH2">SOMAH2</a>, made by Romain Ernandez</p>
                 </div>
             </footer>
-
         </div>
     </div>
 {% block modal %}
