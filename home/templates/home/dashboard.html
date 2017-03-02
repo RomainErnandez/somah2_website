@@ -32,7 +32,8 @@
 {% endblock ul_nav %}
 
 {% block navbar-brand %}
-<a class="navbar-brand" href="#">Dashboard</a>
+
+    <a class="navbar-brand" href="#">Dashboard</a>
 {% endblock navbar-brand %}
 
 {% block content %}
@@ -91,115 +92,10 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6">
-                <div class="card ">
-                    <div class="header">
-                        <h4 class="title">Tasks</h4>
-                        <p class="category">Android development</p>
-                    </div>
-                    <div class="content">
-                        <div class="table-full-width">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <label class="checkbox">
-                                                <input type="checkbox" value="" data-toggle="checkbox">
-                                            </label>
-                                        </td>
-                                        <td id="card_0">Task 1</td>
-                                        <td class="td-actions text-right">
-                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="checkbox">
-                                                <input type="checkbox" value="" data-toggle="checkbox" checked="">
-                                            </label>
-                                        </td>
-                                        <td id="card_1">Task 2</td>
-                                        <td class="td-actions text-right">
-                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="footer">
-                            <hr>
-                            <div class="stats">
-                                <i class="fa fa-history"></i> Synchronized with Trello 3 minutes ago
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
 {% endblock content %}
 
-
 {% block javascript %}
-<script src="https://api.trello.com/1/client.js?key={{ TRELLO_API_KEY  }}"></script>
-
-<script type="text/javascript">
-
-var loadCards = function() {
-  //Get the users boards
-  Trello.get(
-    '/boards/QJjoodGx/cards',
-    loadedCards,
-    function() { console.log("Failed to load cards"); }
-  );
-};
-
-var loadedCards = function(cards) {
-    $.each(cards, function(index, value) {
-
-        $('#card_'+index)
-          .html(value.name);
-      });
-    // update last time updated
-};
-
-Trello.authorize({
-  type: "popup",
-  name: "Trello dashboard",
-  scope: {
-    read: true,
-    write: false },
-  expiration: "never",
-  success: loadCards,
-  error: function() { console.log("Failed authentication"); }
-});
-
-$(document).ready(function(){
-
-    demo.initChartist();
-
-    $.notify({
-        icon: 'pe-7s-gift',
-        message: "Welcome to <b>SOMAH2</b> - a beautiful project for increasing breastfeeding practice"
-
-    },{
-        type: 'info',
-        timer: 4000
-    });
-});
-</script>
-
 {% endblock javascript %}
