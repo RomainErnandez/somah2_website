@@ -22,6 +22,9 @@ class PeriodTr(models.Model):
     language = models.ForeignKey(Language)
     period = models.ForeignKey(Period)
 
+    class Meta:
+        unique_together = ('language', 'period',)
+
 class Topic(models.Model):
     image = models.ImageField(default='0011ff.png')
     periods = models.ManyToManyField(Period, related_name='periods')
@@ -37,6 +40,9 @@ class TopicTr(models.Model):
     language = models.ForeignKey(Language)
     topic = models.ForeignKey(Topic)
 
+    class Meta:
+        unique_together = ('language', 'topic',)
+
 class Content(models.Model):
     image = models.ImageField(default='0011ff.png')
     topic = models.ForeignKey(Topic)
@@ -49,3 +55,6 @@ class ContentTr(models.Model):
     content = models.ForeignKey(Content)
     title = models.TextField()
     text = models.TextField()
+
+    class Meta:
+        unique_together = ('language', 'content',)
