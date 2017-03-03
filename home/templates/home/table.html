@@ -80,7 +80,7 @@
                                          <button type="button" rel="tooltip" title="View Period" class="btn btn-info btn-simple btn-xs" onclick="view_period(this)">
                                             <i class="fa fa-user"></i>
                                          </button>
-                                         <button type="button" rel="tooltip" title="Edit Period" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" href="{% url 'edit_period' %}">
+                                         <button type="button" rel="tooltip" title="Edit Period" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" href="{% url 'edit_period_extended' pk=2 %}">
                                             <i class="fa fa-edit"></i>
                                          </button>
                                          <button id="{{ period.id }}" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" onclick="remove_period(this)">
@@ -262,7 +262,7 @@
     $('#modal').on('show.bs.modal', function (event) {
         var modal = $(this);
          $.ajax({
-        url: "{% url 'edit_period' %}",
+        url: "{% url 'edit_period_extended' pk=2 %}",
         context: document.body
         }).done(function(response) {
             modal.html(response);

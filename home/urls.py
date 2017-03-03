@@ -4,7 +4,7 @@
 __author__ = 'rernande'
 
 from django.conf.urls import url
-from .views import dashboard, view_period, user, table, notifications, remove_period, EditPeriodView
+from .views import dashboard, view_period, user, table, notifications, remove_period, EditPeriodExtendedView
 
 urlpatterns = [
     url(r'^$', dashboard, name = 'dashboard'),
@@ -13,5 +13,5 @@ urlpatterns = [
     url(r'^notifications/$', notifications, name = 'notifications'),
     url(r'^table/$', table, name = 'table'),
     url(r'^remove_period/(?P<period_id>\d+)/$', remove_period, name = 'remove_period'),
-    url(r'^edit_period/$', EditPeriodView.as_view(), name='edit_period'),
+    url(r'^edit_period_extended/(?P<pk>\d+)/$', EditPeriodExtendedView.as_view(), name='edit_period_extended'),
 ]

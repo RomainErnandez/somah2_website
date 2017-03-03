@@ -3,8 +3,11 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+from django.urls import reverse_lazy
 from django.views.generic import CreateView
+from django.views.generic import UpdateView
 
+from home.forms import EditPeriodExtendedMultiForm
 from home.models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
 from somah2_website.local_settings import TRELLO_API_KEY
 
@@ -62,12 +65,16 @@ def remove_period(request, period_id):
     return view_period(request, period_id)
 
 
-class EditPeriodView(CreateView):
-    model = Period
-    fields = '__all__'
-    template_name = 'home/edit_period.html'
+class EditPeriodExtendedView(UpdateView):
+    model = PeriodTr
+    form_class = EditPeriodExtendedMultiForm
+    template_name = 'home/edit_period_extended.html'
+    success_url = reverse_lazy('table')
 
-    def form_valid(self, form):
-        self.object = form.save()
-        return render(self.request, 'home/edit_period_success.html', {'news': self.object})
-
+    def get_form_kwargs(self):
+        kwargs = super(EditPeriodExtendedView, self).get_form_kwargs()
+        kwargs.update(instance={
+            'period': self.object.period,
+            'period_tr': self.object,
+        })
+        return kwargs

@@ -12,18 +12,22 @@ class PeriodAdmin(admin.ModelAdmin):
 
 class PeriodTrAdmin(admin.ModelAdmin):
     list_display = ('period', 'name', 'language',)
+    readonly_fields = ('id',)
+    list_filter = ('id', )
 
 class TopicAdmin(admin.ModelAdmin):
     list_display = ('id', 'image', 'get_periods',)
 
 class TopicTrAdmin(admin.ModelAdmin):
     list_display = ('name', 'language', 'topic_id',)
+    readonly_fields = ('id',)
 
 class ContentAdmin(admin.ModelAdmin):
     list_display = ('id', 'image', 'topic_id',)
 
 class ContentTrAdmin(admin.ModelAdmin):
     list_display = ('language', 'content_id', 'title', 'text',)
+    readonly_fields = ('id',)
 
 # Register your models here.
 

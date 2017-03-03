@@ -1,6 +1,6 @@
 {% load i18n widget_tweaks %}
 <div class="modal-dialog modal-lg" role="document">
-    <form action="{% url 'edit_period' %}" method="post" id="edit_period" class="form">{% csrf_token %}
+    <form action="{% url 'edit_period_extended' pk=2 %}" method="post" id="edit_period" class="form">{% csrf_token %}
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
