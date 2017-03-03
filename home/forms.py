@@ -7,7 +7,7 @@ from home.models import Period, PeriodTr
 class PeriodEditForm(forms.ModelForm):
     class Meta:
         model = Period
-        fields = ('id', 'image')
+        fields = ('image', )
 
 class PeriodTrEditForm(forms.ModelForm):
     class Meta:

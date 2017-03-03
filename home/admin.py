@@ -9,6 +9,7 @@ class LanguageAdmin(admin.ModelAdmin):
 class PeriodAdmin(admin.ModelAdmin):
     # id needed because of order
     list_display = ('id', 'image',)
+    list_filter = ('id',)
 
 class PeriodTrAdmin(admin.ModelAdmin):
     list_display = ('period', 'name', 'language',)

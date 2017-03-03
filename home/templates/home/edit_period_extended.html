@@ -17,7 +17,7 @@
                         {{ field.label_tag }}
                     </label>
                     {{ field|attr:"class:form-control" }}
-                </fieldset>
+                    </fieldset>
                 {% endfor %}
             </div>
             <div class="modal-footer">
@@ -30,4 +30,18 @@
 <script>
     var form_options = { target: '#modal', success: function(response) {} };
     $('#edit_period').ajaxForm(form_options);
+</script>
+<script>
+    //on Language click refresh form with correct period_tr id
+    $('#id_period_tr-language').on('change', function() {
+        var new_language = this.value;
+        var old_period_tr_id = $("#edit_period").attr('action').split('/')[2];
+        var modal = $('#modal');
+        $.ajax({
+            url: "{% url 'edit_period_extended' pk=5 %}",
+            context: document.body
+        }).done(function(response) {
+            modal.html(response);
+        });
+    })
 </script>
