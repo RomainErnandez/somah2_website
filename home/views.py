@@ -4,8 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
-from django.views.generic import UpdateView
+from django.views.generic import CreateView, UpdateView
 
 from home.forms import EditPeriodExtendedMultiForm
 from home.models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
@@ -69,7 +68,13 @@ class EditPeriodExtendedView(UpdateView):
     model = PeriodTr
     form_class = EditPeriodExtendedMultiForm
     template_name = 'home/edit_period_extended.html'
-    success_url = reverse_lazy('table')
+    success_url = reverse_lazy('edit_period_extended_success')
+
+    def get_object(self, queryset=None):
+        period_id = self.kwargs.get('period_id')
+        country_code = self.kwargs.get('language')
+        language = Language.objects.get(country=country_code)
+        return PeriodTr.objects.get(period__id=period_id, language=language)
 
     def get_form_kwargs(self):
         kwargs = super(EditPeriodExtendedView, self).get_form_kwargs()

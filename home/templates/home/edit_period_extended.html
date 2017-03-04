@@ -1,6 +1,6 @@
 {% load i18n widget_tweaks %}
 <div class="modal-dialog modal-lg" role="document">
-    <form action="{% url 'edit_period_extended' pk=2 %}" method="post" id="edit_period" class="form">{% csrf_token %}
+    <form action="{% url 'edit_period_extended' period_id=object.period_id language=object.language.country.code %}" method="post" id="edit_period" class="form">{% csrf_token %}
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -37,8 +37,9 @@
         var new_language = this.value;
         var old_period_tr_id = $("#edit_period").attr('action').split('/')[2];
         var modal = $('#modal');
+        var url = "{% url 'edit_period_extended' period_id=0 language=1 %}".replace('0', old_period_tr_id).replace('1', new_language);
         $.ajax({
-            url: "{% url 'edit_period_extended' pk=5 %}",
+            url: url,
             context: document.body
         }).done(function(response) {
             modal.html(response);

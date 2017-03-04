@@ -4,7 +4,7 @@ from home.models import Language, Period, PeriodTr, Topic, TopicTr, Content, Con
 
 
 class LanguageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'country',)
+    list_display = ('native_name', 'country',)
 
 class PeriodAdmin(admin.ModelAdmin):
     # id needed because of order

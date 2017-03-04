@@ -8,7 +8,7 @@
             <h4 class="modal-title">Edit Period</h4>
         </div>
         <div class="modal-body">
-            <p class="alert alert-info">The period "{{ period.id }}" was succesfully edited!</p>
+            <p class="alert alert-info">The period was successfully edited!</p>
         </div><!-- /.modal-body -->
      </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
@@ -16,5 +16,6 @@
     // close the modal after 3 seconds
     setTimeout(function() {
         $('#modal').modal('hide');
+        $("#table_period_div").load(location.href+" #table_period_div>*","");
     }, 3000);
 </script>

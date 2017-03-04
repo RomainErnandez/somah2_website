@@ -4,11 +4,12 @@ from django_countries.fields import CountryField
 # Create your models here.
 
 class Language(models.Model):
-    name = models.CharField(max_length=20)
-    country = CountryField(primary_key=True) # code: ISO 639-1
+    native_name = models.CharField(max_length=20)
+    # country__code here https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1
+    country = CountryField(primary_key=True)
 
     def __str__(self):
-        return self.name
+        return self.native_name
 
 class Period(models.Model):
     id = models.PositiveSmallIntegerField(primary_key=True) # periods will be in id's order
