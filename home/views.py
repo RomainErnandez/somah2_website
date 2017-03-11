@@ -86,6 +86,7 @@ class EditPeriodExtendedView(UpdateView):
         })
         return kwargs
 
+
 class AddPeriodExtendedView(CreateView):
     model = Period
     form_class = AddPeriodForm
@@ -99,3 +100,9 @@ class AddPeriodExtendedView(CreateView):
         for language in all_languages:
             period_tr = PeriodTr.objects.create(language=language, period=period)
         return redirect('add_period_extended_success')
+
+
+class RemovePeriodExtendedView(DeleteView):
+    model = Period
+    template_name = 'home/remove_period_extended.html'
+    success_url = reverse_lazy('remove_period_extended_success')

@@ -84,10 +84,10 @@
                                          <button type="button" rel="tooltip" title="View Period" class="btn btn-info btn-simple btn-xs" onclick="view_period(this)">
                                             <i class="fa fa-user"></i>
                                          </button>
-                                         <button type="button" rel="tooltip" title="Edit Period" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-period_id="{{ period.id }}">
+                                         <button type="button" rel="tooltip" title="Edit Period" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}">
                                             <i class="fa fa-edit"></i>
                                          </button>
-                                         <button id="{{ period.id }}" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" onclick="remove_period(this)">
+                                         <button type="button" rel="tooltip" title="Remove Period" class="btn btn-danger btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-period_to_remove="{{ period.id }}">
                                             <i class="fa fa-times"></i>
                                          </button>
                                     </td>
@@ -244,41 +244,32 @@
         alert('Available soon !');
     }
 
-    function remove_period(btn) {
-        bootbox.confirm({
-            title: "Remove Period?",
-            message: "Are you sure you want to remove this period ? This cannot be undone.",
-            buttons: {
-                cancel: {
-                    label: '<i class="fa fa-times"></i> Cancel'
-                },
-                confirm: {
-                    label: '<i class="fa fa-check"></i> Confirm'
-                }
-            },
-            callback: function (result) {
-                if (result)
-                    window.location.href="/remove_period_extended/"+btn.id;
-            }
-        });
-    }
-
     $('#modal').on('show.bs.modal', function (event) {
          var modal = $(this);
-         var period_id = $(event.relatedTarget).data('period_id');
-         if (!period_id)
-         {
+         var period_to_remove = $(event.relatedTarget).data('period_to_remove'); //-period_to_remove
+         var period_to_edit = $(event.relatedTarget).data('period_to_edit'); //data-period_to_edit
+        if (period_to_edit){
+            var url = "{% url 'edit_period_extended' period_id=0 language='GB' %}".replace('0', period_to_edit);
              $.ajax({
-                 url: "{% url 'add_period_extended' %}",
+                 url: url,
+                 context: document.body
+             }).done(function(response) {
+                 modal.html(response);
+             });
+        }
+        else if (period_to_remove)
+         {
+             var url = "{% url 'remove_period_extended' pk=0 %}".replace('0', period_to_remove);
+             $.ajax({
+                 url: url,
                  context: document.body
              }).done(function(response) {
                  modal.html(response);
              });
          }
-         else{
-             var url = "{% url 'edit_period_extended' period_id=0 language='GB' %}".replace('0', period_id);
+         else {
              $.ajax({
-                 url: url,
+                 url: "{% url 'add_period_extended' %}",
                  context: document.body
              }).done(function(response) {
                  modal.html(response);

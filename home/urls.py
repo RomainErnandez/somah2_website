@@ -5,7 +5,8 @@ from django.views.generic import TemplateView
 __author__ = 'rernande'
 
 from django.conf.urls import url
-from .views import dashboard, view_period, user, table, notifications, remove_period_extended, EditPeriodExtendedView, AddPeriodExtendedView
+from .views import dashboard, view_period, user, table, notifications, EditPeriodExtendedView, AddPeriodExtendedView, \
+    RemovePeriodExtendedView
 
 urlpatterns = [
     url(r'^$', dashboard, name = 'dashboard'),
@@ -15,7 +16,8 @@ urlpatterns = [
     url(r'^table/$', table, name = 'table'),
     url(r'^edit_period_extended/(?P<period_id>\d+)/(?P<language>\w+)/$', EditPeriodExtendedView.as_view(), name='edit_period_extended'),
     url(r'^edit_period_extended_success/$', TemplateView.as_view(template_name='home/edit_period_extended_success.html'), name='edit_period_extended_success'),
-    url(r'^remove_period_extended/(?P<period_id>\d+)/$', remove_period_extended, name = 'remove_period_extended'),
+    url(r'^remove_period_extended/(?P<pk>\d+)/$', RemovePeriodExtendedView.as_view(), name = 'remove_period_extended'),
     url(r'^add_period_extended/$', AddPeriodExtendedView.as_view(), name = 'add_period_extended'),
     url(r'^add_period_extended_success/$', TemplateView.as_view(template_name='home/add_period_extended_success.html'), name='add_period_extended_success'),
+    url(r'^remove_period_extended_success/$', TemplateView.as_view(template_name='home/remove_period_extended_success.html'), name='remove_period_extended_success'),
 ]
