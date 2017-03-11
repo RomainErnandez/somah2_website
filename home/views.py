@@ -1,12 +1,13 @@
 from django.http import Http404
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
+from django.views.generic import DeleteView
 
-from home.forms import EditPeriodExtendedMultiForm
+from home.forms import EditPeriodExtendedMultiForm, AddPeriodForm
 from home.models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
 from somah2_website.local_settings import TRELLO_API_KEY
 
@@ -60,8 +61,9 @@ def table(request):
             'all_topics_extended':all_topics_extended, 'all_contents_extended':all_contents_extended })
 
 
-def remove_period(request, period_id):
-    return view_period(request, period_id)
+def remove_period_extended(request, period_id):
+    Period.objects.filter(id=period_id).delete()
+    return redirect('table')
 
 
 class EditPeriodExtendedView(UpdateView):
@@ -83,3 +85,17 @@ class EditPeriodExtendedView(UpdateView):
             'period_tr': self.object,
         })
         return kwargs
+
+class AddPeriodExtendedView(CreateView):
+    model = Period
+    form_class = AddPeriodForm
+    template_name = 'home/add_period_extended.html'
+
+    def form_valid(self, form):
+        form.save()
+        id = form['id'].value()
+        period = Period.objects.get(id=id)
+        all_languages = Language.objects.all().order_by('country')  # country_code
+        for language in all_languages:
+            period_tr = PeriodTr.objects.create(language=language, period=period)
+        return redirect('add_period_extended_success')

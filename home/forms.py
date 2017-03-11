@@ -19,3 +19,8 @@ class EditPeriodExtendedMultiForm(MultiModelForm):
         'period': PeriodEditForm,
         'period_tr': PeriodTrEditForm,
     }
+
+class AddPeriodForm(forms.ModelForm):
+    class Meta:
+        model = Period
+        fields = ('id', 'image',)

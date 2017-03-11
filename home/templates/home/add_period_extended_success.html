@@ -1,0 +1,22 @@
+<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">Add Period</h4>
+        </div>
+        <div class="modal-body">
+            <p class="alert alert-info">The period was successfully added!<br>
+                You can now edit the period name in the different languages.</p>
+        </div><!-- /.modal-body -->
+     </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<script>
+    // close the modal after 3 seconds
+    setTimeout(function() {
+        $('#modal').modal('hide');
+        $("#table_period_div").load(location.href+" #table_period_div>*","");
+    }, 3000);
+</script>
