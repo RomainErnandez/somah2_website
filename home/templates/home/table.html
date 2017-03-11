@@ -67,14 +67,14 @@
                                 {% for period, period_trs in all_periods_extended %}
                                 <tr>
                                      <td class="text-center">{{ period }}</td>
-                                     <td>{{ period_trs.0.name }}</td>
-                                     <td>{{ period_trs.1.name }}</td>
-                                     <td>{{ period_trs.2.name }}</td>
-                                     <td>{{ period_trs.3.name }}</td>
-                                     <td>{{ period_trs.4.name }}</td>
-                                     <td>{{ period_trs.5.name }}</td>
-                                     <td>{{ period_trs.6.name }}</td>
-                                     <td>{{ period_trs.7.name }}</td>
+                                     <td>{{ period_trs.0.name|truncatechars:20 }}</td>
+                                     <td>{{ period_trs.1.name|truncatechars:20 }}</td>
+                                     <td>{{ period_trs.2.name|truncatechars:20 }}</td>
+                                     <td>{{ period_trs.3.name|truncatechars:20 }}</td>
+                                     <td>{{ period_trs.4.name|truncatechars:20 }}</td>
+                                     <td>{{ period_trs.5.name|truncatechars:20 }}</td>
+                                     <td>{{ period_trs.6.name|truncatechars:20 }}</td>
+                                     <td>{{ period_trs.7.name|truncatechars:20 }}</td>
                                      <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ period.image }}" alt="period image" style="width: 70px; height: 50px;">
@@ -100,11 +100,14 @@
 
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Table of Topics</h4>
-                        <p class="category">and their translations in each language</p>
+                        <div style="display:inline-block;">
+                            <h4 class="title">Table of Topics</h4>
+                            <p class="category">and their translations in each language</p>
+                        </div>
+                        <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal">New Topic</button>
                     </div>
                     <div class="content table-responsive table-full-width">
-                        <table class="table table table-hover table-striped">
+                        <table  id="table_topic_div" class="table table table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
@@ -123,27 +126,27 @@
                                 <tr>
                                      <td class="text-center">{{ topic }}</td>
                                      <td class="text-center">{{ topic.get_periods }}</td>
-                                     <td>{{ topic_trs.0.name }}</td>
-                                     <td>{{ topic_trs.1.name }}</td>
-                                     <td>{{ topic_trs.2.name }}</td>
-                                     <td>{{ topic_trs.3.name }}</td>
-                                     <td>{{ topic_trs.4.name }}</td>
-                                     <td>{{ topic_trs.5.name }}</td>
-                                     <td>{{ topic_trs.6.name }}</td>
-                                     <td>{{ topic_trs.7.name }}</td>
+                                     <td>{{ topic_trs.0.name|truncatechars:20 }}</td>
+                                     <td>{{ topic_trs.1.name|truncatechars:20 }}</td>
+                                     <td>{{ topic_trs.2.name|truncatechars:20 }}</td>
+                                     <td>{{ topic_trs.3.name|truncatechars:20 }}</td>
+                                     <td>{{ topic_trs.4.name|truncatechars:20 }}</td>
+                                     <td>{{ topic_trs.5.name|truncatechars:20 }}</td>
+                                     <td>{{ topic_trs.6.name|truncatechars:20 }}</td>
+                                     <td>{{ topic_trs.7.name|truncatechars:20 }}</td>
                                      <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ topic.image }}" alt="topic image" style="width: 70px; height: 50px;">
                                         </a>
                                      </td>
                                      <td class="td-actions text-right">
-                                         <button type="button" rel="tooltip" title="View Topic" class="btn btn-info btn-simple btn-xs">
+                                         <button type="button" rel="tooltip" title="View Topic" class="btn btn-info btn-simple btn-xs" onclick="view_topic(this)">
                                             <i class="fa fa-user"></i>
                                          </button>
-                                         <button type="button" rel="tooltip" title="Edit Topic" class="btn btn-success btn-simple btn-xs">
+                                         <button type="button" rel="tooltip" title="Edit Topic" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-topic_to_edit="{{ topic.id }}">
                                             <i class="fa fa-edit"></i>
                                          </button>
-                                         <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                         <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-topic_to_remove="{{ topic.id }}">
                                             <i class="fa fa-times"></i>
                                          </button>
                                     </td>
@@ -156,11 +159,14 @@
 
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Table of Contents</h4>
-                        <p class="category">and their translations in each language</p>
+                        <div style="display:inline-block;">
+                            <h4 class="title">Table of Contents</h4>
+                            <p class="category">and their translations in each language</p>
+                        </div>
+                        <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal">New Content</button>
                     </div>
                     <div class="content table-responsive table-full-width">
-                        <table class="table table table-hover table-striped">
+                        <table id="table_content_div" class="table table table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
@@ -185,35 +191,35 @@
                                 <tr>
                                     <td class="text-center">{{ content }}</td>
                                     <td class="text-center">{{ content.topic }}</td>
-                                    <td>{{ content_trs.0.title }}</td>
-                                    <td>{{ content_trs.0.text|truncatechars:40 }}</td>
-                                    <td>{{ content_trs.1.title }}</td>
-                                    <td>{{ content_trs.1.text|truncatechars:40 }}</td>
-                                    <td>{{ content_trs.2.title }}</td>
-                                    <td>{{ content_trs.2.text|truncatechars:40 }}</td>
-                                    <td>{{ content_trs.3.title }}</td>
-                                    <td>{{ content_trs.3.text|truncatechars:40 }}</td>
-                                    <td>{{ content_trs.4.title }}</td>
-                                    <td>{{ content_trs.4.text|truncatechars:40 }}</td>
-                                    <td>{{ content_trs.5.title }}</td>
-                                    <td>{{ content_trs.5.text|truncatechars:40 }}</td>
-                                    <td>{{ content_trs.6.title }}</td>
-                                    <td>{{ content_trs.6.text|truncatechars:40 }}</td>
-                                    <td>{{ content_trs.7.title }}</td>
-                                    <td>{{ content_trs.7.text|truncatechars:40 }}</td>
+                                    <td>{{ content_trs.0.title|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.0.text|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.1.title|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.1.text|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.2.title|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.2.text|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.3.title|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.3.text|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.4.title|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.4.text|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.5.title|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.5.text|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.6.title|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.6.text|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.7.title|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.7.text|truncatechars:20 }}</td>
                                     <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ content.image }}" alt="content image" style="width: 70px; height: 50px;">
                                         </a>
                                     </td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="View Content" class="btn btn-info btn-simple btn-xs">
+                                        <button type="button" rel="tooltip" title="View Content" class="btn btn-info btn-simple btn-xs" onclick="view_content(this)">
                                             <i class="fa fa-user"></i>
                                         </button>
-                                        <button type="button" rel="tooltip" title="Edit Content" class="btn btn-success btn-simple btn-xs">
+                                        <button type="button" rel="tooltip" title="Edit Content" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}">
                                             <i class="fa fa-edit"></i>
                                         </button>
-                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-content_to_remove="{{ content.id }}">
                                             <i class="fa fa-times"></i>
                                         </button>
                                     </td>
@@ -239,7 +245,6 @@
     <script src="{% static 'home/js/jquery.form.js' %}" type="text/javascript"></script>
     <script src="{% static 'home/js/bootbox.min.js' %}" type="text/javascript"></script>
     <script type="text/javascript">
-
     function view_period() {
         alert('Available soon !');
     }
@@ -270,6 +275,84 @@
          else {
              $.ajax({
                  url: "{% url 'add_period_extended' %}",
+                 context: document.body
+             }).done(function(response) {
+                 modal.html(response);
+             });
+         }
+    })
+    </script>
+
+    <script type="text/javascript">
+    function view_topic() {
+        alert('Available soon !');
+    }
+
+    $('#modal').on('show.bs.modal', function (event) {
+         var modal = $(this);
+         var topic_to_remove = $(event.relatedTarget).data('topic_to_remove'); //-topic_to_remove
+         var topic_to_edit = $(event.relatedTarget).data('topic_to_edit'); //data-topic_to_edit
+        if (topic_to_edit){
+            var url = "{% url 'edit_topic_extended' topic_id=0 language='GB' %}".replace('0', topic_to_edit);
+             $.ajax({
+                 url: url,
+                 context: document.body
+             }).done(function(response) {
+                 modal.html(response);
+             });
+        }
+        else if (topic_to_remove)
+         {
+             var url = "{% url 'remove_topic_extended' pk=0 %}".replace('0', topic_to_remove);
+             $.ajax({
+                 url: url,
+                 context: document.body
+             }).done(function(response) {
+                 modal.html(response);
+             });
+         }
+         else {
+             $.ajax({
+                 url: "{% url 'add_topic_extended' %}",
+                 context: document.body
+             }).done(function(response) {
+                 modal.html(response);
+             });
+         }
+    })
+    </script>
+
+        <script type="text/javascript">
+    function view_content() {
+        alert('Available soon !');
+    }
+
+    $('#modal').on('show.bs.modal', function (event) {
+         var modal = $(this);
+         var content_to_remove = $(event.relatedTarget).data('content_to_remove'); //-content_to_remove
+         var content_to_edit = $(event.relatedTarget).data('content_to_edit'); //data-content_to_edit
+        if (content_to_edit){
+            var url = "{% url 'edit_content_extended' content_id=0 language='GB' %}".replace('0', content_to_edit);
+             $.ajax({
+                 url: url,
+                 context: document.body
+             }).done(function(response) {
+                 modal.html(response);
+             });
+        }
+        else if (content_to_remove)
+         {
+             var url = "{% url 'remove_content_extended' pk=0 %}".replace('0', content_to_remove);
+             $.ajax({
+                 url: url,
+                 context: document.body
+             }).done(function(response) {
+                 modal.html(response);
+             });
+         }
+         else {
+             $.ajax({
+                 url: "{% url 'add_content_extended' %}",
                  context: document.body
              }).done(function(response) {
                  modal.html(response);

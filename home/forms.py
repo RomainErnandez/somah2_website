@@ -1,7 +1,7 @@
 from django import forms
 from betterforms.multiform import MultiModelForm
 
-from home.models import Period, PeriodTr
+from home.models import Period, PeriodTr, Topic, TopicTr, Content, ContentTr
 
 
 class PeriodEditForm(forms.ModelForm):
@@ -23,4 +23,48 @@ class EditPeriodExtendedMultiForm(MultiModelForm):
 class AddPeriodForm(forms.ModelForm):
     class Meta:
         model = Period
+        fields = ('id', 'image',)
+
+
+class TopicEditForm(forms.ModelForm):
+    class Meta:
+        model = Topic
+        fields = ('image', )
+
+class TopicTrEditForm(forms.ModelForm):
+    class Meta:
+        model = TopicTr
+        fields = ('language', 'name')
+
+class EditTopicExtendedMultiForm(MultiModelForm):
+    form_classes = {
+        'topic': TopicEditForm,
+        'topic_tr': TopicTrEditForm,
+    }
+
+class AddTopicForm(forms.ModelForm):
+    class Meta:
+        model = Topic
+        fields = ('id', 'image',)
+
+
+class ContentEditForm(forms.ModelForm):
+    class Meta:
+        model = Content
+        fields = ('image', )
+
+class ContentTrEditForm(forms.ModelForm):
+    class Meta:
+        model = ContentTr
+        fields = ('language', 'title', 'text')
+
+class EditContentExtendedMultiForm(MultiModelForm):
+    form_classes = {
+        'content': ContentEditForm,
+        'content_tr': ContentTrEditForm,
+    }
+
+class AddContentForm(forms.ModelForm):
+    class Meta:
+        model = Content
         fields = ('id', 'image',)
