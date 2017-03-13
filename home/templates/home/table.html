@@ -54,9 +54,9 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    {% for flag in all_flags %}
+                                    {% for language, flag in zipped_languages_flags %}
                                     <th>
-                                        <a href="#" class="text-center" style="">
+                                        <a href="#" class="text-center" data-toggle="tooltip" title="{{ language.native_name }}">
                                             <img src="{{ flag }}" alt="flag image">
                                         </a>
                                     </th>
@@ -112,9 +112,9 @@
                                 <tr>
                                     <th class="text-center">#</th>
                                     <th class="text-center">period(s)</th>
-                                    {% for flag in all_flags %}
+                                    {% for language, flag in zipped_languages_flags %}
                                     <th>
-                                        <a href="#" class="text-center" style="">
+                                        <a href="#" class="text-center" data-toggle="tooltip" title="{{ language.native_name }}">
                                             <img src="{{ flag }}" alt="flag image">
                                         </a>
                                     </th>
@@ -171,9 +171,9 @@
                                 <tr>
                                     <th class="text-center">#</th>
                                     <th class="text-center">topic</th>
-                                    {% for flag in all_flags %}
+                                    {% for language, flag in zipped_languages_flags %}
                                     <th colspan="2">
-                                        <a href="#" class="text-center" style="">
+                                        <a href="#" class="text-center" data-toggle="tooltip" title="{{ language.native_name }}">
                                             <img src="{{ flag }}" alt="flag image">
                                         </a>
                                     </th>
@@ -338,7 +338,7 @@
                  modal.html(response);
              });
          }
-    })
+    });
 
     function view_topic() {
         alert('Available soon !');

@@ -39,6 +39,7 @@ def table(request):
     all_flags = list()
     for language in all_languages:
         all_flags.append(language.country.flag)
+    zipped_languages_flags = list(zip(all_languages, all_flags)) # zip is an iterator so we need a list for the 3 tables
 
     all_periods = Period.objects.all().order_by('id')
     all_periods_trs = list() # [periods_trs_for_period1, periods_trs_for_period2..]
@@ -58,7 +59,7 @@ def table(request):
         all_contents_trs.append(ContentTr.objects.filter(content=content).order_by('language__country'))  # list
     all_contents_extended = zip(all_contents, all_contents_trs)
 
-    return render(request, 'home/table.html', { 'all_flags':all_flags, 'all_periods_extended':all_periods_extended,
+    return render(request, 'home/table.html', {'zipped_languages_flags':zipped_languages_flags, 'all_periods_extended':all_periods_extended,
             'all_topics_extended':all_topics_extended, 'all_contents_extended':all_contents_extended })
 
 
