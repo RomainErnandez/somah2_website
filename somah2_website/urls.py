@@ -21,7 +21,7 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^somah2/admin/', admin.site.urls),
-    url(r'^somah2/', include('dashboard.urls')),
+    url(r'^somah2/dashboard/', include('dashboard.urls')),
 ]
 
 

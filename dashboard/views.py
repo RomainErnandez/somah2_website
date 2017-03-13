@@ -107,8 +107,6 @@ class RemovePeriodExtendedView(DeleteView):
     def get_object(self, queryset=None):
         id = self.kwargs.get('pk')
         related_topics = Topic.objects.filter(periods__id=id) # only 1 and the period to be deleted
-        #for topic in related_topics:
-        #    related_contents = Content.objects.filter(topics__id=id).delete()
         related_topics.delete()
         return Period.objects.get(id=id)
 
