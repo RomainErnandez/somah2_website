@@ -1,7 +1,7 @@
 from django import forms
 from betterforms.multiform import MultiModelForm
 
-from home.models import Period, PeriodTr, Topic, TopicTr, Content, ContentTr
+from .models import Period, PeriodTr, Topic, TopicTr, Content, ContentTr
 
 
 class PeriodEditForm(forms.ModelForm):
