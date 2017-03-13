@@ -30,14 +30,14 @@
 <script>
     var form_options = { target: '#modal', success: function(response) {} };
     $('#edit_period').ajaxForm(form_options);
-</script>
-<script>
+
     //on Language click refresh form with correct period_tr id
     $('#id_period_tr-language').on('change', function() {
+        var old_period_tr_id = $("#edit_period").attr('action').split('/')[3];
         var new_language = this.value;
-        var old_period_tr_id = $("#edit_period").attr('action').split('/')[2];
         var modal = $('#modal');
-        var url = "{% url 'edit_period_extended' period_id=0 language=1 %}".replace('0', old_period_tr_id).replace('1', new_language);
+        // replace in this order
+        var url = "{% url 'edit_period_extended' period_id=0 language=1 %}".replace(1, new_language).replace(0, old_period_tr_id);
         $.ajax({
             url: url,
             context: document.body

@@ -105,6 +105,10 @@ class RemovePeriodExtendedView(DeleteView):
 
     def get_object(self, queryset=None):
         id = self.kwargs.get('pk')
+        related_topics = Topic.objects.filter(periods__id=id) # only 1 and the period to be deleted
+        #for topic in related_topics:
+        #    related_contents = Content.objects.filter(topics__id=id).delete()
+        related_topics.delete()
         return Period.objects.get(id=id)
 
 
@@ -114,9 +118,10 @@ class AddTopicExtendedView(CreateView):
     template_name = 'home/add_topic_extended.html'
 
     def form_valid(self, form):
-        form.save()
-        id = form['id'].value()
-        topic = Topic.objects.get(id=id)
+        # save new topic
+        topic = form.save()
+
+        # create topic_tr for this topic for each language
         all_languages = Language.objects.all().order_by('country')  # country_code
         for language in all_languages:
             topic_tr = TopicTr.objects.create(language=language, topic=topic)
@@ -151,6 +156,7 @@ class RemoveTopicExtendedView(DeleteView):
 
     def get_object(self, queryset=None):
         id = self.kwargs.get('pk')
+        related_contents = Content.objects.filter(topic__id=id).delete()
         return Topic.objects.get(id=id)
 
 class AddContentExtendedView(CreateView):

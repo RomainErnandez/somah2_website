@@ -38,7 +38,7 @@
 {% block content %}
 <div class="content">
     <div class="container-fluid">
-        <div class="row">
+        <div id="row" class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
@@ -46,7 +46,7 @@
                             <h4 class="title" >Table of Periods</h4>
                             <p class="category">and their translations in each language</p>
                         </div>
-                        <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal">New Period</button>
+                        <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal" data-add_period="true">New Period</button>
                     </div>
 
                     <div id="table_period_div" class="content table-responsive table-full-width">
@@ -104,7 +104,7 @@
                             <h4 class="title">Table of Topics</h4>
                             <p class="category">and their translations in each language</p>
                         </div>
-                        <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal">New Topic</button>
+                        <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal" data-add_topic="true">New Topic</button>
                     </div>
                     <div class="content table-responsive table-full-width">
                         <table  id="table_topic_div" class="table table table-hover table-striped">
@@ -253,17 +253,23 @@
          var modal = $(this);
          var period_to_remove = $(event.relatedTarget).data('period_to_remove'); //-period_to_remove
          var period_to_edit = $(event.relatedTarget).data('period_to_edit'); //data-period_to_edit
-        if (period_to_edit){
-            var url = "{% url 'edit_period_extended' period_id=0 language='GB' %}".replace('0', period_to_edit);
+         var topic_to_remove = $(event.relatedTarget).data('topic_to_remove'); //-topic_to_remove
+         var topic_to_edit = $(event.relatedTarget).data('topic_to_edit'); //data-topic_to_edit
+         var content_to_remove = $(event.relatedTarget).data('content_to_remove'); //-content_to_remove
+         var content_to_edit = $(event.relatedTarget).data('content_to_edit'); //data-content_to_edit
+         var add_period = $(event.relatedTarget).data('add_period'); //-content_to_remove
+         var add_topic = $(event.relatedTarget).data('add_topic'); //data-content_to_edit
+
+         if (period_to_edit) {
+             var url = "{% url 'edit_period_extended' period_id=0 language='GB' %}".replace('0', period_to_edit);
              $.ajax({
                  url: url,
                  context: document.body
              }).done(function(response) {
                  modal.html(response);
              });
-        }
-        else if (period_to_remove)
-         {
+         }
+         else if (period_to_remove) {
              var url = "{% url 'remove_period_extended' pk=0 %}".replace('0', period_to_remove);
              $.ajax({
                  url: url,
@@ -272,7 +278,7 @@
                  modal.html(response);
              });
          }
-         else {
+         else if(add_period) {
              $.ajax({
                  url: "{% url 'add_period_extended' %}",
                  context: document.body
@@ -280,19 +286,7 @@
                  modal.html(response);
              });
          }
-    })
-    </script>
-
-    <script type="text/javascript">
-    function view_topic() {
-        alert('Available soon !');
-    }
-
-    $('#modal').on('show.bs.modal', function (event) {
-         var modal = $(this);
-         var topic_to_remove = $(event.relatedTarget).data('topic_to_remove'); //-topic_to_remove
-         var topic_to_edit = $(event.relatedTarget).data('topic_to_edit'); //data-topic_to_edit
-        if (topic_to_edit){
+         else if (topic_to_edit) {
             var url = "{% url 'edit_topic_extended' topic_id=0 language='GB' %}".replace('0', topic_to_edit);
              $.ajax({
                  url: url,
@@ -300,9 +294,8 @@
              }).done(function(response) {
                  modal.html(response);
              });
-        }
-        else if (topic_to_remove)
-         {
+         }
+         else if (topic_to_remove) {
              var url = "{% url 'remove_topic_extended' pk=0 %}".replace('0', topic_to_remove);
              $.ajax({
                  url: url,
@@ -311,7 +304,7 @@
                  modal.html(response);
              });
          }
-         else {
+         else if(add_topic) {
              $.ajax({
                  url: "{% url 'add_topic_extended' %}",
                  context: document.body
@@ -319,19 +312,7 @@
                  modal.html(response);
              });
          }
-    })
-    </script>
-
-        <script type="text/javascript">
-    function view_content() {
-        alert('Available soon !');
-    }
-
-    $('#modal').on('show.bs.modal', function (event) {
-         var modal = $(this);
-         var content_to_remove = $(event.relatedTarget).data('content_to_remove'); //-content_to_remove
-         var content_to_edit = $(event.relatedTarget).data('content_to_edit'); //data-content_to_edit
-        if (content_to_edit){
+         else if (content_to_edit){
             var url = "{% url 'edit_content_extended' content_id=0 language='GB' %}".replace('0', content_to_edit);
              $.ajax({
                  url: url,
@@ -339,9 +320,8 @@
              }).done(function(response) {
                  modal.html(response);
              });
-        }
-        else if (content_to_remove)
-         {
+         }
+         else if (content_to_remove) {
              var url = "{% url 'remove_content_extended' pk=0 %}".replace('0', content_to_remove);
              $.ajax({
                  url: url,
@@ -359,5 +339,14 @@
              });
          }
     })
+
+    function view_topic() {
+        alert('Available soon !');
+    }
+
+    function view_content() {
+        alert('Available soon !');
+    }
+
     </script>
 {% endblock javascript %}

@@ -35,9 +35,9 @@
     //on Language click refresh form with correct period_tr id
     $('#id_topic_tr-language').on('change', function() {
         var new_language = this.value;
-        var old_topic_tr_id = $("#edit_topic").attr('action').split('/')[2];
+        var old_topic_tr_id = $("#edit_topic").attr('action').split('/')[3];
         var modal = $('#modal');
-        var url = "{% url 'edit_topic_extended' topic_id=0 language=1 %}".replace('0', old_topic_tr_id).replace('1', new_language);
+        var url = "{% url 'edit_topic_extended' topic_id=0 language=1 %}".replace('1', new_language).replace('0', old_topic_tr_id);
         $.ajax({
             url: url,
             context: document.body
