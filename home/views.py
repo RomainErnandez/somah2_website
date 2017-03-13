@@ -165,14 +165,11 @@ class AddContentExtendedView(CreateView):
     template_name = 'home/add_content_extended.html'
 
     def form_valid(self, form):
-        form.save()
-        id = form['id'].value()
-        content = Content.objects.get(id=id)
+        content = form.save()
         all_languages = Language.objects.all().order_by('country')  # country_code
         for language in all_languages:
             content_tr = ContentTr.objects.create(language=language, content=content)
         return redirect('add_content_extended_success')
-
 
 class EditContentExtendedView(UpdateView):
     model = ContentTr
