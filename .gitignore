@@ -10,9 +10,9 @@ runserver.bat
 __pycache__/
 local_settings.py
 db.sqlite3
-media
-static_root/
-somah2_website/settings.py
+#media
+#static_root/
+#somah2_website/settings.py
 
 ### PyCharm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm

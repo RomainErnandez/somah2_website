@@ -1,6 +1,6 @@
 Django==1.10.5
 django-betterforms==1.1.4
-django-bootstrap3==8.1.0
+django-bootstrap3==8.2.1
 django-countries==4.0
 django-widget-tweaks==1.4.1
 olefile==0.44
