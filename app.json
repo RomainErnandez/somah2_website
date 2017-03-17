@@ -1,0 +1,8 @@
+{
+  "name": "Somah2",
+  "description": "",
+  "image": "heroku/python",
+  "repository": "https://github.com/RomainErnandez/somah2_website",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}
