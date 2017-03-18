@@ -140,3 +140,8 @@ MEDIA_URL = 'media/'
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static_files'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
