@@ -10,11 +10,11 @@ from django.views.generic import DeleteView
 from .forms import EditPeriodExtendedMultiForm, AddPeriodForm, EditContentExtendedMultiForm, AddContentForm, \
     EditTopicExtendedMultiForm, AddTopicForm
 from .models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
-from somah2_website.local_settings import TRELLO_API_KEY
+#from somah2_website.local_settings import TRELLO_API_KEY
 
 
 def dashboard(request):
-    return render(request, 'dashboard/dashboard.html', { 'TRELLO_API_KEY':TRELLO_API_KEY })
+    return render(request, 'dashboard/dashboard.html')
 
 
 def view_period(request, period_id):
