@@ -11,7 +11,7 @@ __pycache__/
 local_settings.py
 db.sqlite3
 media
-static_root/
+#static_root/
 somah2_website/settings.py
 
 ### PyCharm ###
