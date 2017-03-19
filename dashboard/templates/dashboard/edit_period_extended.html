@@ -33,7 +33,8 @@
 
     //on Language click refresh form with correct period_tr id
     $('#id_period_tr-language').on('change', function() {
-        var old_period_tr_id = $("#edit_period").attr('action').split('/')[4];
+        var array = $("#edit_period").attr('action').split('/');
+        var old_period_tr_id = array[array.length-3];
         var new_language = this.value;
         var modal = $('#modal');
         // replace in this order

@@ -34,7 +34,8 @@
     //on Language click refresh form with correct period_tr id
     $('#id_content_tr-language').on('change', function() {
         var new_language = this.value;
-        var old_content_tr_id = $("#edit_content").attr('action').split('/')[4];
+        var array = $("#edit_period").attr('action').split('/');
+        var old_period_tr_id = array[array.length-3];
         var modal = $('#modal');
         var url = "{% url 'edit_content_extended' content_id=0 language=1 %}".replace('1', new_language).replace('0', old_content_tr_id);
         $.ajax({
