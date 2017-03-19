@@ -53,7 +53,7 @@
                         <table class="table table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
+                                    <th class="text-center">Id</th>
                                     {% for language, flag in zipped_languages_flags %}
                                     <th>
                                         <a href="#" class="text-center" data-toggle="tooltip" title="{{ language.native_name }}">
@@ -110,8 +110,8 @@
                         <table  id="table_topic_div" class="table table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
-                                    <th class="text-center">period(s)</th>
+                                    <th class="text-center">Id</th>
+                                    <th class="text-center">Period(s) Id</th>
                                     {% for language, flag in zipped_languages_flags %}
                                     <th>
                                         <a href="#" class="text-center" data-toggle="tooltip" title="{{ language.native_name }}">
@@ -146,7 +146,7 @@
                                          <button type="button" rel="tooltip" title="Edit Topic" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-topic_to_edit="{{ topic.id }}">
                                             <i class="fa fa-edit"></i>
                                          </button>
-                                         <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-topic_to_remove="{{ topic.id }}">
+                                         <button type="button" rel="tooltip" title="Remove Topic" class="btn btn-danger btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-topic_to_remove="{{ topic.id }}">
                                             <i class="fa fa-times"></i>
                                          </button>
                                     </td>
@@ -169,8 +169,8 @@
                         <table id="table_content_div" class="table table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
-                                    <th class="text-center">topic</th>
+                                    <th class="text-center">Id</th>
+                                    <th class="text-center">Topic Id</th>
                                     {% for language, flag in zipped_languages_flags %}
                                     <th colspan="2">
                                         <a href="#" class="text-center" data-toggle="tooltip" title="{{ language.native_name }}">
@@ -219,7 +219,7 @@
                                         <button type="button" rel="tooltip" title="Edit Content" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}">
                                             <i class="fa fa-edit"></i>
                                         </button>
-                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-content_to_remove="{{ content.id }}">
+                                        <button type="button" rel="tooltip" title="Remove Content" class="btn btn-danger btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-content_to_remove="{{ content.id }}">
                                             <i class="fa fa-times"></i>
                                         </button>
                                     </td>
