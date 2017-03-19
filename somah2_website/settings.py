@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-PROJECT_ROOT = BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,7 +23,7 @@ PROJECT_ROOT = BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file
 SECRET_KEY = 'i9n7(3n9-6#xg=px7)49*39nu56z5xl$_1g9*segq0(rrbsco#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -125,7 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 #STATIC_URL = '/static/'
-STATIC_URL = 'https://somah2.herokuapp.com/static_root/'
 
 ADMINS = (
     ('Romain Ernandez ', 'romain.ernandez@gmail.com'),
@@ -139,10 +138,24 @@ MEDIA_URL = 'media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-STATICFILES_DIRS = ()
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+#STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
