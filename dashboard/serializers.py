@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Period, PeriodTr, Language
+
+from .models import Period, PeriodTr, Language, ContentTr, Content, TopicTr, Topic
 
 
 class PeriodSerializer(serializers.HyperlinkedModelSerializer):
@@ -14,25 +15,30 @@ class PeriodTrSerializer(serializers.ModelSerializer):
 
 class TopicSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Period
+        model = Topic
         fields = ('id', 'image')
 
 class TopicTrSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PeriodTr
+        model = TopicTr
         fields = ('topic', 'language', 'name')
 
 class ContentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Period
-        fields = ('id', 'topic__id','image')
+        model = Content
+        fields = ('id', 'topic_id','image')
 
 class ContentTrSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PeriodTr
+        model = ContentTr
         fields = ('content', 'language', 'title', 'text')
 
 class LanguageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Language
         fields = ('country', 'native_name')
+
+class AssociationPeriodTopicSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Period
+        fields = ('id', 'periods')

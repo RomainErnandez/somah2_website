@@ -8,7 +8,8 @@ from django.views.generic import CreateView, UpdateView
 from django.views.generic import DeleteView
 from rest_framework import viewsets
 
-from dashboard.serializers import PeriodSerializer, PeriodTrSerializer, LanguageSerializer, TopicSerializer
+from dashboard.serializers import PeriodSerializer, PeriodTrSerializer, LanguageSerializer, TopicSerializer, \
+    AssociationPeriodTopicSerializer, TopicTrSerializer, ContentSerializer, ContentTrSerializer
 from .forms import EditPeriodExtendedMultiForm, AddPeriodForm, EditContentExtendedMultiForm, AddContentForm, \
     EditTopicExtendedMultiForm, AddTopicForm
 from .models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
@@ -227,22 +228,22 @@ class TopicTrViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = PeriodTr.objects.all().order_by('topic__id', 'language__country')
-    serializer_class = PeriodTrSerializer
+    queryset = TopicTr.objects.all().order_by('topic__id', 'language__country')
+    serializer_class = TopicTrSerializer
 
 class ContentViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = Period.objects.all().order_by('topic__periods__id', 'topic__id', 'id')
-    serializer_class = PeriodSerializer
+    queryset = Content.objects.all().order_by('topic__periods__id', 'topic__id', 'id')
+    serializer_class = ContentSerializer
 
 class ContentTrViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = PeriodTr.objects.all().order_by('content__id', 'language__country')
-    serializer_class = PeriodTrSerializer
+    queryset = ContentTr.objects.all().order_by('content__id', 'language__country')
+    serializer_class = ContentTrSerializer
 
 class LanguageViewSet(viewsets.ModelViewSet):
     """
@@ -250,3 +251,10 @@ class LanguageViewSet(viewsets.ModelViewSet):
     """
     queryset = Language.objects.all().order_by('country')
     serializer_class = LanguageSerializer
+
+class AssociationPeriodTopicViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Topic.objects.all()
+    serializer_class = AssociationPeriodTopicSerializer

@@ -20,16 +20,17 @@ from django.contrib import admin
 from django.conf import settings
 from rest_framework import routers
 
-from dashboard.views import PeriodViewSet, PeriodTrViewSet, TopicViewSet, TopicTrViewSet, ContentViewSet, ContentTrViewSet, LanguageViewSet
+from dashboard.views import PeriodViewSet, PeriodTrViewSet, TopicViewSet, TopicTrViewSet, ContentViewSet, ContentTrViewSet, LanguageViewSet, AssociationPeriodTopicViewSet
 
 router = routers.DefaultRouter()
 router.register(r'periods', PeriodViewSet)
-router.register(r'periodtrs', PeriodTrViewSet)
+router.register(r'period_trs', PeriodTrViewSet)
 router.register(r'topics', TopicViewSet)
-router.register(r'topictrs', TopicTrViewSet)
+router.register(r'topic_trs', TopicTrViewSet)
 router.register(r'contents', ContentViewSet)
-router.register(r'contenttrs', ContentTrViewSet)
+router.register(r'content_trs', ContentTrViewSet)
 router.register(r'languages', LanguageViewSet)
+#router.register(r'association_period_topics', AssociationPeriodTopicViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
