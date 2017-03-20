@@ -6,7 +6,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
 from django.views.generic import DeleteView
+from rest_framework import viewsets
 
+from dashboard.serializers import PeriodSerializer, PeriodTrSerializer, LanguageSerializer, TopicSerializer
 from .forms import EditPeriodExtendedMultiForm, AddPeriodForm, EditContentExtendedMultiForm, AddContentForm, \
     EditTopicExtendedMultiForm, AddTopicForm
 from .models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
@@ -199,3 +201,52 @@ class RemoveContentExtendedView(DeleteView):
     def get_object(self, queryset=None):
         id = self.kwargs.get('pk')
         return Content.objects.get(id=id)
+
+class PeriodViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Period.objects.all().order_by('id')
+    serializer_class = PeriodSerializer
+
+class PeriodTrViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = PeriodTr.objects.all().order_by('period__id', 'language__country')
+    serializer_class = PeriodTrSerializer
+
+class TopicViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Topic.objects.all().order_by('periods__id', 'id')
+    serializer_class = TopicSerializer
+
+class TopicTrViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = PeriodTr.objects.all().order_by('topic__id', 'language__country')
+    serializer_class = PeriodTrSerializer
+
+class ContentViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Period.objects.all().order_by('topic__periods__id', 'topic__id', 'id')
+    serializer_class = PeriodSerializer
+
+class ContentTrViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = PeriodTr.objects.all().order_by('content__id', 'language__country')
+    serializer_class = PeriodTrSerializer
+
+class LanguageViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Language.objects.all().order_by('country')
+    serializer_class = LanguageSerializer

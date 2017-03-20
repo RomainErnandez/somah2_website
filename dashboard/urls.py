@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 
 __author__ = 'rernande'
 
-from django.conf.urls import url
+from django.conf.urls import url, include
 from .views import dashboard, view_period, user, table, notifications, EditPeriodExtendedView, AddPeriodExtendedView, \
     RemovePeriodExtendedView, AddTopicExtendedView, EditTopicExtendedView, RemoveTopicExtendedView, \
     AddContentExtendedView, EditContentExtendedView, RemoveContentExtendedView
@@ -36,4 +36,5 @@ urlpatterns = [
     url(r'^edit_content_extended_success/$', TemplateView.as_view(template_name='dashboard/edit_content_extended_success.html'), name='edit_content_extended_success'),
     url(r'^remove_content_extended/(?P<pk>\d+)/$', RemoveContentExtendedView.as_view(), name = 'remove_content_extended'),
     url(r'^remove_content_extended_success/$', TemplateView.as_view(template_name='dashboard/remove_content_extended_success.html'), name='remove_content_extended_success'),
+
 ]

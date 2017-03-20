@@ -59,3 +59,5 @@ class ContentTr(models.Model):
 
     class Meta:
         unique_together = ('language', 'content',)
+
+#AssociationPeriodTopic

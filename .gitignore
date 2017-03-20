@@ -1,7 +1,7 @@
 # Created by https://www.gitignore.io/api/django,pycharm
 
 ### Batch Script ###
-runserver.bat
+#runserver.bat
 
 ### Django ###
 *.log
