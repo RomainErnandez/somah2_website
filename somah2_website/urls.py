@@ -20,7 +20,8 @@ from django.contrib import admin
 from django.conf import settings
 from rest_framework import routers
 
-from dashboard.views import PeriodViewSet, PeriodTrViewSet, TopicViewSet, TopicTrViewSet, ContentViewSet, ContentTrViewSet, LanguageViewSet, AssociationPeriodTopicViewSet
+from dashboard.views import PeriodViewSet, PeriodTrViewSet, TopicViewSet, TopicTrViewSet, ContentViewSet, \
+    ContentTrViewSet, LanguageViewSet, get_all_association_period_topic
 
 router = routers.DefaultRouter()
 router.register(r'periods', PeriodViewSet)
@@ -30,11 +31,11 @@ router.register(r'topic_trs', TopicTrViewSet)
 router.register(r'contents', ContentViewSet)
 router.register(r'content_trs', ContentTrViewSet)
 router.register(r'languages', LanguageViewSet)
-#router.register(r'association_period_topics', AssociationPeriodTopicViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^dashboard/', include('dashboard.urls')),
+    url(r'^api/association_period_topics', get_all_association_period_topic),
     url(r'^api/', include(router.urls)),
 ]
 

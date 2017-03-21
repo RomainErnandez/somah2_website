@@ -37,8 +37,3 @@ class LanguageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Language
         fields = ('country', 'native_name')
-
-class AssociationPeriodTopicSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Period
-        fields = ('id', 'periods')

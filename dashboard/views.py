@@ -7,9 +7,11 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
 from django.views.generic import DeleteView
 from rest_framework import viewsets
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 from dashboard.serializers import PeriodSerializer, PeriodTrSerializer, LanguageSerializer, TopicSerializer, \
-    AssociationPeriodTopicSerializer, TopicTrSerializer, ContentSerializer, ContentTrSerializer
+    TopicTrSerializer, ContentSerializer, ContentTrSerializer
 from .forms import EditPeriodExtendedMultiForm, AddPeriodForm, EditContentExtendedMultiForm, AddContentForm, \
     EditTopicExtendedMultiForm, AddTopicForm
 from .models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
@@ -252,9 +254,17 @@ class LanguageViewSet(viewsets.ModelViewSet):
     queryset = Language.objects.all().order_by('country')
     serializer_class = LanguageSerializer
 
-class AssociationPeriodTopicViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-    queryset = Topic.objects.all()
-    serializer_class = AssociationPeriodTopicSerializer
+@api_view(['GET'])
+def get_all_association_period_topic(request):
+    all_association_period_topic = list()
+    all_topics = Topic.objects.all()
+    for topic in all_topics:
+        related_periods = topic.get_periods().split("\n")
+        for period in related_periods:
+            all_association_period_topic.append(
+                {
+                     "period_id": int(period),
+                    "topic_id": topic.id
+                }
+            )
+    return Response(all_association_period_topic)
