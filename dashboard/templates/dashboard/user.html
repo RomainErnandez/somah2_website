@@ -50,19 +50,19 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Company (disabled)</label>
-                                        <input type="text" class="form-control" disabled placeholder="Company" value="Creative Code Inc.">
+                                        <input type="text" class="form-control" disabled placeholder="Company" value="{{ request.user.profile.company }}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Username</label>
-                                        <input type="text" class="form-control" placeholder="Username" value="michael23">
+                                        <input type="text" class="form-control" placeholder="Username" value="{{ request.user.username }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input type="email" class="form-control" placeholder="Email" value="{{ request.user.email }}">
                                     </div>
                                 </div>
                             </div>
@@ -71,13 +71,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="Company" value="Mike">
+                                        <input type="text" class="form-control" placeholder="First Name" value="{{ request.user.first_name }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                        <input type="text" class="form-control" placeholder="Last Name" value="{{ request.user.last_name }}">
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                                        <input type="text" class="form-control" placeholder="Home Address" value="{{ request.user.profile.address }}">
                                     </div>
                                 </div>
                             </div>
@@ -95,19 +95,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>City</label>
-                                        <input type="text" class="form-control" placeholder="City" value="Mike">
+                                        <input type="text" class="form-control" placeholder="City" value="{{ request.user.profile.city }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Country</label>
-                                        <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                                        <input type="text" class="form-control" placeholder="Country" value="{{ request.user.profile.country }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Postal Code</label>
-                                        <input type="number" class="form-control" placeholder="ZIP Code">
+                                        <input type="number" class="form-control" placeholder="ZIP Code" value="{{ request.user.profile.postal_code }}">
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>About Me</label>
-                                        <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                        <textarea rows="5" class="form-control" placeholder="Here can be your description">{{ request.user.profile.description }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -135,17 +135,14 @@
                     <div class="content">
                         <div class="author">
                              <a href="#">
-                            <img class="avatar border-gray" src="{% static 'dashboard/img/faces/face-3.jpg' %}" alt="..."/>
+                            <img class="avatar border-gray" src="/media/{{ request.user.profile.avatar }}" alt="..."/>
 
-                              <h4 class="title">Mike Andrew<br />
-                                 <small>michael24</small>
+                              <h4 class="title">{{ request.user.first_name }} {{ request.user.last_name }}<br />
+                                 <small>{{ request.user.username }}</small>
                               </h4>
                             </a>
                         </div>
-                        <p class="description text-center"> "Lamborghini Mercy <br>
-                                            Your chick she so thirsty <br>
-                                            I'm in that two seat Lambo"
-                        </p>
+                        <p class="description text-center">"{{ request.user.profile.description }}"</p>
                     </div>
                     <hr>
                     <div class="text-center">

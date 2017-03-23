@@ -68,11 +68,11 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(default='face-0.jpg')
     description = models.TextField(blank=True)
-    company = models.CharField(max_length=50, blank=True, default='unknown')
-    address = models.CharField(max_length=50, blank=True, default='unknown')
-    postal_code = models.PositiveSmallIntegerField(blank=True)
+    company = models.CharField(max_length=50, blank=True, default='')
+    address = models.CharField(max_length=50, blank=True, default='')
+    postal_code = models.CharField(max_length=50, blank=True, default='')
     country = CountryField(blank=True)
-    city = models.CharField(max_length=50, blank=True, default='unknown')
+    city = models.CharField(max_length=50, blank=True, default='')
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
