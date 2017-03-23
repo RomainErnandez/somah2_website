@@ -1,4 +1,7 @@
+from django.contrib.auth.models import AbstractUser, User
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django_countries.fields import CountryField
 
 # Create your models here.
@@ -60,4 +63,19 @@ class ContentTr(models.Model):
     class Meta:
         unique_together = ('language', 'content',)
 
-#AssociationPeriodTopic
+# https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar = models.ImageField(default='face-0.jpg')
+    description = models.TextField(blank=True)
+    company = models.CharField(max_length=50, blank=True, default='unknown')
+    address = models.CharField(max_length=50, blank=True, default='unknown')
+    postal_code = models.PositiveSmallIntegerField(blank=True)
+    country = CountryField(blank=True)
+    city = models.CharField(max_length=50, blank=True, default='unknown')
+
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+    instance.profile.save()
