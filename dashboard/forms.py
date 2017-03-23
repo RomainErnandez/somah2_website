@@ -1,7 +1,8 @@
 from django import forms
 from betterforms.multiform import MultiModelForm
+from django.contrib.auth.models import User
 
-from .models import Period, PeriodTr, Topic, TopicTr, Content, ContentTr
+from .models import Period, PeriodTr, Topic, TopicTr, Content, ContentTr, Profile
 
 
 class PeriodEditForm(forms.ModelForm):
@@ -68,3 +69,13 @@ class AddContentForm(forms.ModelForm):
     class Meta:
         model = Content
         fields = ('topic', 'id', 'image',)
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'first_name', 'last_name', )
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('company', 'address', 'city', 'country', 'postal_code', 'description', )

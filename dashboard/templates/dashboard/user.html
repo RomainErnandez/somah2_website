@@ -45,7 +45,8 @@
                         <h4 class="title">Edit Profile</h4>
                     </div>
                     <div class="content">
-                        <form>
+                        <form method="post">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
@@ -101,7 +102,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Country</label>
-                                        <input type="text" class="form-control" placeholder="Country" value="{{ request.user.profile.country }}">
+                                        <input type="text" class="form-control" placeholder="Country" value="{{ request.user.profile.country.name }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -159,3 +160,8 @@
 </div>
 
 {% endblock content %}
+
+{% block javascript %}
+    <script type="text/javascript">
+    </script>
+{% endblock javascript %}

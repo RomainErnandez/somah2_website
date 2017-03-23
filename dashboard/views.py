@@ -1,3 +1,5 @@
+from django.contrib import messages
+from django.db import transaction
 from django.http import Http404
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -13,7 +15,7 @@ from rest_framework.response import Response
 from dashboard.serializers import PeriodSerializer, PeriodTrSerializer, LanguageSerializer, TopicSerializer, \
     TopicTrSerializer, ContentSerializer, ContentTrSerializer
 from .forms import EditPeriodExtendedMultiForm, AddPeriodForm, EditContentExtendedMultiForm, AddContentForm, \
-    EditTopicExtendedMultiForm, AddTopicForm
+    EditTopicExtendedMultiForm, AddTopicForm, UserForm, ProfileForm
 from .models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
 #from somah2_website.local_settings import TRELLO_API_KEY
 
@@ -30,8 +32,26 @@ def view_period(request, period_id):
     else:
         return HttpResponse("period: " + str(period.id))
 
-
+@transaction.atomic
 def user(request):
+    if request.method == 'POST':
+        print('POST')
+        try:
+            user_dic = { 'first_name':'Arthur' }
+            user_form = UserForm(user_dic, instance=request.user)
+            profile_form = ProfileForm(request.POST, instance=request.user.profile)
+            if user_form.is_valid() and profile_form.is_valid():
+                user_form.save()
+                profile_form.save()
+                #messages.success(request, ('Your profile was successfully updated!'))
+                #return redirect('user')
+            else:
+                #messages.error(request, ('Please correct the error below.'))
+                pass
+        except Exception as e:
+            print(e)
+    else:
+        print('GET')
     return render(request, template_name='dashboard/user.html')
 
 
