@@ -42,13 +42,37 @@ class ProfileInline(admin.StackedInline):
 
 class ProfileAdmin(UserAdmin):
     inlines = (ProfileInline, )
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'get_city')
+    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'get_avatar', 'get_description', 'get_company', 'get_address', 'get_postal_code', 'get_country', 'get_city')
     list_select_related = ('profile',)
 
     def get_inline_instances(self, request, obj=None):
         if not obj:
             return list()
         return super(ProfileAdmin, self).get_inline_instances(request, obj)
+
+    def get_avatar(self, instance):
+        return instance.profile.avatar
+    get_avatar.short_description = 'Avatar'
+
+    def get_description(self, instance):
+        return instance.profile.description
+    get_description.short_description = 'Description'
+
+    def get_company(self, instance):
+        return instance.profile.company
+    get_company.short_description = 'Company'
+
+    def get_address(self, instance):
+        return instance.profile.address
+    get_address.short_description = 'Address'
+
+    def get_postal_code(self, instance):
+        return instance.profile.postal_code
+    get_postal_code.short_description = 'Postal Code'
+
+    def get_country(self, instance):
+        return instance.profile.country
+    get_country.short_description = 'Country'
 
     def get_city(self, instance):
         return instance.profile.city
