@@ -1,6 +1,7 @@
 from django import forms
 from betterforms.multiform import MultiModelForm
 from django.contrib.auth.models import User
+from django_countries.widgets import CountrySelectWidget
 
 from .models import Period, PeriodTr, Topic, TopicTr, Content, ContentTr, Profile
 
@@ -79,3 +80,4 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('company', 'address', 'city', 'country', 'postal_code', 'description', )
+        widgets = {'country': CountrySelectWidget()}

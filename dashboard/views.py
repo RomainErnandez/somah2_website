@@ -32,27 +32,26 @@ def view_period(request, period_id):
     else:
         return HttpResponse("period: " + str(period.id))
 
+
 @transaction.atomic
 def user(request):
     if request.method == 'POST':
-        print('POST')
-        try:
-            user_dic = { 'first_name':'Arthur' }
-            user_form = UserForm(user_dic, instance=request.user)
-            profile_form = ProfileForm(request.POST, instance=request.user.profile)
-            if user_form.is_valid() and profile_form.is_valid():
-                user_form.save()
-                profile_form.save()
-                #messages.success(request, ('Your profile was successfully updated!'))
-                #return redirect('user')
-            else:
-                #messages.error(request, ('Please correct the error below.'))
-                pass
-        except Exception as e:
-            print(e)
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, ('Your profile was successfully updated!'))
+            return redirect('user')
+        else:
+            messages.error(request, ('Please correct the error below.'))
     else:
-        print('GET')
-    return render(request, template_name='dashboard/user.html')
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+    return render(request, 'dashboard/user.html', {
+        'user_form': user_form,
+        'profile_form': profile_form
+    })
 
 
 def notifications(request):
