@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'i9n7(3n9-6#xg=px7)49*39nu56z5xl$_1g9*segq0(rrbsco#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -44,9 +44,10 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'betterforms',
     'rest_framework',
+    'crispy_forms',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'login_required_middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'somah2_website.urls'
@@ -161,6 +163,13 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
     'PAGE_SIZE': 10,
-    'DEFAULT_PAGINATION_CLASS': 'somah2_website.pagination.PageNumberPaginationDataOnly'
+    'DEFAULT_PAGINATION_CLASS': 'pagination.PageNumberPaginationDataOnly'
 }
+
+LOGIN_REDIRECT_URL = '/dashboard'
+
+LOGIN_EXEMPT_URLS = (
+ r'^about\.html$',
+ r'^legal/', # allow any URL under /legal/*
+)
 
