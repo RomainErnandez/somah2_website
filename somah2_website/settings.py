@@ -166,7 +166,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'pagination.PageNumberPaginationDataOnly'
 }
 
-LOGOUT_REDIRECT_URL = LOGIN_REDIRECT_URL = '/dashboard'
+LOGOUT_REDIRECT_URL = LOGIN_REDIRECT_URL = '/'
 
 LOGIN_EXEMPT_URLS = (
  r'^api/', # allow any URL under /api/*
