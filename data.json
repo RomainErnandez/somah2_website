@@ -1,43 +1,5 @@
 [
 {
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$30000$42dbPb7svwpq$pQ60WIckY3mUZPsXusGIegyhwSQHldWQU/OVzLFH2Qc=",
-    "last_login": "2017-04-04T12:50:16.324Z",
-    "is_superuser": true,
-    "username": "rernande",
-    "first_name": "Romain",
-    "last_name": "Ernandez",
-    "email": "romain.ernandez@gmail.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2017-02-07T15:35:03Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "fields": {
-    "password": "pbkdf2_sha256$30000$ka7N0XUj0COo$HclTdf7phkk7I7sStTIpNMufwoE2JnQMWOsfyCMUTHI=",
-    "last_login": "2017-04-04T12:53:16.664Z",
-    "is_superuser": false,
-    "username": "lelin",
-    "first_name": "",
-    "last_name": "",
-    "email": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2017-04-04T12:47:11Z",
-    "groups": [
-      [
-        "staff"
-      ]
-    ],
-    "user_permissions": []
-  }
-},
-{
   "model": "dashboard.language",
   "pk": "GB",
   "fields": {
