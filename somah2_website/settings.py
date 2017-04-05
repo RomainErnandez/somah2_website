@@ -169,7 +169,10 @@ REST_FRAMEWORK = {
 LOGOUT_REDIRECT_URL = LOGIN_REDIRECT_URL = '/dashboard'
 
 LOGIN_EXEMPT_URLS = (
- r'^about\.html$',
- r'^legal/', # allow any URL under /legal/*
+ r'^api/', # allow any URL under /legal/*
 )
 
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
