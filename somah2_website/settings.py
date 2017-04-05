@@ -137,7 +137,7 @@ APPEND_SLASH = True # Ajoute un slash en fin d'URL
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -169,7 +169,7 @@ REST_FRAMEWORK = {
 LOGOUT_REDIRECT_URL = LOGIN_REDIRECT_URL = '/dashboard'
 
 LOGIN_EXEMPT_URLS = (
- r'^api/', # allow any URL under /legal/*
+ r'^api/', # allow any URL under /api/*
 )
 
 import dj_database_url

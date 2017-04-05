@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 from django.conf import settings
+from django.views.static import serve
 from rest_framework import routers
 
 from dashboard.views import PeriodViewSet, PeriodTrViewSet, TopicViewSet, TopicTrViewSet, ContentViewSet, \
@@ -40,7 +41,5 @@ urlpatterns = [
     url(r'^dashboard/', include('dashboard.urls')),
     url(r'^api/association_period_topics', get_all_association_period_topic),
     url(r'^api/', include(router.urls)),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT,}),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
