@@ -1662,38 +1662,6 @@
   }
 },
 {
-  "model": "dashboard.profile",
-  "pk": 1,
-  "fields": {
-    "user": [
-      "rernande"
-    ],
-    "avatar": "face-0.jpg",
-    "description": "Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.",
-    "company": "",
-    "address": "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09",
-    "postal_code": "",
-    "country": "FR",
-    "city": ""
-  }
-},
-{
-  "model": "dashboard.profile",
-  "pk": 2,
-  "fields": {
-    "user": [
-      "lelin"
-    ],
-    "avatar": "face-0.jpg",
-    "description": "",
-    "company": "",
-    "address": "",
-    "postal_code": "",
-    "country": "",
-    "city": ""
-  }
-},
-{
   "model": "admin.logentry",
   "pk": 1,
   "fields": {
