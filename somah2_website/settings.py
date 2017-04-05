@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'i9n7(3n9-6#xg=px7)49*39nu56z5xl$_1g9*segq0(rrbsco#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -156,7 +156,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 #    os.path.join(PROJECT_ROOT, 'static'),
 #)
 
-#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -166,7 +166,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'pagination.PageNumberPaginationDataOnly'
 }
 
-LOGIN_REDIRECT_URL = '/dashboard'
+LOGOUT_REDIRECT_URL = LOGIN_REDIRECT_URL = '/dashboard'
 
 LOGIN_EXEMPT_URLS = (
  r'^about\.html$',

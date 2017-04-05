@@ -1,4 +1,4 @@
-{% extends "dashboard/template.html" %}
+{% extends "template.html" %}
 
 {% load static %}
 
@@ -45,7 +45,7 @@
                         <h4 class="title">Edit Profile</h4>
                     </div>
                     <div class="content">
-                        <form method="post" action=".">
+                        <form id="form-edit_profile" method="post" action=".">
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-5">
@@ -127,7 +127,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                            <button id="btn-edit_profile" type="button" class="btn btn-info btn-fill pull-right" >Update Profile</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
@@ -165,12 +165,32 @@
 
 {% endblock content %}
 
+{% block modal %}
+    <div class="modal fade" id="modal"></div>
+{% endblock modal %}
+
 {% block javascript %}
+    <script src="{% static 'js/bootbox.min.js' %}" type="text/javascript"></script>
     <script type="text/javascript">
-    {% if messages %}
-        {% for message in messages %}
-            alert(message);
-        {% endfor %}
-    {% endif %}
+    $("#btn-edit_profile").click(function(event) {
+        event.preventDefault();
+        bootbox.confirm({
+            title: "Edit thoose information?",
+            message: "Are you sure you want to edit thoose information ? This cannot be undone.",
+            buttons: {
+                cancel: {
+                    label: '<i class="fa fa-times"></i> Cancel'
+                },
+                confirm: {
+                    label: '<i class="fa fa-check"></i> Confirm'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    document.forms[0].submit();
+                }
+            }
+        });
+    });
     </script>
 {% endblock javascript %}
