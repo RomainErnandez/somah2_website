@@ -1,64 +1,254 @@
 [
 {
   "model": "auth.group",
-  "pk": 1,
   "fields": {
     "name": "staff",
     "permissions": [
-      58,
-      59,
-      60,
-      49,
-      50,
-      51,
-      46,
-      47,
-      48,
-      43,
-      44,
-      45,
-      52,
-      53,
-      54,
-      61,
-      62,
-      63,
-      55,
-      56,
-      57,
-      40,
-      41,
-      42,
-      37,
-      38,
-      39,
-      34,
-      35,
-      36,
-      25,
-      26,
-      27,
-      28,
-      29,
-      30,
-      31,
-      32,
-      33,
-      22,
-      23,
-      24,
-      19,
-      20,
-      21,
-      16,
-      17,
-      18
+      [
+        "add_content",
+        "dashboard",
+        "content"
+      ],
+      [
+        "change_content",
+        "dashboard",
+        "content"
+      ],
+      [
+        "delete_content",
+        "dashboard",
+        "content"
+      ],
+      [
+        "add_contenttr",
+        "dashboard",
+        "contenttr"
+      ],
+      [
+        "change_contenttr",
+        "dashboard",
+        "contenttr"
+      ],
+      [
+        "delete_contenttr",
+        "dashboard",
+        "contenttr"
+      ],
+      [
+        "add_language",
+        "dashboard",
+        "language"
+      ],
+      [
+        "change_language",
+        "dashboard",
+        "language"
+      ],
+      [
+        "delete_language",
+        "dashboard",
+        "language"
+      ],
+      [
+        "add_period",
+        "dashboard",
+        "period"
+      ],
+      [
+        "change_period",
+        "dashboard",
+        "period"
+      ],
+      [
+        "delete_period",
+        "dashboard",
+        "period"
+      ],
+      [
+        "add_periodtr",
+        "dashboard",
+        "periodtr"
+      ],
+      [
+        "change_periodtr",
+        "dashboard",
+        "periodtr"
+      ],
+      [
+        "delete_periodtr",
+        "dashboard",
+        "periodtr"
+      ],
+      [
+        "add_profile",
+        "dashboard",
+        "profile"
+      ],
+      [
+        "change_profile",
+        "dashboard",
+        "profile"
+      ],
+      [
+        "delete_profile",
+        "dashboard",
+        "profile"
+      ],
+      [
+        "add_topic",
+        "dashboard",
+        "topic"
+      ],
+      [
+        "change_topic",
+        "dashboard",
+        "topic"
+      ],
+      [
+        "delete_topic",
+        "dashboard",
+        "topic"
+      ],
+      [
+        "add_topictr",
+        "dashboard",
+        "topictr"
+      ],
+      [
+        "change_topictr",
+        "dashboard",
+        "topictr"
+      ],
+      [
+        "delete_topictr",
+        "dashboard",
+        "topictr"
+      ],
+      [
+        "add_content",
+        "home",
+        "content"
+      ],
+      [
+        "change_content",
+        "home",
+        "content"
+      ],
+      [
+        "delete_content",
+        "home",
+        "content"
+      ],
+      [
+        "add_contenttr",
+        "home",
+        "contenttr"
+      ],
+      [
+        "change_contenttr",
+        "home",
+        "contenttr"
+      ],
+      [
+        "delete_contenttr",
+        "home",
+        "contenttr"
+      ],
+      [
+        "add_language",
+        "home",
+        "language"
+      ],
+      [
+        "change_language",
+        "home",
+        "language"
+      ],
+      [
+        "delete_language",
+        "home",
+        "language"
+      ],
+      [
+        "add_period",
+        "home",
+        "period"
+      ],
+      [
+        "change_period",
+        "home",
+        "period"
+      ],
+      [
+        "delete_period",
+        "home",
+        "period"
+      ],
+      [
+        "add_periodtr",
+        "home",
+        "periodtr"
+      ],
+      [
+        "change_periodtr",
+        "home",
+        "periodtr"
+      ],
+      [
+        "delete_periodtr",
+        "home",
+        "periodtr"
+      ],
+      [
+        "add_topic",
+        "home",
+        "topic"
+      ],
+      [
+        "change_topic",
+        "home",
+        "topic"
+      ],
+      [
+        "delete_topic",
+        "home",
+        "topic"
+      ],
+      [
+        "add_topictr",
+        "home",
+        "topictr"
+      ],
+      [
+        "change_topictr",
+        "home",
+        "topictr"
+      ],
+      [
+        "delete_topictr",
+        "home",
+        "topictr"
+      ],
+      [
+        "add_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "change_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "delete_session",
+        "sessions",
+        "session"
+      ]
     ]
   }
 },
 {
   "model": "auth.user",
-  "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$30000$42dbPb7svwpq$pQ60WIckY3mUZPsXusGIegyhwSQHldWQU/OVzLFH2Qc=",
     "last_login": "2017-04-04T12:50:16.324Z",
@@ -76,7 +266,6 @@
 },
 {
   "model": "auth.user",
-  "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$30000$ka7N0XUj0COo$HclTdf7phkk7I7sStTIpNMufwoE2JnQMWOsfyCMUTHI=",
     "last_login": "2017-04-04T12:53:16.664Z",
@@ -89,7 +278,9 @@
     "is_active": true,
     "date_joined": "2017-04-04T12:47:11Z",
     "groups": [
-      1
+      [
+        "staff"
+      ]
     ],
     "user_permissions": []
   }
@@ -1760,7 +1951,9 @@
   "model": "dashboard.profile",
   "pk": 1,
   "fields": {
-    "user": 1,
+    "user": [
+      "rernande"
+    ],
     "avatar": "face-0.jpg",
     "description": "Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.",
     "company": "",
@@ -1774,7 +1967,9 @@
   "model": "dashboard.profile",
   "pk": 2,
   "fields": {
-    "user": 2,
+    "user": [
+      "lelin"
+    ],
     "avatar": "face-0.jpg",
     "description": "",
     "company": "",
@@ -1789,8 +1984,13 @@
   "pk": 1,
   "fields": {
     "action_time": "2017-02-07T15:50:00.134Z",
-    "user": 1,
-    "content_type": 9,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "language"
+    ],
     "object_id": "NO",
     "object_repr": "Language object",
     "action_flag": 1,
@@ -1802,8 +2002,13 @@
   "pk": 2,
   "fields": {
     "action_time": "2017-02-07T15:52:20.711Z",
-    "user": 1,
-    "content_type": 9,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "language"
+    ],
     "object_id": "GB",
     "object_repr": "Language object",
     "action_flag": 1,
@@ -1815,8 +2020,13 @@
   "pk": 3,
   "fields": {
     "action_time": "2017-02-07T15:53:14.291Z",
-    "user": 1,
-    "content_type": 9,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "language"
+    ],
     "object_id": "PL",
     "object_repr": "Language object",
     "action_flag": 1,
@@ -1828,8 +2038,13 @@
   "pk": 4,
   "fields": {
     "action_time": "2017-02-07T15:53:32.006Z",
-    "user": 1,
-    "content_type": 9,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "language"
+    ],
     "object_id": "SO",
     "object_repr": "Language object",
     "action_flag": 1,
@@ -1841,8 +2056,13 @@
   "pk": 5,
   "fields": {
     "action_time": "2017-02-07T16:00:35.425Z",
-    "user": 1,
-    "content_type": 9,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "language"
+    ],
     "object_id": "LT",
     "object_repr": "Language object",
     "action_flag": 1,
@@ -1854,8 +2074,13 @@
   "pk": 6,
   "fields": {
     "action_time": "2017-02-07T16:03:09.965Z",
-    "user": 1,
-    "content_type": 9,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "language"
+    ],
     "object_id": "PK",
     "object_repr": "Language object",
     "action_flag": 1,
@@ -1867,8 +2092,13 @@
   "pk": 7,
   "fields": {
     "action_time": "2017-02-07T16:05:57.996Z",
-    "user": 1,
-    "content_type": 9,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "language"
+    ],
     "object_id": "AE",
     "object_repr": "Language object",
     "action_flag": 1,
@@ -1880,8 +2110,13 @@
   "pk": 8,
   "fields": {
     "action_time": "2017-02-07T16:43:42.971Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "1",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -1893,8 +2128,13 @@
   "pk": 9,
   "fields": {
     "action_time": "2017-02-07T16:43:50.808Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "2",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -1906,8 +2146,13 @@
   "pk": 10,
   "fields": {
     "action_time": "2017-02-07T16:43:59.138Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "3",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -1919,8 +2164,13 @@
   "pk": 11,
   "fields": {
     "action_time": "2017-02-07T16:44:06.619Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "4",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -1932,8 +2182,13 @@
   "pk": 12,
   "fields": {
     "action_time": "2017-02-07T16:44:13.934Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "5",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -1945,8 +2200,13 @@
   "pk": 13,
   "fields": {
     "action_time": "2017-02-07T16:44:21.776Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "6",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -1958,8 +2218,13 @@
   "pk": 14,
   "fields": {
     "action_time": "2017-02-07T16:44:28.481Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "7",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -1971,8 +2236,13 @@
   "pk": 15,
   "fields": {
     "action_time": "2017-02-07T16:44:58.323Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "8",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -1984,8 +2254,13 @@
   "pk": 16,
   "fields": {
     "action_time": "2017-02-07T16:45:05.106Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "9",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -1997,8 +2272,13 @@
   "pk": 17,
   "fields": {
     "action_time": "2017-02-07T16:45:10.997Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "10",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2010,8 +2290,13 @@
   "pk": 18,
   "fields": {
     "action_time": "2017-02-07T16:45:18.175Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "11",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2023,8 +2308,13 @@
   "pk": 19,
   "fields": {
     "action_time": "2017-02-08T04:39:33.599Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "11",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2036,8 +2326,13 @@
   "pk": 20,
   "fields": {
     "action_time": "2017-02-08T04:39:33.646Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "10",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2049,8 +2344,13 @@
   "pk": 21,
   "fields": {
     "action_time": "2017-02-08T04:39:33.675Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "9",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2062,8 +2362,13 @@
   "pk": 22,
   "fields": {
     "action_time": "2017-02-08T04:39:33.741Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "8",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2075,8 +2380,13 @@
   "pk": 23,
   "fields": {
     "action_time": "2017-02-08T04:39:33.805Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "7",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2088,8 +2398,13 @@
   "pk": 24,
   "fields": {
     "action_time": "2017-02-08T04:39:33.841Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "6",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2101,8 +2416,13 @@
   "pk": 25,
   "fields": {
     "action_time": "2017-02-08T04:39:33.874Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "5",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2114,8 +2434,13 @@
   "pk": 26,
   "fields": {
     "action_time": "2017-02-08T04:39:33.908Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "4",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2127,8 +2452,13 @@
   "pk": 27,
   "fields": {
     "action_time": "2017-02-08T04:39:33.942Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "3",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2140,8 +2470,13 @@
   "pk": 28,
   "fields": {
     "action_time": "2017-02-08T04:39:33.981Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "2",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2153,8 +2488,13 @@
   "pk": 29,
   "fields": {
     "action_time": "2017-02-08T04:39:34.019Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "1",
     "object_repr": "Period object",
     "action_flag": 3,
@@ -2166,8 +2506,13 @@
   "pk": 30,
   "fields": {
     "action_time": "2017-02-08T04:39:41.345Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "1",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2179,8 +2524,13 @@
   "pk": 31,
   "fields": {
     "action_time": "2017-02-08T04:39:53.275Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "2",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2192,8 +2542,13 @@
   "pk": 32,
   "fields": {
     "action_time": "2017-02-08T04:40:01.461Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "3",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2205,8 +2560,13 @@
   "pk": 33,
   "fields": {
     "action_time": "2017-02-08T04:40:05.533Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "4",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2218,8 +2578,13 @@
   "pk": 34,
   "fields": {
     "action_time": "2017-02-08T04:40:09.229Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "5",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2231,8 +2596,13 @@
   "pk": 35,
   "fields": {
     "action_time": "2017-02-08T04:40:12.590Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "6",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2244,8 +2614,13 @@
   "pk": 36,
   "fields": {
     "action_time": "2017-02-08T04:40:16.118Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "7",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2257,8 +2632,13 @@
   "pk": 37,
   "fields": {
     "action_time": "2017-02-08T04:40:19.529Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "8",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2270,8 +2650,13 @@
   "pk": 38,
   "fields": {
     "action_time": "2017-02-08T04:40:22.912Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "9",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2283,8 +2668,13 @@
   "pk": 39,
   "fields": {
     "action_time": "2017-02-08T04:40:26.319Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "10",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2296,8 +2686,13 @@
   "pk": 40,
   "fields": {
     "action_time": "2017-02-08T04:40:29.037Z",
-    "user": 1,
-    "content_type": 10,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "period"
+    ],
     "object_id": "11",
     "object_repr": "Period object",
     "action_flag": 1,
@@ -2309,8 +2704,13 @@
   "pk": 41,
   "fields": {
     "action_time": "2017-02-08T04:59:05.884Z",
-    "user": 1,
-    "content_type": 9,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "language"
+    ],
     "object_id": "SA",
     "object_repr": "Language object",
     "action_flag": 2,
@@ -2322,8 +2722,13 @@
   "pk": 42,
   "fields": {
     "action_time": "2017-02-12T20:53:40.089Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "1",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2335,8 +2740,13 @@
   "pk": 43,
   "fields": {
     "action_time": "2017-02-12T20:54:03.182Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "2",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2348,8 +2758,13 @@
   "pk": 44,
   "fields": {
     "action_time": "2017-02-12T20:54:12.944Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "3",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2361,8 +2776,13 @@
   "pk": 45,
   "fields": {
     "action_time": "2017-02-12T20:54:22.148Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "4",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2374,8 +2794,13 @@
   "pk": 46,
   "fields": {
     "action_time": "2017-02-12T20:54:31.045Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "5",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2387,8 +2812,13 @@
   "pk": 47,
   "fields": {
     "action_time": "2017-02-12T20:54:39.604Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "6",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2400,8 +2830,13 @@
   "pk": 48,
   "fields": {
     "action_time": "2017-02-12T20:54:51.074Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "7",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2413,8 +2848,13 @@
   "pk": 49,
   "fields": {
     "action_time": "2017-02-12T20:55:01.336Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "8",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2426,8 +2866,13 @@
   "pk": 50,
   "fields": {
     "action_time": "2017-02-12T20:55:16.046Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "9",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2439,8 +2884,13 @@
   "pk": 51,
   "fields": {
     "action_time": "2017-02-12T20:55:42.419Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "10",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2452,8 +2902,13 @@
   "pk": 52,
   "fields": {
     "action_time": "2017-02-12T20:55:52.551Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "11",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2465,8 +2920,13 @@
   "pk": 53,
   "fields": {
     "action_time": "2017-02-12T20:56:01.054Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "12",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2478,8 +2938,13 @@
   "pk": 54,
   "fields": {
     "action_time": "2017-02-12T20:56:12.912Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "13",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2491,8 +2956,13 @@
   "pk": 55,
   "fields": {
     "action_time": "2017-02-12T20:56:22.198Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "14",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2504,8 +2974,13 @@
   "pk": 56,
   "fields": {
     "action_time": "2017-02-12T20:56:34.211Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "15",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2517,8 +2992,13 @@
   "pk": 57,
   "fields": {
     "action_time": "2017-02-12T20:56:43.335Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "16",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2530,8 +3010,13 @@
   "pk": 58,
   "fields": {
     "action_time": "2017-02-12T20:56:55.530Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "17",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2543,8 +3028,13 @@
   "pk": 59,
   "fields": {
     "action_time": "2017-02-12T20:57:06.743Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "18",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2556,8 +3046,13 @@
   "pk": 60,
   "fields": {
     "action_time": "2017-02-12T20:57:43.194Z",
-    "user": 1,
-    "content_type": 9,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "language"
+    ],
     "object_id": "AE",
     "object_repr": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
     "action_flag": 3,
@@ -2569,8 +3064,13 @@
   "pk": 61,
   "fields": {
     "action_time": "2017-02-12T20:58:11.571Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "19",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2582,8 +3082,13 @@
   "pk": 62,
   "fields": {
     "action_time": "2017-02-12T20:58:23.076Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "20",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2595,8 +3100,13 @@
   "pk": 63,
   "fields": {
     "action_time": "2017-02-12T20:58:38.175Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "21",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2608,8 +3118,13 @@
   "pk": 64,
   "fields": {
     "action_time": "2017-02-12T20:58:48.521Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "22",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2621,8 +3136,13 @@
   "pk": 65,
   "fields": {
     "action_time": "2017-02-12T20:58:58.254Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "23",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2634,8 +3154,13 @@
   "pk": 66,
   "fields": {
     "action_time": "2017-02-12T20:59:07.660Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "24",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2647,8 +3172,13 @@
   "pk": 67,
   "fields": {
     "action_time": "2017-02-12T20:59:18.167Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "25",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2660,8 +3190,13 @@
   "pk": 68,
   "fields": {
     "action_time": "2017-02-12T20:59:27.351Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "26",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2673,8 +3208,13 @@
   "pk": 69,
   "fields": {
     "action_time": "2017-02-12T20:59:36.616Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "27",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2686,8 +3226,13 @@
   "pk": 70,
   "fields": {
     "action_time": "2017-02-12T20:59:50.243Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "28",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2699,8 +3244,13 @@
   "pk": 71,
   "fields": {
     "action_time": "2017-02-12T21:00:00.109Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "29",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2712,8 +3262,13 @@
   "pk": 72,
   "fields": {
     "action_time": "2017-02-12T21:00:14.432Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "30",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2725,8 +3280,13 @@
   "pk": 73,
   "fields": {
     "action_time": "2017-02-12T21:00:32.115Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "31",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2738,8 +3298,13 @@
   "pk": 74,
   "fields": {
     "action_time": "2017-02-12T21:00:46.961Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "32",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2751,8 +3316,13 @@
   "pk": 75,
   "fields": {
     "action_time": "2017-02-12T21:00:59.074Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "33",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2764,8 +3334,13 @@
   "pk": 76,
   "fields": {
     "action_time": "2017-02-12T21:01:07.082Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "34",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2777,8 +3352,13 @@
   "pk": 77,
   "fields": {
     "action_time": "2017-02-12T21:01:14.165Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "35",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2790,8 +3370,13 @@
   "pk": 78,
   "fields": {
     "action_time": "2017-02-12T21:01:28.780Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "36",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2803,8 +3388,13 @@
   "pk": 79,
   "fields": {
     "action_time": "2017-02-12T21:03:52.146Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "37",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2816,8 +3406,13 @@
   "pk": 80,
   "fields": {
     "action_time": "2017-02-12T21:04:07.614Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "38",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2829,8 +3424,13 @@
   "pk": 81,
   "fields": {
     "action_time": "2017-02-12T21:04:21.039Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "39",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2842,8 +3442,13 @@
   "pk": 82,
   "fields": {
     "action_time": "2017-02-14T10:04:22.213Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "40",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2855,8 +3460,13 @@
   "pk": 83,
   "fields": {
     "action_time": "2017-02-14T10:04:32.668Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "41",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2868,8 +3478,13 @@
   "pk": 84,
   "fields": {
     "action_time": "2017-02-14T10:04:41.465Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "42",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2881,8 +3496,13 @@
   "pk": 85,
   "fields": {
     "action_time": "2017-02-14T10:04:53.658Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "43",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2894,8 +3514,13 @@
   "pk": 86,
   "fields": {
     "action_time": "2017-02-14T10:05:04.410Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "44",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2907,8 +3532,13 @@
   "pk": 87,
   "fields": {
     "action_time": "2017-02-14T10:05:13.379Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "45",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2920,8 +3550,13 @@
   "pk": 88,
   "fields": {
     "action_time": "2017-02-14T10:05:29.532Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "46",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2933,8 +3568,13 @@
   "pk": 89,
   "fields": {
     "action_time": "2017-02-14T10:05:40.112Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "47",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2946,8 +3586,13 @@
   "pk": 90,
   "fields": {
     "action_time": "2017-02-14T10:05:49.028Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "48",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2959,8 +3604,13 @@
   "pk": 91,
   "fields": {
     "action_time": "2017-02-14T10:06:00.601Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "49",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2972,8 +3622,13 @@
   "pk": 92,
   "fields": {
     "action_time": "2017-02-14T10:06:08.797Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "50",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2985,8 +3640,13 @@
   "pk": 93,
   "fields": {
     "action_time": "2017-02-14T10:06:17.531Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "51",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -2998,8 +3658,13 @@
   "pk": 94,
   "fields": {
     "action_time": "2017-02-14T10:06:30.513Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "52",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3011,8 +3676,13 @@
   "pk": 95,
   "fields": {
     "action_time": "2017-02-14T10:06:38.661Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "53",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3024,8 +3694,13 @@
   "pk": 96,
   "fields": {
     "action_time": "2017-02-14T10:06:47.788Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "54",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3037,8 +3712,13 @@
   "pk": 97,
   "fields": {
     "action_time": "2017-02-14T10:07:19.141Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "55",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3050,8 +3730,13 @@
   "pk": 98,
   "fields": {
     "action_time": "2017-02-14T10:07:33.516Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "56",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3063,8 +3748,13 @@
   "pk": 99,
   "fields": {
     "action_time": "2017-02-14T10:10:31.884Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "57",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3076,8 +3766,13 @@
   "pk": 100,
   "fields": {
     "action_time": "2017-02-14T10:10:42.437Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "58",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3089,8 +3784,13 @@
   "pk": 101,
   "fields": {
     "action_time": "2017-02-14T10:10:50.189Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "59",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3102,8 +3802,13 @@
   "pk": 102,
   "fields": {
     "action_time": "2017-02-14T10:10:59.210Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "60",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3115,8 +3820,13 @@
   "pk": 103,
   "fields": {
     "action_time": "2017-02-14T10:11:07.662Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "61",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3128,8 +3838,13 @@
   "pk": 104,
   "fields": {
     "action_time": "2017-02-14T10:11:16.279Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "62",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3141,8 +3856,13 @@
   "pk": 105,
   "fields": {
     "action_time": "2017-02-14T10:11:27.949Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "63",
     "object_repr": "PeriodTr object",
     "action_flag": 1,
@@ -3154,8 +3874,13 @@
   "pk": 106,
   "fields": {
     "action_time": "2017-02-14T10:12:25.827Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "2",
     "object_repr": "PeriodTr object",
     "action_flag": 2,
@@ -3167,8 +3892,13 @@
   "pk": 107,
   "fields": {
     "action_time": "2017-02-14T10:12:37.569Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "3",
     "object_repr": "PeriodTr object",
     "action_flag": 2,
@@ -3180,8 +3910,13 @@
   "pk": 108,
   "fields": {
     "action_time": "2017-02-14T10:12:54.438Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "4",
     "object_repr": "PeriodTr object",
     "action_flag": 2,
@@ -3193,8 +3928,13 @@
   "pk": 109,
   "fields": {
     "action_time": "2017-02-14T10:12:57.986Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "5",
     "object_repr": "PeriodTr object",
     "action_flag": 2,
@@ -3206,8 +3946,13 @@
   "pk": 110,
   "fields": {
     "action_time": "2017-02-14T10:13:01.082Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "6",
     "object_repr": "PeriodTr object",
     "action_flag": 2,
@@ -3219,8 +3964,13 @@
   "pk": 111,
   "fields": {
     "action_time": "2017-02-14T10:13:04.020Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "7",
     "object_repr": "PeriodTr object",
     "action_flag": 2,
@@ -3232,8 +3982,13 @@
   "pk": 112,
   "fields": {
     "action_time": "2017-02-14T10:13:07.061Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "8",
     "object_repr": "PeriodTr object",
     "action_flag": 2,
@@ -3245,8 +4000,13 @@
   "pk": 113,
   "fields": {
     "action_time": "2017-02-14T10:13:09.931Z",
-    "user": 1,
-    "content_type": 11,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "periodtr"
+    ],
     "object_id": "9",
     "object_repr": "PeriodTr object",
     "action_flag": 2,
@@ -3258,8 +4018,13 @@
   "pk": 114,
   "fields": {
     "action_time": "2017-02-14T14:40:01.102Z",
-    "user": 1,
-    "content_type": 8,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topic"
+    ],
     "object_id": "1",
     "object_repr": "1",
     "action_flag": 1,
@@ -3271,8 +4036,13 @@
   "pk": 115,
   "fields": {
     "action_time": "2017-02-14T14:40:03.593Z",
-    "user": 1,
-    "content_type": 8,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topic"
+    ],
     "object_id": "2",
     "object_repr": "2",
     "action_flag": 1,
@@ -3284,8 +4054,13 @@
   "pk": 116,
   "fields": {
     "action_time": "2017-02-14T14:40:07.149Z",
-    "user": 1,
-    "content_type": 8,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topic"
+    ],
     "object_id": "3",
     "object_repr": "3",
     "action_flag": 1,
@@ -3297,8 +4072,13 @@
   "pk": 117,
   "fields": {
     "action_time": "2017-02-14T14:40:09.455Z",
-    "user": 1,
-    "content_type": 8,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topic"
+    ],
     "object_id": "4",
     "object_repr": "4",
     "action_flag": 1,
@@ -3310,8 +4090,13 @@
   "pk": 118,
   "fields": {
     "action_time": "2017-02-14T14:40:12.489Z",
-    "user": 1,
-    "content_type": 8,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topic"
+    ],
     "object_id": "5",
     "object_repr": "5",
     "action_flag": 1,
@@ -3323,8 +4108,13 @@
   "pk": 119,
   "fields": {
     "action_time": "2017-02-14T14:40:14.338Z",
-    "user": 1,
-    "content_type": 8,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topic"
+    ],
     "object_id": "6",
     "object_repr": "6",
     "action_flag": 1,
@@ -3336,8 +4126,13 @@
   "pk": 120,
   "fields": {
     "action_time": "2017-02-14T14:40:16.359Z",
-    "user": 1,
-    "content_type": 8,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topic"
+    ],
     "object_id": "7",
     "object_repr": "7",
     "action_flag": 1,
@@ -3349,8 +4144,13 @@
   "pk": 121,
   "fields": {
     "action_time": "2017-02-14T14:40:18.857Z",
-    "user": 1,
-    "content_type": 8,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topic"
+    ],
     "object_id": "8",
     "object_repr": "8",
     "action_flag": 1,
@@ -3362,8 +4162,13 @@
   "pk": 122,
   "fields": {
     "action_time": "2017-02-14T14:40:21.448Z",
-    "user": 1,
-    "content_type": 8,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topic"
+    ],
     "object_id": "9",
     "object_repr": "9",
     "action_flag": 1,
@@ -3375,8 +4180,13 @@
   "pk": 123,
   "fields": {
     "action_time": "2017-02-14T14:42:55.526Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "1",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3388,8 +4198,13 @@
   "pk": 124,
   "fields": {
     "action_time": "2017-02-14T14:43:06.429Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "2",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3401,8 +4216,13 @@
   "pk": 125,
   "fields": {
     "action_time": "2017-02-14T14:43:17.502Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "3",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3414,8 +4234,13 @@
   "pk": 126,
   "fields": {
     "action_time": "2017-02-14T14:43:25.513Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "4",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3427,8 +4252,13 @@
   "pk": 127,
   "fields": {
     "action_time": "2017-02-14T14:43:38.939Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "5",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3440,8 +4270,13 @@
   "pk": 128,
   "fields": {
     "action_time": "2017-02-14T14:43:48.081Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "6",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3453,8 +4288,13 @@
   "pk": 129,
   "fields": {
     "action_time": "2017-02-14T14:43:57.620Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "7",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3466,8 +4306,13 @@
   "pk": 130,
   "fields": {
     "action_time": "2017-02-14T14:44:08.811Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "8",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3479,8 +4324,13 @@
   "pk": 131,
   "fields": {
     "action_time": "2017-02-14T14:44:19.724Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "9",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3492,8 +4342,13 @@
   "pk": 132,
   "fields": {
     "action_time": "2017-02-14T14:44:27.748Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "10",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3505,8 +4360,13 @@
   "pk": 133,
   "fields": {
     "action_time": "2017-02-14T14:44:36.752Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "11",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3518,8 +4378,13 @@
   "pk": 134,
   "fields": {
     "action_time": "2017-02-14T14:44:45.069Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "12",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3531,8 +4396,13 @@
   "pk": 135,
   "fields": {
     "action_time": "2017-02-14T14:45:02.619Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "13",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3544,8 +4414,13 @@
   "pk": 136,
   "fields": {
     "action_time": "2017-02-14T14:45:11.775Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "14",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3557,8 +4432,13 @@
   "pk": 137,
   "fields": {
     "action_time": "2017-02-14T14:45:23.370Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "15",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3570,8 +4450,13 @@
   "pk": 138,
   "fields": {
     "action_time": "2017-02-14T14:45:38.828Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "16",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3583,8 +4468,13 @@
   "pk": 139,
   "fields": {
     "action_time": "2017-02-14T14:45:49.982Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "17",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3596,8 +4486,13 @@
   "pk": 140,
   "fields": {
     "action_time": "2017-02-14T14:46:00.202Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "18",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3609,8 +4504,13 @@
   "pk": 141,
   "fields": {
     "action_time": "2017-02-14T14:46:10.125Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "19",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3622,8 +4522,13 @@
   "pk": 142,
   "fields": {
     "action_time": "2017-02-14T14:46:24.846Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "20",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3635,8 +4540,13 @@
   "pk": 143,
   "fields": {
     "action_time": "2017-02-14T14:46:34.767Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "21",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3648,8 +4558,13 @@
   "pk": 144,
   "fields": {
     "action_time": "2017-02-14T14:46:44.480Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "22",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3661,8 +4576,13 @@
   "pk": 145,
   "fields": {
     "action_time": "2017-02-14T14:46:57.606Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "23",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3674,8 +4594,13 @@
   "pk": 146,
   "fields": {
     "action_time": "2017-02-14T14:47:11.069Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "24",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3687,8 +4612,13 @@
   "pk": 147,
   "fields": {
     "action_time": "2017-02-14T14:47:23.612Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "25",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3700,8 +4630,13 @@
   "pk": 148,
   "fields": {
     "action_time": "2017-02-14T14:47:33.330Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "26",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3713,8 +4648,13 @@
   "pk": 149,
   "fields": {
     "action_time": "2017-02-14T14:47:53.066Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "27",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3726,8 +4666,13 @@
   "pk": 150,
   "fields": {
     "action_time": "2017-02-14T14:48:11.485Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "19",
     "object_repr": "TopicTr object",
     "action_flag": 2,
@@ -3739,8 +4684,13 @@
   "pk": 151,
   "fields": {
     "action_time": "2017-02-14T14:48:14.784Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "22",
     "object_repr": "TopicTr object",
     "action_flag": 2,
@@ -3752,8 +4702,13 @@
   "pk": 152,
   "fields": {
     "action_time": "2017-02-14T14:48:54.274Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "28",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3765,8 +4720,13 @@
   "pk": 153,
   "fields": {
     "action_time": "2017-02-14T14:49:03.097Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "29",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3778,8 +4738,13 @@
   "pk": 154,
   "fields": {
     "action_time": "2017-02-14T14:49:12.104Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "30",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3791,8 +4756,13 @@
   "pk": 155,
   "fields": {
     "action_time": "2017-02-14T14:49:21.003Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "31",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3804,8 +4774,13 @@
   "pk": 156,
   "fields": {
     "action_time": "2017-02-14T14:49:35.948Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "32",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3817,8 +4792,13 @@
   "pk": 157,
   "fields": {
     "action_time": "2017-02-14T14:49:44.677Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "33",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3830,8 +4810,13 @@
   "pk": 158,
   "fields": {
     "action_time": "2017-02-14T14:55:37.714Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "34",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3843,8 +4828,13 @@
   "pk": 159,
   "fields": {
     "action_time": "2017-02-14T14:55:45.603Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "35",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3856,8 +4846,13 @@
   "pk": 160,
   "fields": {
     "action_time": "2017-02-14T14:56:02.812Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "36",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3869,8 +4864,13 @@
   "pk": 161,
   "fields": {
     "action_time": "2017-02-14T14:56:11.445Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "37",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3882,8 +4882,13 @@
   "pk": 162,
   "fields": {
     "action_time": "2017-02-14T14:56:20.424Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "38",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3895,8 +4900,13 @@
   "pk": 163,
   "fields": {
     "action_time": "2017-02-14T14:56:29.683Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "39",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3908,8 +4918,13 @@
   "pk": 164,
   "fields": {
     "action_time": "2017-02-14T14:56:39.492Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "40",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3921,8 +4936,13 @@
   "pk": 165,
   "fields": {
     "action_time": "2017-02-14T14:56:48.348Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "41",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3934,8 +4954,13 @@
   "pk": 166,
   "fields": {
     "action_time": "2017-02-14T14:56:59.935Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "42",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3947,8 +4972,13 @@
   "pk": 167,
   "fields": {
     "action_time": "2017-02-14T14:57:11.041Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "43",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3960,8 +4990,13 @@
   "pk": 168,
   "fields": {
     "action_time": "2017-02-14T14:57:21.286Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "44",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3973,8 +5008,13 @@
   "pk": 169,
   "fields": {
     "action_time": "2017-02-14T14:57:33.310Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "45",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3986,8 +5026,13 @@
   "pk": 170,
   "fields": {
     "action_time": "2017-02-14T14:57:42.893Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "46",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -3999,8 +5044,13 @@
   "pk": 171,
   "fields": {
     "action_time": "2017-02-14T14:57:53.804Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "47",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4012,8 +5062,13 @@
   "pk": 172,
   "fields": {
     "action_time": "2017-02-14T14:58:03.403Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "48",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4025,8 +5080,13 @@
   "pk": 173,
   "fields": {
     "action_time": "2017-02-14T14:58:11.627Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "49",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4038,8 +5098,13 @@
   "pk": 174,
   "fields": {
     "action_time": "2017-02-14T14:58:20.837Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "50",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4051,8 +5116,13 @@
   "pk": 175,
   "fields": {
     "action_time": "2017-02-14T14:58:29.505Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "51",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4064,8 +5134,13 @@
   "pk": 176,
   "fields": {
     "action_time": "2017-02-14T14:58:35.675Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "52",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4077,8 +5152,13 @@
   "pk": 177,
   "fields": {
     "action_time": "2017-02-14T14:58:44.305Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "53",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4090,8 +5170,13 @@
   "pk": 178,
   "fields": {
     "action_time": "2017-02-14T14:58:52.347Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "54",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4103,8 +5188,13 @@
   "pk": 179,
   "fields": {
     "action_time": "2017-02-14T14:59:00.546Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "55",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4116,8 +5206,13 @@
   "pk": 180,
   "fields": {
     "action_time": "2017-02-14T14:59:19.274Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "56",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4129,8 +5224,13 @@
   "pk": 181,
   "fields": {
     "action_time": "2017-02-14T14:59:27.266Z",
-    "user": 1,
-    "content_type": 7,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "topictr"
+    ],
     "object_id": "57",
     "object_repr": "TopicTr object",
     "action_flag": 1,
@@ -4142,8 +5242,13 @@
   "pk": 182,
   "fields": {
     "action_time": "2017-02-14T15:00:22.927Z",
-    "user": 1,
-    "content_type": 13,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "content"
+    ],
     "object_id": "1",
     "object_repr": "1",
     "action_flag": 1,
@@ -4155,8 +5260,13 @@
   "pk": 183,
   "fields": {
     "action_time": "2017-02-14T15:00:25.853Z",
-    "user": 1,
-    "content_type": 13,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "content"
+    ],
     "object_id": "2",
     "object_repr": "2",
     "action_flag": 1,
@@ -4168,8 +5278,13 @@
   "pk": 184,
   "fields": {
     "action_time": "2017-02-14T15:00:29.275Z",
-    "user": 1,
-    "content_type": 13,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "content"
+    ],
     "object_id": "3",
     "object_repr": "3",
     "action_flag": 1,
@@ -4181,8 +5296,13 @@
   "pk": 185,
   "fields": {
     "action_time": "2017-02-14T15:00:31.654Z",
-    "user": 1,
-    "content_type": 13,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "content"
+    ],
     "object_id": "4",
     "object_repr": "4",
     "action_flag": 1,
@@ -4194,8 +5314,13 @@
   "pk": 186,
   "fields": {
     "action_time": "2017-02-14T15:00:34.685Z",
-    "user": 1,
-    "content_type": 13,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "content"
+    ],
     "object_id": "5",
     "object_repr": "5",
     "action_flag": 1,
@@ -4207,8 +5332,13 @@
   "pk": 187,
   "fields": {
     "action_time": "2017-02-14T15:00:37.247Z",
-    "user": 1,
-    "content_type": 13,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "content"
+    ],
     "object_id": "6",
     "object_repr": "6",
     "action_flag": 1,
@@ -4220,8 +5350,13 @@
   "pk": 188,
   "fields": {
     "action_time": "2017-02-14T15:42:14.620Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "1",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4233,8 +5368,13 @@
   "pk": 189,
   "fields": {
     "action_time": "2017-02-14T15:42:35.822Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "2",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4246,8 +5386,13 @@
   "pk": 190,
   "fields": {
     "action_time": "2017-02-14T15:43:23.907Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "3",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4259,8 +5404,13 @@
   "pk": 191,
   "fields": {
     "action_time": "2017-02-14T15:43:43.304Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "4",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4272,8 +5422,13 @@
   "pk": 192,
   "fields": {
     "action_time": "2017-02-14T15:44:33.000Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "5",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4285,8 +5440,13 @@
   "pk": 193,
   "fields": {
     "action_time": "2017-02-14T15:45:04.283Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "6",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4298,8 +5458,13 @@
   "pk": 194,
   "fields": {
     "action_time": "2017-02-14T15:45:40.919Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "7",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4311,8 +5476,13 @@
   "pk": 195,
   "fields": {
     "action_time": "2017-02-14T15:46:07.323Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "8",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4324,8 +5494,13 @@
   "pk": 196,
   "fields": {
     "action_time": "2017-02-14T15:46:31.700Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "9",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4337,8 +5512,13 @@
   "pk": 197,
   "fields": {
     "action_time": "2017-02-14T15:46:53.135Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "10",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4350,8 +5530,13 @@
   "pk": 198,
   "fields": {
     "action_time": "2017-02-14T15:47:25.855Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "11",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4363,8 +5548,13 @@
   "pk": 199,
   "fields": {
     "action_time": "2017-02-14T15:47:51.763Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "12",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4376,8 +5566,13 @@
   "pk": 200,
   "fields": {
     "action_time": "2017-02-14T15:48:12.659Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "13",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4389,8 +5584,13 @@
   "pk": 201,
   "fields": {
     "action_time": "2017-02-14T15:48:33.539Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "14",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4402,8 +5602,13 @@
   "pk": 202,
   "fields": {
     "action_time": "2017-02-14T15:49:15.628Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "15",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4415,8 +5620,13 @@
   "pk": 203,
   "fields": {
     "action_time": "2017-02-14T17:34:27.427Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "16",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4428,8 +5638,13 @@
   "pk": 204,
   "fields": {
     "action_time": "2017-02-14T17:34:53.698Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "17",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4441,8 +5656,13 @@
   "pk": 205,
   "fields": {
     "action_time": "2017-02-14T17:35:14.225Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "18",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4454,8 +5674,13 @@
   "pk": 206,
   "fields": {
     "action_time": "2017-02-14T17:35:40.411Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "19",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4467,8 +5692,13 @@
   "pk": 207,
   "fields": {
     "action_time": "2017-02-14T17:35:56.406Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "20",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4480,8 +5710,13 @@
   "pk": 208,
   "fields": {
     "action_time": "2017-02-14T17:36:14.094Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "21",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4493,8 +5728,13 @@
   "pk": 209,
   "fields": {
     "action_time": "2017-02-14T17:36:37.225Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "22",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4506,8 +5746,13 @@
   "pk": 210,
   "fields": {
     "action_time": "2017-02-14T17:37:00.504Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "23",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4519,8 +5764,13 @@
   "pk": 211,
   "fields": {
     "action_time": "2017-02-14T17:37:22.003Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "24",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4532,8 +5782,13 @@
   "pk": 212,
   "fields": {
     "action_time": "2017-02-14T17:37:47.062Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "25",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4545,8 +5800,13 @@
   "pk": 213,
   "fields": {
     "action_time": "2017-02-14T17:38:15.255Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "26",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4558,8 +5818,13 @@
   "pk": 214,
   "fields": {
     "action_time": "2017-02-14T17:38:35.973Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "27",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4571,8 +5836,13 @@
   "pk": 215,
   "fields": {
     "action_time": "2017-02-14T17:38:54.906Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "28",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4584,8 +5854,13 @@
   "pk": 216,
   "fields": {
     "action_time": "2017-02-14T17:39:28.534Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "29",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4597,8 +5872,13 @@
   "pk": 217,
   "fields": {
     "action_time": "2017-02-14T17:39:52.018Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "30",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4610,8 +5890,13 @@
   "pk": 218,
   "fields": {
     "action_time": "2017-02-14T17:40:20.428Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "31",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4623,8 +5908,13 @@
   "pk": 219,
   "fields": {
     "action_time": "2017-02-14T17:40:38.554Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "32",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4636,8 +5926,13 @@
   "pk": 220,
   "fields": {
     "action_time": "2017-02-14T17:41:05.546Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "33",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4649,8 +5944,13 @@
   "pk": 221,
   "fields": {
     "action_time": "2017-02-14T17:41:22.075Z",
-    "user": 1,
-    "content_type": 12,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "home",
+      "contenttr"
+    ],
     "object_id": "34",
     "object_repr": "ContentTr object",
     "action_flag": 1,
@@ -4662,8 +5962,13 @@
   "pk": 222,
   "fields": {
     "action_time": "2017-03-13T20:52:57.218Z",
-    "user": 1,
-    "content_type": 14,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "dashboard",
+      "language"
+    ],
     "object_id": "SO",
     "object_repr": "Soomaaliga",
     "action_flag": 2,
@@ -4675,8 +5980,13 @@
   "pk": 223,
   "fields": {
     "action_time": "2017-03-13T20:54:04.154Z",
-    "user": 1,
-    "content_type": 14,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "dashboard",
+      "language"
+    ],
     "object_id": "SA",
     "object_repr": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
     "action_flag": 2,
@@ -4688,8 +5998,13 @@
   "pk": 224,
   "fields": {
     "action_time": "2017-03-13T20:54:13.769Z",
-    "user": 1,
-    "content_type": 14,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "dashboard",
+      "language"
+    ],
     "object_id": "PL",
     "object_repr": "Polszczyzna",
     "action_flag": 2,
@@ -4701,8 +6016,13 @@
   "pk": 225,
   "fields": {
     "action_time": "2017-03-13T20:54:23.531Z",
-    "user": 1,
-    "content_type": 14,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "dashboard",
+      "language"
+    ],
     "object_id": "PK",
     "object_repr": "\u0627\u0631\u062f\u0648",
     "action_flag": 2,
@@ -4714,8 +6034,13 @@
   "pk": 226,
   "fields": {
     "action_time": "2017-03-13T20:54:32.393Z",
-    "user": 1,
-    "content_type": 14,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "dashboard",
+      "language"
+    ],
     "object_id": "NO",
     "object_repr": "Norsk bokm\u00e5l",
     "action_flag": 2,
@@ -4727,8 +6052,13 @@
   "pk": 227,
   "fields": {
     "action_time": "2017-03-13T20:54:44.760Z",
-    "user": 1,
-    "content_type": 14,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "dashboard",
+      "language"
+    ],
     "object_id": "LT",
     "object_repr": "Lietuvi\u0173 kalba",
     "action_flag": 2,
@@ -4740,8 +6070,13 @@
   "pk": 228,
   "fields": {
     "action_time": "2017-03-13T20:54:53.503Z",
-    "user": 1,
-    "content_type": 14,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "dashboard",
+      "language"
+    ],
     "object_id": "GB",
     "object_repr": "English",
     "action_flag": 2,
@@ -4753,8 +6088,13 @@
   "pk": 229,
   "fields": {
     "action_time": "2017-03-23T16:14:02.213Z",
-    "user": 1,
-    "content_type": 21,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "dashboard",
+      "profile"
+    ],
     "object_id": "1",
     "object_repr": "Profile object",
     "action_flag": 1,
@@ -4766,8 +6106,13 @@
   "pk": 230,
   "fields": {
     "action_time": "2017-03-23T16:18:28.650Z",
-    "user": 1,
-    "content_type": 21,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "dashboard",
+      "profile"
+    ],
     "object_id": "1",
     "object_repr": "Profile object",
     "action_flag": 2,
@@ -4779,8 +6124,13 @@
   "pk": 231,
   "fields": {
     "action_time": "2017-03-23T19:16:44.123Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "admin",
     "action_flag": 2,
@@ -4792,8 +6142,13 @@
   "pk": 232,
   "fields": {
     "action_time": "2017-03-23T19:18:12.907Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "michael23",
     "action_flag": 2,
@@ -4805,8 +6160,13 @@
   "pk": 233,
   "fields": {
     "action_time": "2017-03-23T19:20:29.019Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "michael23",
     "action_flag": 2,
@@ -4818,8 +6178,13 @@
   "pk": 234,
   "fields": {
     "action_time": "2017-03-23T20:52:55.929Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "michael23",
     "action_flag": 2,
@@ -4831,8 +6196,13 @@
   "pk": 235,
   "fields": {
     "action_time": "2017-03-23T20:53:49.875Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "michael23",
     "action_flag": 2,
@@ -4844,8 +6214,13 @@
   "pk": 236,
   "fields": {
     "action_time": "2017-03-23T20:55:03.327Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "michael23",
     "action_flag": 2,
@@ -4857,8 +6232,13 @@
   "pk": 237,
   "fields": {
     "action_time": "2017-03-23T21:02:29.030Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "michael23",
     "action_flag": 2,
@@ -4870,8 +6250,13 @@
   "pk": 238,
   "fields": {
     "action_time": "2017-03-23T21:22:30.869Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "admin",
     "action_flag": 2,
@@ -4883,8 +6268,13 @@
   "pk": 239,
   "fields": {
     "action_time": "2017-03-23T21:38:17.993Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "rernande",
     "action_flag": 2,
@@ -4896,8 +6286,13 @@
   "pk": 240,
   "fields": {
     "action_time": "2017-03-23T21:54:40.711Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "rernande",
     "action_flag": 2,
@@ -4909,8 +6304,13 @@
   "pk": 241,
   "fields": {
     "action_time": "2017-03-23T21:56:03.199Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "rernande",
     "action_flag": 2,
@@ -4922,8 +6322,13 @@
   "pk": 242,
   "fields": {
     "action_time": "2017-03-23T21:57:24.008Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "rernande",
     "action_flag": 2,
@@ -4935,8 +6340,13 @@
   "pk": 243,
   "fields": {
     "action_time": "2017-03-23T21:57:47.478Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "rernande",
     "action_flag": 2,
@@ -4948,8 +6358,13 @@
   "pk": 244,
   "fields": {
     "action_time": "2017-03-23T21:58:29.142Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "1",
     "object_repr": "rernande",
     "action_flag": 2,
@@ -4961,8 +6376,13 @@
   "pk": 245,
   "fields": {
     "action_time": "2017-04-04T12:47:12.042Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "2",
     "object_repr": "lelin",
     "action_flag": 1,
@@ -4974,8 +6394,13 @@
   "pk": 246,
   "fields": {
     "action_time": "2017-04-04T12:48:37.503Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "2",
     "object_repr": "lelin",
     "action_flag": 2,
@@ -4987,8 +6412,13 @@
   "pk": 247,
   "fields": {
     "action_time": "2017-04-04T12:51:47.148Z",
-    "user": 1,
-    "content_type": 4,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
     "object_id": "1",
     "object_repr": "staff",
     "action_flag": 1,
@@ -5000,8 +6430,13 @@
   "pk": 248,
   "fields": {
     "action_time": "2017-04-04T12:52:28.703Z",
-    "user": 1,
-    "content_type": 3,
+    "user": [
+      "rernande"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
     "object_id": "2",
     "object_repr": "lelin",
     "action_flag": 2,
