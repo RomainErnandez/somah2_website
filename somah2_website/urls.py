@@ -38,7 +38,7 @@ urlpatterns = [
     # login, logout, password_change, password_change/done, password_reset, password_reset/done, reset/done
     url('^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^dashboard/', include('dashboard.urls')),
+    url(r'^', include('dashboard.urls')),
     url(r'^api/association_period_topics', get_all_association_period_topic),
     url(r'^api/', include(router.urls)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT,}),
