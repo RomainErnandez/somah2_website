@@ -26,7 +26,6 @@ def dashboard(request):
     files = os.listdir(os.path.join(MEDIA_ROOT, 'pdf/'))
     return render(request, 'dashboard/dashboard.html', { 'files':files})
 
-
 def view_period(request, period_id):
     try:
         period = Period.objects.get(id=period_id)
@@ -35,10 +34,11 @@ def view_period(request, period_id):
     else:
         return HttpResponse("period: " + str(period.id))
 
-
 @transaction.atomic
 def user(request):
     if request.method == 'POST':
+        request.POST._mutable = True
+        request.POST['username']=request.user.username
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = ProfileForm(request.POST, instance=request.user.profile)
         if user_form.is_valid() and profile_form.is_valid():
@@ -56,10 +56,8 @@ def user(request):
         'profile_form': profile_form
     })
 
-
 def notifications(request):
     return render(request, template_name='dashboard/notifications.html')
-
 
 def table(request):
     all_languages = Language.objects.all().order_by('country') # country_code
@@ -89,7 +87,6 @@ def table(request):
     return render(request, 'dashboard/table.html', {'zipped_languages_flags':zipped_languages_flags, 'all_periods_extended':all_periods_extended,
             'all_topics_extended':all_topics_extended, 'all_contents_extended':all_contents_extended })
 
-
 class AddPeriodExtendedView(CreateView):
     model = Period
     form_class = AddPeriodForm
@@ -103,7 +100,6 @@ class AddPeriodExtendedView(CreateView):
         for language in all_languages:
             period_tr = PeriodTr.objects.create(language=language, period=period)
         return redirect('add_period_extended_success')
-
 
 class EditPeriodExtendedView(UpdateView):
     model = PeriodTr
@@ -125,7 +121,6 @@ class EditPeriodExtendedView(UpdateView):
         })
         return kwargs
 
-
 class RemovePeriodExtendedView(DeleteView):
     model = Period
     template_name = 'dashboard/remove_period_extended.html'
@@ -136,7 +131,6 @@ class RemovePeriodExtendedView(DeleteView):
         related_topics = Topic.objects.filter(periods__id=id) # only 1 and the period to be deleted
         related_topics.delete()
         return Period.objects.get(id=id)
-
 
 class AddTopicExtendedView(CreateView):
     model = Topic
@@ -152,7 +146,6 @@ class AddTopicExtendedView(CreateView):
         for language in all_languages:
             topic_tr = TopicTr.objects.create(language=language, topic=topic)
         return redirect('add_topic_extended_success')
-
 
 class EditTopicExtendedView(UpdateView):
     model = TopicTr
@@ -173,7 +166,6 @@ class EditTopicExtendedView(UpdateView):
             'topic_tr': self.object,
         })
         return kwargs
-
 
 class RemoveTopicExtendedView(DeleteView):
     model = Topic
@@ -216,7 +208,6 @@ class EditContentExtendedView(UpdateView):
             'content_tr': self.object,
         })
         return kwargs
-
 
 class RemoveContentExtendedView(DeleteView):
     model = Content

@@ -22,7 +22,7 @@ class Period(models.Model):
         return str(self.id)
 
 class PeriodTr(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, blank=True, default='')
     language = models.ForeignKey(Language)
     period = models.ForeignKey(Period)
 
@@ -40,7 +40,7 @@ class Topic(models.Model):
         return str(self.id)
 
 class TopicTr(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, blank=True, default='')
     language = models.ForeignKey(Language)
     topic = models.ForeignKey(Topic)
 
@@ -57,8 +57,8 @@ class Content(models.Model):
 class ContentTr(models.Model):
     language = models.ForeignKey(Language)
     content = models.ForeignKey(Content)
-    title = models.TextField()
-    text = models.TextField()
+    title = models.TextField(blank=True, default='')
+    text = models.TextField(blank=True, default='')
 
     class Meta:
         unique_together = ('language', 'content',)
