@@ -9,12 +9,12 @@ from .models import Period, PeriodTr, Topic, TopicTr, Content, ContentTr, Profil
 class PeriodEditForm(forms.ModelForm):
     class Meta:
         model = Period
-        fields = ( )
+        fields = ('image', )
 
 class PeriodTrEditForm(forms.ModelForm):
     class Meta:
         model = PeriodTr
-        fields = ('language', 'name')
+        fields = ('language', 'name', )
 
 class EditPeriodExtendedMultiForm(MultiModelForm):
     form_classes = {
@@ -31,7 +31,7 @@ class AddPeriodForm(forms.ModelForm):
 class TopicEditForm(forms.ModelForm):
     class Meta:
         model = Topic
-        fields = ( )
+        fields = ('image', )
 
 class TopicTrEditForm(forms.ModelForm):
     class Meta:
@@ -53,7 +53,7 @@ class AddTopicForm(forms.ModelForm):
 class ContentEditForm(forms.ModelForm):
     class Meta:
         model = Content
-        fields = ( )
+        fields = ('image', )
 
 class ContentTrEditForm(forms.ModelForm):
     class Meta:
