@@ -1,3 +1,5 @@
+import os
+
 from django.contrib import messages
 from django.db import transaction
 from django.http import Http404
@@ -17,11 +19,12 @@ from dashboard.serializers import PeriodSerializer, PeriodTrSerializer, Language
 from .forms import EditPeriodExtendedMultiForm, AddPeriodForm, EditContentExtendedMultiForm, AddContentForm, \
     EditTopicExtendedMultiForm, AddTopicForm, UserForm, ProfileForm
 from .models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
-#from somah2_website.local_settings import TRELLO_API_KEY
+from somah2_website.settings import MEDIA_ROOT
 
 
 def dashboard(request):
-    return render(request, 'dashboard/dashboard.html')
+    files = os.listdir(os.path.join(MEDIA_ROOT, 'pdf/'))
+    return render(request, 'dashboard/dashboard.html', { 'files':files})
 
 
 def view_period(request, period_id):
