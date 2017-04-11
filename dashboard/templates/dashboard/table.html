@@ -74,14 +74,14 @@
                                 {% for period, period_trs in all_periods_extended %}
                                 <tr>
                                      <td class="text-center">{{ period }}</td>
-                                     <td>{{ period_trs.0.name|truncatechars:20 }}</td>
-                                     <td>{{ period_trs.1.name|truncatechars:20 }}</td>
-                                     <td>{{ period_trs.2.name|truncatechars:20 }}</td>
-                                     <td>{{ period_trs.3.name|truncatechars:20 }}</td>
-                                     <td>{{ period_trs.4.name|truncatechars:20 }}</td>
-                                     <td>{{ period_trs.5.name|truncatechars:20 }}</td>
-                                     <td>{{ period_trs.6.name|truncatechars:20 }}</td>
-                                     <td>{{ period_trs.7.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.0.name }}">{{ period_trs.0.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.1.name }}">{{ period_trs.1.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.2.name }}">{{ period_trs.2.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.3.name }}">{{ period_trs.3.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.4.name }}">{{ period_trs.4.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.5.name }}">{{ period_trs.5.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.6.name }}">{{ period_trs.6.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.7.name }}">{{ period_trs.7.name|truncatechars:20 }}</td>
                                      <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ period.image }}" alt="period image" style="width: 70px; height: 50px;">
@@ -141,14 +141,14 @@
                                 <tr>
                                      <td class="text-center">{{ topic }}</td>
                                      <td class="text-center">{{ topic.get_periods }}</td>
-                                     <td>{{ topic_trs.0.name|truncatechars:20 }}</td>
-                                     <td>{{ topic_trs.1.name|truncatechars:20 }}</td>
-                                     <td>{{ topic_trs.2.name|truncatechars:20 }}</td>
-                                     <td>{{ topic_trs.3.name|truncatechars:20 }}</td>
-                                     <td>{{ topic_trs.4.name|truncatechars:20 }}</td>
-                                     <td>{{ topic_trs.5.name|truncatechars:20 }}</td>
-                                     <td>{{ topic_trs.6.name|truncatechars:20 }}</td>
-                                     <td>{{ topic_trs.7.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.0.name }}">{{ topic_trs.0.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.1.name }}">{{ topic_trs.1.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.2.name }}">{{ topic_trs.2.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.3.name }}">{{ topic_trs.3.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.4.name }}">{{ topic_trs.4.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.5.name }}">{{ topic_trs.5.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.6.name }}">{{ topic_trs.6.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.7.name }}">{{ topic_trs.7.name|truncatechars:20 }}</td>
                                      <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ topic.image }}" alt="topic image" style="width: 70px; height: 50px;">
@@ -206,22 +206,22 @@
                                 {% for content, content_trs in all_contents_extended %}
                                 <tr>
                                     <td class="text-center">{{ content.topic }}</td>
-                                    <td>{{ content_trs.0.title|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.0.text|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.1.title|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.1.text|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.2.title|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.2.text|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.3.title|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.3.text|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.4.title|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.4.text|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.5.title|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.5.text|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.6.title|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.6.text|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.7.title|truncatechars:10 }}</td>
-                                    <td>{{ content_trs.7.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.0.title }}">{{ content_trs.0.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.0.text }}">{{ content_trs.0.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.1.title }}">{{ content_trs.1.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.1.text }}">{{ content_trs.1.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.2.title }}">{{ content_trs.2.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.2.text }}">{{ content_trs.2.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.3.title }}">{{ content_trs.3.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.3.text }}">{{ content_trs.3.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.4.title }}">{{ content_trs.4.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.4.text }}">{{ content_trs.4.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.5.title }}">{{ content_trs.5.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.5.text }}">{{ content_trs.5.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.6.title }}">{{ content_trs.6.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.6.text }}">{{ content_trs.6.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.7.title }}">{{ content_trs.7.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.7.text }}">{{ content_trs.7.text|truncatechars:10 }}</td>
                                     <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ content.image }}" alt="content image" style="width: 70px; height: 50px;">
@@ -257,7 +257,6 @@
     <script src="{% static 'dashboard/js/jquery.form.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/bootbox.min.js' %}" type="text/javascript"></script>
     <script type="text/javascript">
-
 
     $('#modal').on('show.bs.modal', function (event) {
          var modal = $(this);
@@ -362,7 +361,7 @@
             for (j = 1; j < 8; j++) {
                 td = trs[i].getElementsByTagName("td")[j];
                 if (td) {
-                    if ((td.innerHTML.toUpperCase().indexOf(input_name.toUpperCase()) > -1) && (td.innerHTML.toUpperCase().indexOf(input_id) > -1)) {
+                    if ((td.title.toUpperCase().indexOf(input_name.toUpperCase()) > -1) && (td.title.toUpperCase().indexOf(input_id) > -1)) {
                         trs[i].style.display = "";
                         break;
                     } else {
@@ -389,7 +388,7 @@
             for (j = 2; j < 9; j++) {
                 td = trs[i].getElementsByTagName("td")[j];
                 if (td) {
-                    if ((td_0.innerHTML.toUpperCase().indexOf(input_id) > -1) && (td_1.innerHTML.toUpperCase().indexOf(input_period_id) > -1) && (td.innerHTML.toUpperCase().indexOf(input_name.toUpperCase()) > -1)) {
+                    if ((td_0.title.toUpperCase().indexOf(input_id) > -1) && (td_1.title.toUpperCase().indexOf(input_period_id) > -1) && (td.title.toUpperCase().indexOf(input_name.toUpperCase()) > -1)) {
                         trs[i].style.display = "";
                         break;
                     } else {
@@ -413,7 +412,7 @@
             for (j = 1; j < 15; j++) {
                 td = trs[i].getElementsByTagName("td")[j];
                 if (td) {
-                    if ((td_0.innerHTML.toUpperCase().indexOf(input_topic_id) > -1) && (td.innerHTML.toUpperCase().indexOf(input_name.toUpperCase()) > -1)) {
+                    if ((td_0.title.toUpperCase().indexOf(input_topic_id) > -1) && (td.title.toUpperCase().indexOf(input_name.toUpperCase()) > -1)) {
                         trs[i].style.display = "";
                         break;
                     } else {
