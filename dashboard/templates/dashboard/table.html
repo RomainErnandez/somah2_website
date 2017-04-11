@@ -47,10 +47,17 @@
                             <p class="category">and their translations in each language</p>
                         </div>
                         <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal" data-add_period="true">New Period</button>
-                    </div>
 
+                    </div>
+                    <p style="margin-top: 10px; text-indent: 10px;">
+                        <input type="text" id="filter-period_id" onkeyup="filterPeriod()" placeholder="Search for id..">
+                    </p>
+                    <p style="margin-bottom: 0; text-indent: 10px;">
+                        <input type="text" id="filter-period_name" onkeyup="filterPeriod()" placeholder="Search for name..">
+                    </p>
                     <div id="table_period_div" class="content table-responsive table-full-width">
-                        <table class="table table table-hover table-striped">
+
+                        <table id="table-period" class="table table table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th class="text-center">Id</th>
@@ -81,9 +88,6 @@
                                         </a>
                                      </td>
                                      <td class="td-actions text-right">
-                                         <button type="button" rel="tooltip" title="View Period" class="btn btn-info btn-simple btn-xs" onclick="view_period(this)">
-                                            <i class="fa fa-user"></i>
-                                         </button>
                                          <button type="button" rel="tooltip" title="Edit Period" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}">
                                             <i class="fa fa-edit"></i>
                                          </button>
@@ -106,8 +110,19 @@
                         </div>
                         <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal" data-add_topic="true">New Topic</button>
                     </div>
-                    <div class="content table-responsive table-full-width">
-                        <table  id="table_topic_div" class="table table table-hover table-striped">
+
+                    <p style="margin-top: 10px; text-indent: 10px;">
+                        <input type="text" id="filter-topic_id" onkeyup="filterTopic()" placeholder="Search for id..">
+                    </p>
+                    <p style="margin-top: 10px; text-indent: 10px;">
+                        <input type="text" id="filter-topic_period_id" onkeyup="filterTopic()" placeholder="Search for period id..">
+                    </p>
+                    <p style="margin-bottom: 0; text-indent: 10px;">
+                        <input type="text" id="filter-topic_name" onkeyup="filterTopic()" placeholder="Search for name..">
+                    </p>
+
+                    <div id="table_topic_div" class="content table-responsive table-full-width">
+                        <table id="table_topic" class="table table table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th class="text-center">Id</th>
@@ -140,9 +155,6 @@
                                         </a>
                                      </td>
                                      <td class="td-actions text-right">
-                                         <button type="button" rel="tooltip" title="View Topic" class="btn btn-info btn-simple btn-xs" onclick="view_topic(this)">
-                                            <i class="fa fa-user"></i>
-                                         </button>
                                          <button type="button" rel="tooltip" title="Edit Topic" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-topic_to_edit="{{ topic.id }}">
                                             <i class="fa fa-edit"></i>
                                          </button>
@@ -165,11 +177,16 @@
                         </div>
                         <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal">New Content</button>
                     </div>
-                    <div class="content table-responsive table-full-width">
-                        <table id="table_content_div" class="table table table-hover table-striped">
+                    <p style="margin-top: 10px; text-indent: 10px;">
+                        <input type="text" id="filter-content_topic_id" onkeyup="filterContent()" placeholder="Search for topic id..">
+                    </p>
+                    <p style="margin-bottom: 0; text-indent: 10px;">
+                        <input type="text" id="filter-content_name" onkeyup="filterContent()" placeholder="Search for title or text..">
+                    </p>
+                    <div id="table_content_div" class="content table-responsive table-full-width">
+                        <table id="table_content" class="table table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center">Id</th>
                                     <th class="text-center">Topic Id</th>
                                     {% for language, flag in zipped_languages_flags %}
                                     <th colspan="2">
@@ -180,7 +197,6 @@
                                     {% endfor %}
                                 </tr>
                                     <th></th>
-                                    <th></th>
                                     {% for language, flag in zipped_languages_flags %}
                                         <th>title</th>
                                         <th>text</th>
@@ -189,33 +205,29 @@
                             <tbody>
                                 {% for content, content_trs in all_contents_extended %}
                                 <tr>
-                                    <td class="text-center">{{ content }}</td>
                                     <td class="text-center">{{ content.topic }}</td>
-                                    <td>{{ content_trs.0.title|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.0.text|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.1.title|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.1.text|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.2.title|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.2.text|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.3.title|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.3.text|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.4.title|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.4.text|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.5.title|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.5.text|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.6.title|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.6.text|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.7.title|truncatechars:20 }}</td>
-                                    <td>{{ content_trs.7.text|truncatechars:20 }}</td>
+                                    <td>{{ content_trs.0.title|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.0.text|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.1.title|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.1.text|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.2.title|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.2.text|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.3.title|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.3.text|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.4.title|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.4.text|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.5.title|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.5.text|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.6.title|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.6.text|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.7.title|truncatechars:10 }}</td>
+                                    <td>{{ content_trs.7.text|truncatechars:10 }}</td>
                                     <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ content.image }}" alt="content image" style="width: 70px; height: 50px;">
                                         </a>
                                     </td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="View Content" class="btn btn-info btn-simple btn-xs" onclick="view_content(this)">
-                                            <i class="fa fa-user"></i>
-                                        </button>
                                         <button type="button" rel="tooltip" title="Edit Content" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}">
                                             <i class="fa fa-edit"></i>
                                         </button>
@@ -245,9 +257,7 @@
     <script src="{% static 'dashboard/js/jquery.form.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/bootbox.min.js' %}" type="text/javascript"></script>
     <script type="text/javascript">
-    function view_period() {
-        alert('Available soon !');
-    }
+
 
     $('#modal').on('show.bs.modal', function (event) {
          var modal = $(this);
@@ -340,12 +350,78 @@
          }
     });
 
-    function view_topic() {
-        alert('Available soon !');
+    function filterPeriod() {
+        input_id = document.getElementById("filter-period_id").value;
+        input_name = document.getElementById("filter-period_name").value;
+        table = document.getElementById("table-period");
+        trs = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < trs.length; i++) {
+            tds = trs[i].getElementsByTagName("td");
+            for (j = 1; j < 8; j++) {
+                td = trs[i].getElementsByTagName("td")[j];
+                if (td) {
+                    if ((td.innerHTML.toUpperCase().indexOf(input_name.toUpperCase()) > -1) && (td.innerHTML.toUpperCase().indexOf(input_id) > -1)) {
+                        trs[i].style.display = "";
+                        break;
+                    } else {
+                        trs[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
     }
 
-    function view_content() {
-        alert('Available soon !');
+    function filterTopic() {
+        input_id = document.getElementById("filter-topic_id").value;
+        input_period_id = document.getElementById("filter-topic_period_id").value;
+        input_name = document.getElementById("filter-topic_name").value;
+        table = document.getElementById("table_topic");
+        trs = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < trs.length; i++) {
+            td_0 = trs[i].getElementsByTagName("td")[0];
+            td_1 = trs[i].getElementsByTagName("td")[1];
+            tds = trs[i].getElementsByTagName("td");
+            for (j = 2; j < 9; j++) {
+                td = trs[i].getElementsByTagName("td")[j];
+                if (td) {
+                    if ((td_0.innerHTML.toUpperCase().indexOf(input_id) > -1) && (td_1.innerHTML.toUpperCase().indexOf(input_period_id) > -1) && (td.innerHTML.toUpperCase().indexOf(input_name.toUpperCase()) > -1)) {
+                        trs[i].style.display = "";
+                        break;
+                    } else {
+                        trs[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    }
+
+    function filterContent() {
+        input_topic_id = document.getElementById("filter-content_topic_id").value;
+        input_name = document.getElementById("filter-content_name").value;
+        table = document.getElementById("table_content");
+        trs = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < trs.length; i++) {
+            td_0 = trs[i].getElementsByTagName("td")[0];
+            tds = trs[i].getElementsByTagName("td");
+            for (j = 1; j < 15; j++) {
+                td = trs[i].getElementsByTagName("td")[j];
+                if (td) {
+                    if ((td_0.innerHTML.toUpperCase().indexOf(input_topic_id) > -1) && (td.innerHTML.toUpperCase().indexOf(input_name.toUpperCase()) > -1)) {
+                        trs[i].style.display = "";
+                        break;
+                    } else {
+                        trs[i].style.display = "none";
+                    }
+                }
+            }
+        }
     }
 
     </script>
