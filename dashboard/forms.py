@@ -16,16 +16,10 @@ class PeriodTrEditForm(forms.ModelForm):
         model = PeriodTr
         fields = ('name', )
 
-class EditPeriodExtendedMultiForm(MultiModelForm):
-    form_classes = {
-        'period_tr': PeriodTrEditForm,
-    }
-
 class AddPeriodForm(forms.ModelForm):
     class Meta:
         model = Period
         fields = ('id', )
-
 
 class TopicEditForm(forms.ModelForm):
     class Meta:
@@ -35,13 +29,7 @@ class TopicEditForm(forms.ModelForm):
 class TopicTrEditForm(forms.ModelForm):
     class Meta:
         model = TopicTr
-        fields = ('language', 'name')
-
-class EditTopicExtendedMultiForm(MultiModelForm):
-    form_classes = {
-        'topic': TopicEditForm,
-        'topic_tr': TopicTrEditForm,
-    }
+        fields = ('name', )
 
 class AddTopicForm(forms.ModelForm):
     class Meta:
@@ -57,13 +45,7 @@ class ContentEditForm(forms.ModelForm):
 class ContentTrEditForm(forms.ModelForm):
     class Meta:
         model = ContentTr
-        fields = ('language', 'title', 'text')
-
-class EditContentExtendedMultiForm(MultiModelForm):
-    form_classes = {
-        'content': ContentEditForm,
-        'content_tr': ContentTrEditForm,
-    }
+        fields = ('title', 'text')
 
 class AddContentForm(forms.ModelForm):
     class Meta:
@@ -80,3 +62,4 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = ('company', 'address', 'city', 'country', 'postal_code', 'description', )
         widgets = {'country': CountrySelectWidget()}
+

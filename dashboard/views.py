@@ -16,8 +16,9 @@ from rest_framework.response import Response
 
 from dashboard.serializers import PeriodSerializer, PeriodTrSerializer, LanguageSerializer, TopicSerializer, \
     TopicTrSerializer, ContentSerializer, ContentTrSerializer
-from .forms import EditPeriodExtendedMultiForm, AddPeriodForm, EditContentExtendedMultiForm, AddContentForm, \
-    EditTopicExtendedMultiForm, AddTopicForm, UserForm, ProfileForm
+from .forms import AddPeriodForm, AddContentForm, \
+    AddTopicForm, UserForm, ProfileForm, PeriodTrEditForm, TopicTrEditForm, \
+    ContentTrEditForm, PeriodEditForm
 from .models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
 from somah2_website.settings import MEDIA_ROOT
 
@@ -101,25 +102,17 @@ class AddPeriodExtendedView(CreateView):
             period_tr = PeriodTr.objects.create(language=language, period=period)
         return redirect('add_period_extended_success')
 
-class EditPeriodExtendedView(UpdateView):
+class EditPeriodTrView(UpdateView):
     model = PeriodTr
-    form_class = EditPeriodExtendedMultiForm
-    template_name = 'dashboard/edit_period_extended.html'
-    success_url = reverse_lazy('edit_period_extended_success')
+    form_class = PeriodTrEditForm
+    template_name = 'dashboard/edit_period_tr.html'
+    success_url = reverse_lazy('edit_period_success')
 
     def get_object(self, queryset=None):
         period_id = self.kwargs.get('period_id')
         country_code = self.kwargs.get('language')
         language = Language.objects.get(country=country_code)
         return PeriodTr.objects.get(period__id=period_id, language=language)
-
-    def get_form_kwargs(self):
-        kwargs = super(EditPeriodExtendedView, self).get_form_kwargs()
-        kwargs.update(instance={
-            'period': self.object.period,
-            'period_tr': self.object,
-        })
-        return kwargs
 
 class RemovePeriodExtendedView(DeleteView):
     model = Period
@@ -147,25 +140,17 @@ class AddTopicExtendedView(CreateView):
             topic_tr = TopicTr.objects.create(language=language, topic=topic)
         return redirect('add_topic_extended_success')
 
-class EditTopicExtendedView(UpdateView):
+class EditTopicTrView(UpdateView):
     model = TopicTr
-    form_class = EditTopicExtendedMultiForm
-    template_name = 'dashboard/edit_topic_extended.html'
-    success_url = reverse_lazy('edit_topic_extended_success')
+    form_class = TopicTrEditForm
+    template_name = 'dashboard/edit_topic_tr.html'
+    success_url = reverse_lazy('edit_topic_success')
 
     def get_object(self, queryset=None):
         topic_id = self.kwargs.get('topic_id')
         country_code = self.kwargs.get('language')
         language = Language.objects.get(country=country_code)
         return TopicTr.objects.get(topic__id=topic_id, language=language)
-
-    def get_form_kwargs(self):
-        kwargs = super(EditTopicExtendedView, self).get_form_kwargs()
-        kwargs.update(instance={
-            'topic': self.object.topic,
-            'topic_tr': self.object,
-        })
-        return kwargs
 
 class RemoveTopicExtendedView(DeleteView):
     model = Topic
@@ -189,25 +174,17 @@ class AddContentExtendedView(CreateView):
             content_tr = ContentTr.objects.create(language=language, content=content)
         return redirect('add_content_extended_success')
 
-class EditContentExtendedView(UpdateView):
+class EditContentTrView(UpdateView):
     model = ContentTr
-    form_class = EditContentExtendedMultiForm
-    template_name = 'dashboard/edit_content_extended.html'
-    success_url = reverse_lazy('edit_content_extended_success')
+    form_class = ContentTrEditForm
+    template_name = 'dashboard/edit_content_tr.html'
+    success_url = reverse_lazy('edit_content_success')
 
     def get_object(self, queryset=None):
         content_id = self.kwargs.get('content_id')
         country_code = self.kwargs.get('language')
         language = Language.objects.get(country=country_code)
         return ContentTr.objects.get(content__id=content_id, language=language)
-
-    def get_form_kwargs(self):
-        kwargs = super(EditContentExtendedView, self).get_form_kwargs()
-        kwargs.update(instance={
-            'content': self.object.content,
-            'content_tr': self.object,
-        })
-        return kwargs
 
 class RemoveContentExtendedView(DeleteView):
     model = Content
@@ -281,3 +258,13 @@ def get_all_association_period_topic(request):
                 }
             )
     return Response(all_association_period_topic)
+
+class EditPeriodView(UpdateView):
+    model = Period
+    form_class = PeriodEditForm
+    template_name = 'dashboard/edit_period.html'
+    success_url = reverse_lazy('edit_period_success')
+
+    def get_object(self, queryset=None):
+        period_id = self.kwargs.get('period_id')
+        return Period.objects.get(id=period_id)

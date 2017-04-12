@@ -75,17 +75,17 @@
                                 {% for period, period_trs in all_periods_extended %}
                                 <tr>
                                      <td class="text-center">{{ period }}</td>
-                                     <td title="{{ period_trs.0.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.0.language.country.code }}">{{ period_trs.0.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.1.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.1.language.country.code }}">{{ period_trs.1.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.2.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.2.language.country.code }}">{{ period_trs.2.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.3.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.3.language.country.code }}">{{ period_trs.3.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.4.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.4.language.country.code }}">{{ period_trs.4.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.5.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.5.language.country.code }}">{{ period_trs.5.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.6.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.6.language.country.code }}">{{ period_trs.6.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.7.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.7.language.country.code }}">{{ period_trs.7.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.0.name }}" data-toggle="modal" data-target="#modal" data-period_id_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.0.language.country.code }}">{{ period_trs.0.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.1.name }}" data-toggle="modal" data-target="#modal" data-period_id_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.1.language.country.code }}">{{ period_trs.1.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.2.name }}" data-toggle="modal" data-target="#modal" data-period_id_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.2.language.country.code }}">{{ period_trs.2.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.3.name }}" data-toggle="modal" data-target="#modal" data-period_id_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.3.language.country.code }}">{{ period_trs.3.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.4.name }}" data-toggle="modal" data-target="#modal" data-period_id_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.4.language.country.code }}">{{ period_trs.4.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.5.name }}" data-toggle="modal" data-target="#modal" data-period_id_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.5.language.country.code }}">{{ period_trs.5.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.6.name }}" data-toggle="modal" data-target="#modal" data-period_id_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.6.language.country.code }}">{{ period_trs.6.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.7.name }}" data-toggle="modal" data-target="#modal" data-period_id_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.7.language.country.code }}">{{ period_trs.7.name|truncatechars:20 }}</td>
                                      <td>
                                         <a href="#" class="text-center">
-                                            <img src="/media/{{ period.image }}" alt="period image" style="width: 70px; height: 50px;">
+                                            <img src="/media/{{ period.image }}" alt="period image" style="width: 70px; height: 50px;" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}">
                                         </a>
                                      </td>
                                      <td class="td-actions text-right">
@@ -140,14 +140,14 @@
                                 <tr>
                                      <td class="text-center">{{ topic }}</td>
                                      <td class="text-center">{{ topic.get_periods }}</td>
-                                     <td title="{{ topic_trs.0.name }}">{{ topic_trs.0.name|truncatechars:20 }}</td>
-                                     <td title="{{ topic_trs.1.name }}">{{ topic_trs.1.name|truncatechars:20 }}</td>
-                                     <td title="{{ topic_trs.2.name }}">{{ topic_trs.2.name|truncatechars:20 }}</td>
-                                     <td title="{{ topic_trs.3.name }}">{{ topic_trs.3.name|truncatechars:20 }}</td>
-                                     <td title="{{ topic_trs.4.name }}">{{ topic_trs.4.name|truncatechars:20 }}</td>
-                                     <td title="{{ topic_trs.5.name }}">{{ topic_trs.5.name|truncatechars:20 }}</td>
-                                     <td title="{{ topic_trs.6.name }}">{{ topic_trs.6.name|truncatechars:20 }}</td>
-                                     <td title="{{ topic_trs.7.name }}">{{ topic_trs.7.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.0.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.0.language.country.code }}">{{ topic_trs.0.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.1.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.1.language.country.code }}">{{ topic_trs.1.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.2.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.2.language.country.code }}">{{ topic_trs.2.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.3.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.3.language.country.code }}">{{ topic_trs.3.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.4.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.4.language.country.code }}">{{ topic_trs.4.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.5.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.5.language.country.code }}">{{ topic_trs.5.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.6.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.6.language.country.code }}">{{ topic_trs.6.name|truncatechars:20 }}</td>
+                                     <td title="{{ topic_trs.7.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.7.language.country.code }}">{{ topic_trs.7.name|truncatechars:20 }}</td>
                                      <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ topic.image }}" alt="topic image" style="width: 70px; height: 50px;">
@@ -207,22 +207,22 @@
                                 {% for content, content_trs in all_contents_extended %}
                                 <tr>
                                     <td class="text-center">{{ content.topic }}</td>
-                                    <td title="{{ content_trs.0.title }}">{{ content_trs.0.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.0.text }}">{{ content_trs.0.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.1.title }}">{{ content_trs.1.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.1.text }}">{{ content_trs.1.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.2.title }}">{{ content_trs.2.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.2.text }}">{{ content_trs.2.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.3.title }}">{{ content_trs.3.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.3.text }}">{{ content_trs.3.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.4.title }}">{{ content_trs.4.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.4.text }}">{{ content_trs.4.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.5.title }}">{{ content_trs.5.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.5.text }}">{{ content_trs.5.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.6.title }}">{{ content_trs.6.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.6.text }}">{{ content_trs.6.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.7.title }}">{{ content_trs.7.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.7.text }}">{{ content_trs.7.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.0.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.0.language.country.code }}">{{ content_trs.0.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.0.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.0.language.country.code }}">{{ content_trs.0.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.1.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.1.language.country.code }}">{{ content_trs.1.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.1.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.1.language.country.code }}">{{ content_trs.1.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.2.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.2.language.country.code }}">{{ content_trs.2.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.2.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.2.language.country.code }}">{{ content_trs.2.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.3.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.3.language.country.code }}">{{ content_trs.3.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.3.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.3.language.country.code }}">{{ content_trs.3.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.4.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.4.language.country.code }}">{{ content_trs.4.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.4.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.4.language.country.code }}">{{ content_trs.4.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.5.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.5.language.country.code }}">{{ content_trs.5.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.5.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.5.language.country.code }}">{{ content_trs.5.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.6.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.6.language.country.code }}">{{ content_trs.6.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.6.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.6.language.country.code }}">{{ content_trs.6.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.7.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.7.language.country.code }}">{{ content_trs.7.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.7.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.7.language.country.code }}">{{ content_trs.7.text|truncatechars:10 }}</td>
                                     <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ content.image }}" alt="content image" style="width: 70px; height: 50px;">
@@ -259,17 +259,27 @@
     $('#modal').on('show.bs.modal', function (event) {
          var modal = $(this);
          var period_to_remove = $(event.relatedTarget).data('period_to_remove'); //-period_to_remove
-         var period_to_edit = $(event.relatedTarget).data('period_to_edit'); //data-period_to_edit
+         var period_id_to_edit = $(event.relatedTarget).data('period_id_to_edit'); //data-period_to_edit
          var topic_to_remove = $(event.relatedTarget).data('topic_to_remove'); //-topic_to_remove
-         var topic_to_edit = $(event.relatedTarget).data('topic_to_edit'); //data-topic_to_edit
+         var topic_id_to_edit = $(event.relatedTarget).data('topic_id_to_edit'); //data-topic_to_edit
          var content_to_remove = $(event.relatedTarget).data('content_to_remove'); //-content_to_remove
          var content_to_edit = $(event.relatedTarget).data('content_to_edit'); //data-content_to_edit
          var add_period = $(event.relatedTarget).data('add_period'); //-content_to_remove
          var add_topic = $(event.relatedTarget).data('add_topic'); //data-content_to_edit
+         var period_to_edit =  $(event.relatedTarget).data('period_to_edit');
 
          if (period_to_edit) {
+             var url = "{% url 'edit_period' period_id=0 %}".replace('0', period_to_edit);
+             $.ajax({
+                 url: url,
+                 context: document.body
+             }).done(function(response) {
+                 modal.html(response);
+             });
+         }
+         else if (period_id_to_edit) {
              var period_tr_language_to_edit = $(event.relatedTarget).data('period_tr_language_to_edit'); //data-period_to_edit
-             var url = "{% url 'edit_period_extended' period_id=0 language=1 %}".replace('1', period_tr_language_to_edit).replace('0', period_to_edit);
+             var url = "{% url 'edit_period_tr' period_id=0 language=1 %}".replace('1', period_tr_language_to_edit).replace('0', period_id_to_edit);
              $.ajax({
                  url: url,
                  context: document.body
@@ -294,8 +304,9 @@
                  modal.html(response);
              });
          }
-         else if (topic_to_edit) {
-            var url = "{% url 'edit_topic_extended' topic_id=0 language='GB' %}".replace('0', topic_to_edit);
+         else if (topic_id_to_edit) {
+            var topic_tr_language_to_edit = $(event.relatedTarget).data('topic_tr_language_to_edit'); //data-period_to_edit
+            var url = "{% url 'edit_topic_tr' topic_id=0 language=1 %}".replace('1', topic_tr_language_to_edit).replace('0', topic_id_to_edit);
              $.ajax({
                  url: url,
                  context: document.body
@@ -321,7 +332,8 @@
              });
          }
          else if (content_to_edit){
-            var url = "{% url 'edit_content_extended' content_id=0 language='GB' %}".replace('0', content_to_edit);
+            var content_tr_language_to_edit = $(event.relatedTarget).data('content_tr_language_to_edit'); //data-period_to_edit
+            var url = "{% url 'edit_content_tr' content_id=0 language=1 %}".replace('1', content_tr_language_to_edit).replace('0', content_to_edit);
              $.ajax({
                  url: url,
                  context: document.body

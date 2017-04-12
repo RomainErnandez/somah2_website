@@ -1,13 +1,13 @@
 {% load i18n widget_tweaks %}
 <div class="modal-dialog modal-lg" role="document">
-    <form action="{% url 'edit_topic_extended' topic_id=object.topic_id language=object.language.country.code %}" method="post" id="edit_topic" class="form">{% csrf_token %}
+    <form action="{% url 'edit_period' period_id=object.id  %}" method="post" id="form-edit_period" class="form">{% csrf_token %}
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                     <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title">Edit Topic</h4>
+                <h4 class="modal-title">Edit Period</h4>
             </div>
             <div class="modal-body">
                 {{ form.media }}
@@ -29,16 +29,16 @@
 </div><!-- /.modal-dialog -->
 <script>
     var form_options = { target: '#modal', success: function(response) {} };
-    $('#edit_topic').ajaxForm(form_options);
-</script>
-<script>
+    $('#form-edit_period').ajaxForm(form_options);
+
     //on Language click refresh form with correct period_tr id
-    $('#id_topic_tr-language').on('change', function() {
-        var new_language = this.value;
+    $('#id_period_tr-language').on('change', function() {
         var array = $("#edit_period").attr('action').split('/');
         var old_period_tr_id = array[array.length-3];
+        var new_language = this.value;
         var modal = $('#modal');
-        var url = "{% url 'edit_topic_extended' topic_id=0 language=1 %}".replace('1', new_language).replace('0', old_topic_tr_id);
+        // replace in this order
+        var url = "{% url 'edit_period_tr' period_id=0 language=1 %}".replace(1, new_language).replace(0, old_period_tr_id);
         $.ajax({
             url: url,
             context: document.body
