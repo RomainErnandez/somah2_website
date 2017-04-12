@@ -139,7 +139,7 @@
                                 {% for topic, topic_trs in all_topics_extended %}
                                 <tr>
                                      <td class="text-center">{{ topic }}</td>
-                                     <td class="text-center">{{ topic.get_periods }}</td>
+                                     <td class="text-center" data-toggle="modal" data-target="#modal" data-topic_to_edit="{{ topic.id }}">{{ topic.get_periods }}</td>
                                      <td title="{{ topic_trs.0.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.0.language.country.code }}">{{ topic_trs.0.name|truncatechars:20 }}</td>
                                      <td title="{{ topic_trs.1.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.1.language.country.code }}">{{ topic_trs.1.name|truncatechars:20 }}</td>
                                      <td title="{{ topic_trs.2.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.2.language.country.code }}">{{ topic_trs.2.name|truncatechars:20 }}</td>
@@ -206,7 +206,7 @@
                             <tbody>
                                 {% for content, content_trs in all_contents_extended %}
                                 <tr>
-                                    <td class="text-center">{{ content.topic }}</td>
+                                    <td class="text-center" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}">{{ content.topic }}</td>
                                     <td title="{{ content_trs.0.title }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.0.language.country.code }}">{{ content_trs.0.title|truncatechars:10 }}</td>
                                     <td title="{{ content_trs.0.text }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.0.language.country.code }}">{{ content_trs.0.text|truncatechars:10 }}</td>
                                     <td title="{{ content_trs.1.title }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.1.language.country.code }}">{{ content_trs.1.title|truncatechars:10 }}</td>
