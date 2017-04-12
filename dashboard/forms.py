@@ -14,18 +14,17 @@ class PeriodEditForm(forms.ModelForm):
 class PeriodTrEditForm(forms.ModelForm):
     class Meta:
         model = PeriodTr
-        fields = ('language', 'name', )
+        fields = ('name', )
 
 class EditPeriodExtendedMultiForm(MultiModelForm):
     form_classes = {
-        'period': PeriodEditForm,
         'period_tr': PeriodTrEditForm,
     }
 
 class AddPeriodForm(forms.ModelForm):
     class Meta:
         model = Period
-        fields = ('id', 'image',)
+        fields = ('id', )
 
 
 class TopicEditForm(forms.ModelForm):
@@ -47,7 +46,7 @@ class EditTopicExtendedMultiForm(MultiModelForm):
 class AddTopicForm(forms.ModelForm):
     class Meta:
         model = Topic
-        fields = ('periods', 'image',)
+        fields = ('periods', )
 
 
 class ContentEditForm(forms.ModelForm):
@@ -69,7 +68,7 @@ class EditContentExtendedMultiForm(MultiModelForm):
 class AddContentForm(forms.ModelForm):
     class Meta:
         model = Content
-        fields = ('topic', 'id', 'image',)
+        fields = ('topic', 'id', )
 
 class UserForm(forms.ModelForm):
     class Meta:

@@ -47,16 +47,9 @@
                             <p class="category">and their translations in each language</p>
                         </div>
                         <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal" data-add_period="true">New Period</button>
-
                     </div>
-                    <p style="margin-top: 10px; text-indent: 10px;">
-                        <input type="text" id="filter-period_id" onkeyup="filterPeriod()" placeholder="Search for id..">
-                    </p>
-                    <p style="margin-bottom: 0; text-indent: 10px;">
-                        <input type="text" id="filter-period_name" onkeyup="filterPeriod()" placeholder="Search for name..">
-                    </p>
-                    <div id="table_period_div" class="content table-responsive table-full-width">
 
+                    <div id="table_period_div" class="content table-responsive table-full-width">
                         <table id="table-period" class="table table table-hover table-striped">
                             <thead>
                                 <tr>
@@ -69,28 +62,33 @@
                                     </th>
                                     {% endfor %}
                                 </tr>
+                                <tr>
+                                    <th>
+                                        <input style="text-align: center;" id="filter-period_id"  class="form-control" type="search" onkeyup="filterPeriod()" placeholder="ID">
+                                    </th>
+                                    <th colspan="7">
+                                        <input style="width: 100%; text-align: center;" type="search" id="filter-period_name" class="form-control" onkeyup="filterPeriod()" placeholder="VALUE (ALL LANGUAGES)">
+                                    </th>
+                                </tr>
                             </thead>
                             <tbody>
                                 {% for period, period_trs in all_periods_extended %}
                                 <tr>
                                      <td class="text-center">{{ period }}</td>
-                                     <td title="{{ period_trs.0.name }}">{{ period_trs.0.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.1.name }}">{{ period_trs.1.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.2.name }}">{{ period_trs.2.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.3.name }}">{{ period_trs.3.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.4.name }}">{{ period_trs.4.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.5.name }}">{{ period_trs.5.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.6.name }}">{{ period_trs.6.name|truncatechars:20 }}</td>
-                                     <td title="{{ period_trs.7.name }}">{{ period_trs.7.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.0.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.0.language.country.code }}">{{ period_trs.0.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.1.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.1.language.country.code }}">{{ period_trs.1.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.2.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.2.language.country.code }}">{{ period_trs.2.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.3.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.3.language.country.code }}">{{ period_trs.3.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.4.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.4.language.country.code }}">{{ period_trs.4.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.5.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.5.language.country.code }}">{{ period_trs.5.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.6.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.6.language.country.code }}">{{ period_trs.6.name|truncatechars:20 }}</td>
+                                     <td title="{{ period_trs.7.name }}" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}" data-period_tr_language_to_edit="{{ period_trs.7.language.country.code }}">{{ period_trs.7.name|truncatechars:20 }}</td>
                                      <td>
                                         <a href="#" class="text-center">
                                             <img src="/media/{{ period.image }}" alt="period image" style="width: 70px; height: 50px;">
                                         </a>
                                      </td>
                                      <td class="td-actions text-right">
-                                         <button type="button" rel="tooltip" title="Edit Period" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-period_to_edit="{{ period.id }}">
-                                            <i class="fa fa-edit"></i>
-                                         </button>
                                          <button type="button" rel="tooltip" title="Remove Period" class="btn btn-danger btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-period_to_remove="{{ period.id }}">
                                             <i class="fa fa-times"></i>
                                          </button>
@@ -111,16 +109,6 @@
                         <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal" data-add_topic="true">New Topic</button>
                     </div>
 
-                    <p style="margin-top: 10px; text-indent: 10px;">
-                        <input type="text" id="filter-topic_id" onkeyup="filterTopic()" placeholder="Search for id..">
-                    </p>
-                    <p style="margin-top: 10px; text-indent: 10px;">
-                        <input type="text" id="filter-topic_period_id" onkeyup="filterTopic()" placeholder="Search for period id..">
-                    </p>
-                    <p style="margin-bottom: 0; text-indent: 10px;">
-                        <input type="text" id="filter-topic_name" onkeyup="filterTopic()" placeholder="Search for name..">
-                    </p>
-
                     <div id="table_topic_div" class="content table-responsive table-full-width">
                         <table id="table_topic" class="table table table-hover table-striped">
                             <thead>
@@ -134,6 +122,17 @@
                                         </a>
                                     </th>
                                     {% endfor %}
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <input style="text-align: center;" type="search" id="filter-topic_id" class="form-control" onkeyup="filterTopic()" placeholder="ID">
+                                    </th>
+                                    <th>
+                                        <input style="text-align: center;" type="search" id="filter-topic_period_id" class="form-control" onkeyup="filterTopic()" placeholder="PERIOD(S) ID">
+                                    </th>
+                                    <th colspan="7">
+                                        <input style="width: 100%; text-align: center;" type="search" id="filter-topic_name" class="form-control" onkeyup="filterTopic()" placeholder="VALUE (ALL LANGUAGES)">
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -155,9 +154,6 @@
                                         </a>
                                      </td>
                                      <td class="td-actions text-right">
-                                         <button type="button" rel="tooltip" title="Edit Topic" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-topic_to_edit="{{ topic.id }}">
-                                            <i class="fa fa-edit"></i>
-                                         </button>
                                          <button type="button" rel="tooltip" title="Remove Topic" class="btn btn-danger btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-topic_to_remove="{{ topic.id }}">
                                             <i class="fa fa-times"></i>
                                          </button>
@@ -177,12 +173,7 @@
                         </div>
                         <button type="button" class="btn btn btn-success pull-right" style="display:inline-block;" data-toggle="modal" data-target="#modal">New Content</button>
                     </div>
-                    <p style="margin-top: 10px; text-indent: 10px;">
-                        <input type="text" id="filter-content_topic_id" onkeyup="filterContent()" placeholder="Search for topic id..">
-                    </p>
-                    <p style="margin-bottom: 0; text-indent: 10px;">
-                        <input type="text" id="filter-content_name" onkeyup="filterContent()" placeholder="Search for title or text..">
-                    </p>
+
                     <div id="table_content_div" class="content table-responsive table-full-width">
                         <table id="table_content" class="table table table-hover table-striped">
                             <thead>
@@ -196,11 +187,21 @@
                                     </th>
                                     {% endfor %}
                                 </tr>
-                                    <th></th>
-                                    {% for language, flag in zipped_languages_flags %}
-                                        <th>title</th>
-                                        <th>text</th>
-                                    {% endfor %}
+                                <tr>
+                                <th></th>
+                                {% for language, flag in zipped_languages_flags %}
+                                    <th>title</th>
+                                    <th>text</th>
+                                {% endfor %}
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <input style="text-align: center;" id="filter-content_topic_id"  class="form-control" type="search" onkeyup="filterContent()" placeholder="TOPIC ID">
+                                    </th>
+                                    <th colspan="14">
+                                        <input style="width: 100%; text-align: center;"  type="search" id="filter-content_name" class="form-control" onkeyup="filterContent()" placeholder="Value (All languages)">
+                                    </th>
+                                </tr>
                             </thead>
                             <tbody>
                                 {% for content, content_trs in all_contents_extended %}
@@ -228,9 +229,6 @@
                                         </a>
                                     </td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Content" class="btn btn-success btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
                                         <button type="button" rel="tooltip" title="Remove Content" class="btn btn-danger btn-simple btn-xs" data-toggle="modal" data-target="#modal" data-content_to_remove="{{ content.id }}">
                                             <i class="fa fa-times"></i>
                                         </button>
@@ -270,7 +268,8 @@
          var add_topic = $(event.relatedTarget).data('add_topic'); //data-content_to_edit
 
          if (period_to_edit) {
-             var url = "{% url 'edit_period_extended' period_id=0 language='GB' %}".replace('0', period_to_edit);
+             var period_tr_language_to_edit = $(event.relatedTarget).data('period_tr_language_to_edit'); //data-period_to_edit
+             var url = "{% url 'edit_period_extended' period_id=0 language=1 %}".replace('1', period_tr_language_to_edit).replace('0', period_to_edit);
              $.ajax({
                  url: url,
                  context: document.body
@@ -357,11 +356,12 @@
 
         // Loop through all table rows, and hide those who don't match the search query
         for (i = 0; i < trs.length; i++) {
+            td_0 = trs[i].getElementsByTagName("td")[0];
             tds = trs[i].getElementsByTagName("td");
             for (j = 1; j < 8; j++) {
                 td = trs[i].getElementsByTagName("td")[j];
                 if (td) {
-                    if ((td.title.toUpperCase().indexOf(input_name.toUpperCase()) > -1) && (td.title.toUpperCase().indexOf(input_id) > -1)) {
+                    if ((td.title.toUpperCase().indexOf(input_name.toUpperCase()) > -1) && (td_0.innerHTML.toUpperCase().indexOf(input_id) > -1)) {
                         trs[i].style.display = "";
                         break;
                     } else {
@@ -388,7 +388,7 @@
             for (j = 2; j < 9; j++) {
                 td = trs[i].getElementsByTagName("td")[j];
                 if (td) {
-                    if ((td_0.title.toUpperCase().indexOf(input_id) > -1) && (td_1.title.toUpperCase().indexOf(input_period_id) > -1) && (td.title.toUpperCase().indexOf(input_name.toUpperCase()) > -1)) {
+                    if ((td_0.innerHTML.toUpperCase().indexOf(input_id) > -1) && (td_1.innerHTML.toUpperCase().indexOf(input_period_id) > -1) && (td.title.toUpperCase().indexOf(input_name.toUpperCase()) > -1)) {
                         trs[i].style.display = "";
                         break;
                     } else {
@@ -412,7 +412,7 @@
             for (j = 1; j < 15; j++) {
                 td = trs[i].getElementsByTagName("td")[j];
                 if (td) {
-                    if ((td_0.title.toUpperCase().indexOf(input_topic_id) > -1) && (td.title.toUpperCase().indexOf(input_name.toUpperCase()) > -1)) {
+                    if ((td_0.innerHTML.toUpperCase().indexOf(input_topic_id) > -1) && (td.title.toUpperCase().indexOf(input_name.toUpperCase()) > -1)) {
                         trs[i].style.display = "";
                         break;
                     } else {
