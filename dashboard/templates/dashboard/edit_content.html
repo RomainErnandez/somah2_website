@@ -1,6 +1,6 @@
 {% load i18n widget_tweaks %}
 <div class="modal-dialog modal-lg" role="document">
-    <form action="{% url 'edit_period' period_id=object.id  %}" method="post" id="form-edit_period" class="form">{% csrf_token %}
+    <form action="{% url 'edit_content' content_id=object.id  %}" method="post" id="form-edit_content" class="form">{% csrf_token %}
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -29,5 +29,5 @@
 </div><!-- /.modal-dialog -->
 <script>
     var form_options = { target: '#modal', success: function(response) {} };
-    $('#form-edit_period').ajaxForm(form_options);
+    $('#form-edit_content').ajaxForm(form_options);
 </script>

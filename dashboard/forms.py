@@ -24,7 +24,7 @@ class AddPeriodForm(forms.ModelForm):
 class TopicEditForm(forms.ModelForm):
     class Meta:
         model = Topic
-        fields = ('image', )
+        fields = ('periods', 'image', )
 
 class TopicTrEditForm(forms.ModelForm):
     class Meta:
@@ -40,7 +40,7 @@ class AddTopicForm(forms.ModelForm):
 class ContentEditForm(forms.ModelForm):
     class Meta:
         model = Content
-        fields = ('image', )
+        fields = ('topic', 'image', )
 
 class ContentTrEditForm(forms.ModelForm):
     class Meta:

@@ -150,7 +150,7 @@
                                      <td title="{{ topic_trs.7.name }}" data-toggle="modal" data-target="#modal" data-topic_id_to_edit="{{ topic.id }}" data-topic_tr_language_to_edit="{{ topic_trs.7.language.country.code }}">{{ topic_trs.7.name|truncatechars:20 }}</td>
                                      <td>
                                         <a href="#" class="text-center">
-                                            <img src="/media/{{ topic.image }}" alt="topic image" style="width: 70px; height: 50px;">
+                                            <img src="/media/{{ topic.image }}" alt="topic image" style="width: 70px; height: 50px;" data-toggle="modal" data-target="#modal" data-topic_to_edit="{{ topic.id }}">
                                         </a>
                                      </td>
                                      <td class="td-actions text-right">
@@ -207,25 +207,25 @@
                                 {% for content, content_trs in all_contents_extended %}
                                 <tr>
                                     <td class="text-center">{{ content.topic }}</td>
-                                    <td title="{{ content_trs.0.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.0.language.country.code }}">{{ content_trs.0.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.0.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.0.language.country.code }}">{{ content_trs.0.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.1.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.1.language.country.code }}">{{ content_trs.1.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.1.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.1.language.country.code }}">{{ content_trs.1.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.2.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.2.language.country.code }}">{{ content_trs.2.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.2.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.2.language.country.code }}">{{ content_trs.2.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.3.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.3.language.country.code }}">{{ content_trs.3.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.3.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.3.language.country.code }}">{{ content_trs.3.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.4.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.4.language.country.code }}">{{ content_trs.4.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.4.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.4.language.country.code }}">{{ content_trs.4.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.5.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.5.language.country.code }}">{{ content_trs.5.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.5.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.5.language.country.code }}">{{ content_trs.5.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.6.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.6.language.country.code }}">{{ content_trs.6.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.6.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.6.language.country.code }}">{{ content_trs.6.text|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.7.title }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.7.language.country.code }}">{{ content_trs.7.title|truncatechars:10 }}</td>
-                                    <td title="{{ content_trs.7.text }}" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.7.language.country.code }}">{{ content_trs.7.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.0.title }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.0.language.country.code }}">{{ content_trs.0.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.0.text }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.0.language.country.code }}">{{ content_trs.0.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.1.title }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.1.language.country.code }}">{{ content_trs.1.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.1.text }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.1.language.country.code }}">{{ content_trs.1.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.2.title }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.2.language.country.code }}">{{ content_trs.2.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.2.text }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.2.language.country.code }}">{{ content_trs.2.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.3.title }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.3.language.country.code }}">{{ content_trs.3.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.3.text }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.3.language.country.code }}">{{ content_trs.3.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.4.title }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.4.language.country.code }}">{{ content_trs.4.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.4.text }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.4.language.country.code }}">{{ content_trs.4.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.5.title }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.5.language.country.code }}">{{ content_trs.5.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.5.text }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.5.language.country.code }}">{{ content_trs.5.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.6.title }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.6.language.country.code }}">{{ content_trs.6.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.6.text }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.6.language.country.code }}">{{ content_trs.6.text|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.7.title }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.7.language.country.code }}">{{ content_trs.7.title|truncatechars:10 }}</td>
+                                    <td title="{{ content_trs.7.text }}" data-toggle="modal" data-target="#modal" data-content_id_to_edit="{{ content.id }}" data-content_tr_language_to_edit="{{ content_trs.7.language.country.code }}">{{ content_trs.7.text|truncatechars:10 }}</td>
                                     <td>
                                         <a href="#" class="text-center">
-                                            <img src="/media/{{ content.image }}" alt="content image" style="width: 70px; height: 50px;">
+                                            <img src="/media/{{ content.image }}" alt="content image" style="width: 70px; height: 50px;" data-toggle="modal" data-target="#modal" data-content_to_edit="{{ content.id }}">
                                         </a>
                                     </td>
                                     <td class="td-actions text-right">
@@ -263,12 +263,32 @@
          var topic_to_remove = $(event.relatedTarget).data('topic_to_remove'); //-topic_to_remove
          var topic_id_to_edit = $(event.relatedTarget).data('topic_id_to_edit'); //data-topic_to_edit
          var content_to_remove = $(event.relatedTarget).data('content_to_remove'); //-content_to_remove
-         var content_to_edit = $(event.relatedTarget).data('content_to_edit'); //data-content_to_edit
+         var content_id_to_edit = $(event.relatedTarget).data('content_id_to_edit'); //data-content_to_edit
          var add_period = $(event.relatedTarget).data('add_period'); //-content_to_remove
          var add_topic = $(event.relatedTarget).data('add_topic'); //data-content_to_edit
          var period_to_edit =  $(event.relatedTarget).data('period_to_edit');
+         var topic_to_edit =  $(event.relatedTarget).data('topic_to_edit');
+         var content_to_edit =  $(event.relatedTarget).data('content_to_edit');
 
-         if (period_to_edit) {
+         if (topic_to_edit) {
+             var url = "{% url 'edit_topic' topic_id=0 %}".replace('0', topic_to_edit);
+             $.ajax({
+                 url: url,
+                 context: document.body
+             }).done(function(response) {
+                 modal.html(response);
+             });
+         }
+         else if (content_to_edit) {
+             var url = "{% url 'edit_content' content_id=0 %}".replace('0', content_to_edit);
+             $.ajax({
+                 url: url,
+                 context: document.body
+             }).done(function(response) {
+                 modal.html(response);
+             });
+         }
+         else if (period_to_edit) {
              var url = "{% url 'edit_period' period_id=0 %}".replace('0', period_to_edit);
              $.ajax({
                  url: url,

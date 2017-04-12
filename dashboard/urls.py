@@ -7,8 +7,7 @@ __author__ = 'rernande'
 from django.conf.urls import url, include
 from .views import dashboard, view_period, user, table, notifications, EditPeriodTrView, AddPeriodExtendedView, \
     RemovePeriodExtendedView, AddTopicExtendedView, EditTopicTrView, RemoveTopicExtendedView, \
-    AddContentExtendedView, EditContentTrView, RemoveContentExtendedView, EditPeriodView
-
+    AddContentExtendedView, EditContentTrView, RemoveContentExtendedView, EditPeriodView, EditContentView, EditTopicView
 
 urlpatterns = [
     url(r'^$', dashboard, name = 'dashboard'),
@@ -39,5 +38,6 @@ urlpatterns = [
     url(r'^remove_content_extended_success/$', TemplateView.as_view(template_name='dashboard/remove_content_extended_success.html'), name='remove_content_extended_success'),
 
     url(r'^edit_period/(?P<period_id>\d+)/$', EditPeriodView.as_view(), name='edit_period'),
-
+    url(r'^edit_topic/(?P<topic_id>\d+)/$', EditTopicView.as_view(), name='edit_topic'),
+    url(r'^edit_content/(?P<content_id>\d+)/$', EditContentView.as_view(), name='edit_content'),
 ]

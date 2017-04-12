@@ -18,7 +18,7 @@ from dashboard.serializers import PeriodSerializer, PeriodTrSerializer, Language
     TopicTrSerializer, ContentSerializer, ContentTrSerializer
 from .forms import AddPeriodForm, AddContentForm, \
     AddTopicForm, UserForm, ProfileForm, PeriodTrEditForm, TopicTrEditForm, \
-    ContentTrEditForm, PeriodEditForm
+    ContentTrEditForm, PeriodEditForm, ContentEditForm, TopicEditForm
 from .models import Period, Language, PeriodTr, Topic, TopicTr, Content, ContentTr
 from somah2_website.settings import MEDIA_ROOT
 
@@ -268,3 +268,23 @@ class EditPeriodView(UpdateView):
     def get_object(self, queryset=None):
         period_id = self.kwargs.get('period_id')
         return Period.objects.get(id=period_id)
+
+class EditTopicView(UpdateView):
+    model = Topic
+    form_class = TopicEditForm
+    template_name = 'dashboard/edit_topic.html'
+    success_url = reverse_lazy('edit_topic_success')
+
+    def get_object(self, queryset=None):
+        topic_id = self.kwargs.get('topic_id')
+        return Topic.objects.get(id=topic_id)
+
+class EditContentView(UpdateView):
+    model = Content
+    form_class = ContentEditForm
+    template_name = 'dashboard/edit_content.html'
+    success_url = reverse_lazy('edit_content_success')
+
+    def get_object(self, queryset=None):
+        content_id = self.kwargs.get('content_id')
+        return Content.objects.get(id=content_id)
