@@ -60,6 +60,6 @@ class UserForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('company', 'address', 'city', 'country', 'postal_code', 'description', )
+        fields = ('company', 'address', 'city', 'country', 'postal_code', 'description', 'avatar')
         widgets = {'country': CountrySelectWidget()}
 
