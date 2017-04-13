@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth import views as auth_views
+from django.contrib.auth import views as auth_views, authenticate, login
 
 from django.conf import settings
 from django.views.static import serve
@@ -33,8 +33,36 @@ router.register(r'topic_trs', TopicTrViewSet)
 router.register(r'contents', ContentViewSet)
 router.register(r'content_trs', ContentTrViewSet)
 router.register(r'languages', LanguageViewSet)
+from django.shortcuts import render, redirect
+
+### Register
+
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
+class RegisterForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ('username', 'password1', 'password2',)
+
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()  # load the profile instance created by the signal
+            user.save()
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=raw_password)
+            login(request, user)
+            return redirect('dashboard')
+    else:
+        form = RegisterForm()
+    return render(request, 'register.html', {'form': form})
 
 urlpatterns = [
+    url('^register/$', register, name = 'register'),
     # login, logout, password_change, password_change/done, password_reset, password_reset/done, reset/done
     url('^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
