@@ -38,7 +38,7 @@ Once logged in, you have access to the data table that contain periods, topics a
   - edit the period (click on the content you want to edit and a pop-up will appear to quickly edit it)
   ![table_period_edit](https://github.com/RomainErnandez/somah2_website/blob/master/dashboard/static/dashboard/img/table_period_edit.PNG)
   - some data are cut because it will take too much space to display them. Just put your mouse over it to display the full content of it.
-  ![table_toogle](https://github.com/RomainErnandez/somah2_website/blob/master/dashboard/static/dashboard/img/table_toogle.PNG)
+  ![table_toogle](https://github.com/RomainErnandez/somah2_website/blob/master/dashboard/static/dashboard/img/table_toogle.png)
 
 
 ## Demo
