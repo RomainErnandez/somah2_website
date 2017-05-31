@@ -4,6 +4,8 @@
 > The website aims to be a user friendly interface to modify the content of the main application.
 Once logged in, you have access to the data table that contain periods, topics and contents.
 
+[https://somah2.herokuapp.com/](https://somah2.herokuapp.com/)
+
 ## Getting started
 
 > You first need to login to the website. This is to prevent anyone to access to the data.
